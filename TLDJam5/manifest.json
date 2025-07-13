@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ow-mods/owml/master/schemas/manifest_schema.json",
+  "filename": "TLDJam5.dll",
+  "author": "TheLoweDown256",
+  "name": "TLDJam5",
+  "uniqueName": "TheLoweDown256.TLDJam5",
+  "version": "0.1.0",
+  "owmlVersion": "2.15.1",
+    "dependencies": [ "xen.NewHorizons", "xen-42.ModJam5" ]
+}

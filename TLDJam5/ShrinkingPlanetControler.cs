@@ -1,0 +1,119 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using NAudio.Mixer;
+using UnityEngine;
+
+namespace TLDJam5
+{
+    public class ShrinkingPlanetControler : MonoBehaviour
+    {
+        public float endTime=60*20;
+        public List<Transform> transformsToScale = new();
+        public GravityVolume gravityVolume;
+        public float surfaceGravityStart;
+        public float surfaceGravityRadiusStart;
+        public List<Transform> transformsToUnscale = new();
+        public float shrinkPerSecond;
+        public List<Light> lights=new();
+        public float lightStartRange=160;
+
+        public Dictionary<Transform,float> baseScales = new();
+
+        public bool planetGone = false;
+
+        public float curentScale = 1;
+
+        
+        public void Awake()
+        {
+        }
+
+        public void Start()
+        {
+            gravityVolume=this.transform.Find("GravityWell").GetComponent<GravityVolume>();
+            surfaceGravityStart = gravityVolume._surfaceAcceleration;
+            surfaceGravityRadiusStart = gravityVolume._upperSurfaceRadius;
+
+            Transform dontScaleRoot =  this.transform.Find("Sector/DontScale");
+            for(int i = 0; i < dontScaleRoot.childCount; i++)
+            {
+                transformsToUnscale.Add(dontScaleRoot.GetChild(i));
+            }
+            transformsToUnscale.Add(this.transform.Find("Sector/Ring"));
+
+            shrinkPerSecond = 1f / endTime;
+
+            GlobalMessenger.AddListener("ExitRoastingMode", new Callback(this.onExitCampFire));
+            GlobalMessenger.AddListener("StopSleepingAtCampfire", new Callback(this.onExitCampFire));
+            GlobalMessenger.AddListener("EnterRoastingMode", new Callback(this.onEnterCampFire));
+            GlobalMessenger.AddListener("StartSleepingAtCampfire", new Callback(this.onEnterCampFire));
+        }
+
+        public void FixedUpdate()
+        {
+            if (planetGone) { return; }
+            curentScale -= shrinkPerSecond/60f; //Mathf.Max(1f-Mathf.Clamp01(Time.timeSinceLevelLoad / endTime),0.00001f);
+            endTime -= 1f / 60f;
+
+            for (int i = 0; i < transformsToUnscale.Count; i++)
+            {
+                transformsToUnscale[i].localScale=Vector3.one/curentScale;
+            }
+
+            for (int i = 0; i < lights.Count; i++)
+            {
+                lights[i].range=lightStartRange*curentScale;
+            }
+
+            if (transformsToScale != null)
+            {
+                for (int i = 0; i < transformsToScale.Count; i++) {
+
+                    float toScale = curentScale;
+                    if (baseScales.ContainsKey(transformsToScale[i])) {
+                        toScale*=baseScales[transformsToScale[i]];
+                    }
+                    transformsToScale[i].localScale = Vector3.one * toScale;
+                }
+            }
+            if (gravityVolume != null) {
+                gravityVolume._surfaceAcceleration = Mathf.Max(surfaceGravityStart * (float)Math.Pow(curentScale,1.5f)-0.1f,0);
+                //gravityVolume._upperSurfaceRadius = surfaceGravityRadiusStart * curentScale;
+            }
+            if (curentScale <= 1.5/200)//0.02)
+            {
+                Destroy(transformsToScale[0].gameObject);
+                planetGone = true;
+            }
+        }
+        
+    
+
+        public void onEnterCampFire()
+        {
+            if (!TLDJam5.Instance.isPlayerAroundShrinkingPlanet())
+            {
+                return;
+            }
+            Transform player = Locator._playerTransform;
+            PlayerAttachPoint attPt= player.parent.GetComponent<PlayerAttachPoint>();
+            if (attPt != null)
+            {
+                attPt._attachOffset /= curentScale;
+            }
+        }
+        public void onExitCampFire()
+        {
+            if (!TLDJam5.Instance.isPlayerAroundShrinkingPlanet())
+            {
+                return;
+            }
+            Transform player = Locator._playerTransform;
+            player.localScale = Vector3.one;
+        }
+    }
+}

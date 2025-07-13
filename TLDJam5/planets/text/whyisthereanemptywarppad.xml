@@ -1,0 +1,27 @@
+﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
+    <TextBlock>
+        <ID>1</ID>
+		<Text>NAME: Why is this warp transmitter empty?</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>2</ID>
+		<ParentID>1</ParentID>
+		<Text>NAME2: This warp transmitter used to lead to <![CDATA[<color=orange>Hidden Light</color>]]>, the invisible star orbiting [SP NAME].</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>3</ID>
+		<ParentID>3</ParentID>
+		<Text>NAME2: The warp core from this transmitter was repurposed to power [SP NAME]'s warp core.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>4</ID>
+		<ParentID>3</ParentID>
+		<Text>NAME2: <![CDATA[<color=orange>Hidden Light</color>]]>'s orbit is marked by the purple energy ring around [SP NAME].</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>5</ID>
+		<ParentID>4</ParentID>
+		<Text>NAME2: The white hole core on <![CDATA[<color=orange>Hidden Light</color>]]> was also planned to be used for [SP NAME]'s warp core, but was broken. It is now at [ _____ ], along with another white hole core that was accidentaly made too big.</Text>
+	</TextBlock>
+
+</NomaiObject>

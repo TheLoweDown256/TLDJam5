@@ -1,0 +1,22 @@
+﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
+    <TextBlock>
+        <ID>1</ID>
+		<Text>DEUTZIA: After much work, I have finally finished installing all of the necessary Photovoltaic Trees on [SP NAME].</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>2</ID>
+		<ParentID>1</ParentID>
+		<Text>DEUTZIA: These trees are engineered to convert sunlight to energy useable by most Nomaian technology. In total, the Photovoltaic Trees installed on [SP NAME] are currently producing 50 NEU (Nomaian Energy Units).</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>3</ID>
+		<ParentID>3</ParentID>
+		<Text>DEUTZIA: A strange thing I've noticed is that the trees actualy produce the greatest amount of energy at 20% of their maximum size. If the Photovoltaic Trees were to grow to their full size, they would only be able to generate around 20 NEU total.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>4</ID>
+		<ParentID>3</ParentID>
+		<Text>DEUTZIA: For this reason, it is important that we limit the Photovoltaic Trees to only 20% of their full growth potential.</Text>
+	</TextBlock>
+
+</NomaiObject>

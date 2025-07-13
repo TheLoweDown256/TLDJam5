@@ -1,0 +1,7 @@
+﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
+    <TextBlock>
+        <ID>1</ID>
+		<Text>not enoguht energy, need 50, have 20, are teh trees broken, guy lost notes on teh sun</Text>
+	</TextBlock>
+
+</NomaiObject>

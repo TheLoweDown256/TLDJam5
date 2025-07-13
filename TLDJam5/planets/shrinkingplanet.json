@@ -1,0 +1,377 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
+    "name": "TheLoweDown256_ShrinkingPlanet",
+    "starSystem": "Jam5",
+    "Base": {
+        //"gravityFallOff": "inverseSquared",
+        "surfaceSize": 200,
+        "surfaceGravity": 14,
+        "centerOfSolarSystem": true
+        //"groundSize": 200
+    },
+    /*"Orbit": {
+        "staticPosition": {
+            "x": 1000,
+            "y": 2000,
+            "z": 5000
+        }
+    },*/
+
+    "MapMarker": { "enabled": true },
+    "Props": {
+        "gravityCannons": [
+            {
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 199
+                },
+                "alignRadial": true,
+                "shuttleID": "tldjam5_nshuttle",
+                "controls": {
+                    "position": {
+                        "x": -2,
+                        "y": -14.70588,
+                        "z": 216.8475
+                    },
+                    "rotation": {
+                        "x": 0,
+                        "y": 90.03278,
+                        "z": 90.03948
+                    }
+                },
+                "computer": {
+                    "position": {
+                        "x": 0,
+                        "y": 300,
+                        "z": -50
+                    }
+                },
+                "detailed": true
+            }
+        ],
+        "singularities": [
+            {
+                "type": "blackHole",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "horizonRadius": 1.5,
+                "parentPath": "blackhole" //"Sector/DontScale"
+            }
+        ],
+        "warpTransmitters": [
+            {
+                "position": {
+                    "x": -68.3,
+                    "y": 0,
+                    "z": 68.3
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": 45,
+                    "z": 90
+                },
+                "frequency": "DONOTCONECTTOANYTHINGATALLPLEASE_dt75ihyt8754e"
+            }
+        ],
+        "details": [
+            {
+                "assetBundle": "assets/shrinkingplanet",
+                "path": "Assets/shrinkingplanet.prefab",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "keepLoaded": true,
+                "alignRadial": false
+            },
+            {
+                "assetBundle": "assets/shrinkingplanet",
+                "path": "Assets/shrinkingplanet_details.prefab",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "keepLoaded": false,
+                "alignRadial": false
+            },
+            {
+                "path": "TowerTwin_Body/Sector_TowerTwin/Sector_TimeLoopInterior/Geometry_TimeLoopInterior/ControlledByProxy_TimeLoopInterior",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "scale": 1.83
+            },
+
+
+
+            {
+                "path": "CaveTwin_Body/Sector_CaveTwin/Sector_SouthHemisphere/Sector_SouthSurface/Sector_WarpReceiver/Interactables_WarpReceiver/Prefab_NOM_WarpReceiver/Structure_NOM_WarpReceiver_CaveTwin/Structure_NOM_WarpReceiver_CaveTwin_Copper",
+                "position": {
+                    "x": 0,
+                    "y": 27.3,
+                    "z": 0
+                },
+                "scale": 1,
+                "itemSocket": {
+                    "itemType": "WarpCore",
+                    "position": {
+                        "x": -0.05,
+
+                        "y": 0.27,
+                        "z": -0.05
+                    },
+                    "rotation": {
+                        "x": 0,
+                        "y": 315,
+                        "z": 90
+                    },
+                    "colliderRadius": 0.8,
+                    "isRelativeToParent": true
+                }
+            },
+            {
+                "path": "CaveTwin_Body/Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthSurface/Sector_TimeLoopExperiment/WarpCoreWallSockets/WarpCoreSocket (4)/Props_NOM_WarpCoreWhite (1)",
+                "position": {
+                    "x": -0.009384155,
+                    "y": -21.56202,
+                    "z": 216.8449
+                },
+
+                "scale": 2
+            },
+
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Interactibles_WhiteholeStation/Prefab_NOM_Tablet",
+                "position": {
+                    "x": -3.3055,
+                    "y": -18.6419,
+                    "z": 219.2072
+                },
+                "rotation": {
+                    "x": 270,
+                    "y": 90,
+                    "z": 0
+                },
+                "stretch": {
+                    "x": 1.5,
+                    "y": 1.5,
+                    "z": 1.5
+                }
+            },
+
+
+
+            {
+                "rename": "HE_thing",
+                "position": {
+                    "x": 168.3935,
+                    "y": 20.49355,
+                    "z": 0.2044508
+                },
+                "rotation": {
+                    "x": 357.9893,
+                    "y": 359.4133,
+                    "z": 286.2695
+                }
+            },
+            {
+                "path": "TimeLoopRing_Body/Interactibles_TimeLoopRing_Hidden/RingShutdownInterface/Prefab_NOM_OrbTrack_Vertical",
+                "parentPath": "Sector/HE_thing",
+                "rotation": { "y": 70 },
+                "isRelativeToParent": true,
+                "scale": 2
+            },
+
+            { "rename": "TowerPuzzle" },
+            {
+                "path": "TimeLoopRing_Body/Interactibles_TimeLoopRing_Hidden/RingShutdownInterface/Prefab_NOM_OrbTrack_Vertical",
+                "alignRadial": true,
+                "scale": 3,
+                "position": { "x": 200 },
+                "parentPath": "Sector/TowerPuzzle",
+                "rename": "EastOrbInterface"
+            },
+            {
+                "path": "TimeLoopRing_Body/Interactibles_TimeLoopRing_Hidden/RingShutdownInterface/Prefab_NOM_OrbTrack_Vertical",
+                "alignRadial": true,
+                "scale": 3,
+                "position": { "x": -200 },
+                "parentPath": "Sector/TowerPuzzle",
+                "rename": "WestOrbInterface"
+            },
+
+            { "rename": "DontScale" },
+            { "rename": "blackhole","parentPath": "" },
+            {
+                "path": "TimberHearth_Body/Sector_TH/Sector_Village/Interactables_Village/LaunchTower/Effects_HEA_Campfire",
+                "position": { "y": -200 },
+                "alignRadial": true
+            },
+            { "rename": "solarpaneltrees" },
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Props_WhiteHoleStation/Prefab_NOM_NomaiTree_Var_1",
+                "position": { "z": -195 },
+                "rotation": { "y": 90 },
+                "alignRadial": true,
+                "parentPath": "Sector/solarpaneltrees",
+                "rename": "paneltree",
+                "scale": 10,
+                "keepLoaded": true
+            },
+
+            { "rename": "NomaiComputers" }
+
+
+        ],
+        "translatorText": [
+            {
+                "position": {
+                 "x":   -3.2926, "y":   -19.2271,
+                 "z":   218.0
+                },
+                "rotation": {
+                    "x": 89.88809,
+                    "y": 90.11082,
+                    "z": 0
+                },
+                "normal": {
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                },
+                "xmlFile": "planets/text/dontuseshuttleatday.xml",
+                "type": "wall",
+                "seed": 463
+            },
+            {
+                "xmlFile": "planets/text/evacuate.xml",
+                "type": "computer",
+                "position": {
+                    "x": 11.06269,
+                    "y": -32.31073,
+                    "z": 175.0396
+                },
+                "rotation": {
+                    "x": 314.6014,
+                    "y": 270,
+                    "z": 270
+                },
+                "normal": {
+                    "x": 0,
+                    "y": 1.192093E-07,
+                    "z": 1
+                },
+                "parentPath": "Sector/NomaiComputers",
+                "rename": "shuttlestairs"
+            },
+            {
+                "xmlFile": "planets/text/evacuate.xml",
+                "type": "computer",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 94.97821
+                },
+                "rotation": {
+                    "x": 85.82946,
+                    "y": 270.0002,
+                    "z": 270.0002
+                },
+                "normal": {
+                    "x": 0,
+                    "y": 3.576279E-07,
+                    "z": 1
+                },
+                "parentPath": "Sector/NomaiComputers",
+                "rename": "library"
+            },
+            {
+                "position": {
+                    "x": -71.93415,
+                    "y": 4.714675,
+                    "z": 64.9747
+                },
+                "rotation": {
+                    "x": 31.75202,
+                    "y": 225,
+                    "z": 270
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/whyisthereanemptywarppad.xml"
+            }
+        ]
+    },
+    "Volumes": {
+        "forces": {
+            /*"polarVolumes": [
+                {
+                    "radius": 60,
+                    "force": -10,
+                    "priority": 3
+                }
+            ]*/
+            "directionalVolumes": [
+                {
+                    "normal": {
+                        "x": 0.9600047,
+                        "y": 0.2799839,
+                        "z": 2.78225E-07
+                    },
+                    "position": {
+                        "x": 168.3935,
+                        "y": 20.49355,
+                        "z": 0.2044508
+                    },
+                    "radius": 15,
+                    "force": -15
+                }
+            ]
+        },
+        "zeroGravityVolumes": [
+            {
+                "radius": 62,
+                "layer": 0,
+                "priority": 5
+            }
+        ],
+        "oxygenVolumes": [
+            {
+                "radius": 230,
+                "treeVolume": true
+            }
+        ]
+    },
+    "Rings": [
+        {
+            "texture": "planets/shrinkingplanet_rings.png",
+            "unlit": true,
+            "rotationSpeed": 6,
+            "innerRadius": 760,
+            "outerRadius": 840,
+            "fluidType": "none"
+        }
+    ],"Atmosphere": {"hasOxygen": true,"hasTrees": true,"atmosphereTint": {"r": 0,"g": 0,"b": 0,"a": 0},"useAtmosphereShader": false,"atmosphereSunIntensity": 0,"size": 175}
+
+    /* "Lava": {
+        "size": 200,
+        "tint": {
+            "r": 180,
+            "g": 240,
+            "b": 255
+        }
+    }*/
+    //"ShipLog": {
+    //  "xmlFile": "planets/shiplog/AuthorModSystem.xml",
+    //  "spriteFolder": "planets/shiplog/sprites"
+    //}
+}
+
+

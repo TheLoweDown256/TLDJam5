@@ -1,0 +1,182 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
+    "name": "Hidden Light",
+    "starSystem": "Jam5",
+    "removeChildren": [ "Sector/Star/Audio_Star/SurfaceAudio_Sun" ],
+    "Base": {
+        "gravityFallOff": "inverseSquared",
+        "surfaceSize": 40,
+        "surfaceGravity": 8
+    },
+    "Orbit": {
+        "semiMajorAxis": 800,
+        "primaryBody": "TheLoweDown256_ShrinkingPlanet",
+        "isTidallyLocked": true,
+        "showOrbitLine": false
+        //"initialRotation": 90
+        
+    },
+    "Star": {
+        "size": 40,
+        "solarLuminosity": 0.9,
+        "lightTint": {
+            "r": 150,//200,
+            "g": 158,//240,
+            "b": 255
+        },
+        "tint": {
+            "r": 105, //90//200,
+            "g": 94, //98//240,
+            "b": 255
+        },
+        /*"endTint": {
+            "r": 255,
+            "g": 60,
+            "b": 10
+        },*/
+        "lightRadius": 2100,
+
+        "stellarDeathType": "none"
+    },
+    "Props": {
+        "details": [
+            {
+                "assetBundle": "assets/shrinkingplanet",
+                "path": "Assets/minisun_ring.prefab",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "rotation": { "x": 90 },
+                //"keepLoaded": true,
+                "alignRadial": false,
+                "keepLoaded": true
+            },
+            {
+                "path": "TimberHearth_Body/Sector_TH/Sector_Village/Interactables_Village/LaunchTower/Effects_HEA_Campfire",
+                "position": {
+                    "x": -39.67871,
+                    "y": 0.02052116,
+                    "z": 35.45271
+                },
+                "rotation": {
+                    "x": 290.5773,
+                    "y": 225,
+                    "z": 270
+                }
+            },
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Props_WhiteHoleStation/Prefab_NOM_NomaiTree_Var_1",
+                "position": {
+                    "x": -41.91263,
+                    "y": -3.306288,
+                    "z": 33.21879
+                },
+                "rotation": {
+                    "x": 298.201,
+                    "y": 44.99999,
+                    "z": 90.00002
+                }
+            }
+        ],
+        "translatorText": [
+            {
+                "xmlFile": "planets/text/evacuate.xml",
+                "type": "computer",
+                "position": {
+                    "x": -43.6702,
+                    "y": 0.5321159,
+                    "z": 31.46122
+                },
+                "rotation": {
+                    "x": 334.2084,
+                    "y": 45,
+                    "z": 90.00001
+                },
+                "normal": {
+                    "x": -0.7071067,
+                    "y": -1.788139E-07,
+                    "z": 0.7071068
+                }
+            },
+            {
+                "position": {
+                    "x": 5.971865,
+                    "y": 23.07001,
+                    "z": 0.05594379
+                },
+                "rotation": {
+                    "x": -9.914573E-06,
+                    "y": 311.4297,
+                    "z": -2.616E-06
+                },
+                "normal": {
+                    "x": -4.377216E-08,
+                    "y": 1,
+                    "z": -1.247972E-07
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/treeresearch.xml"
+            }
+        ],
+        "warpReceivers": [
+            {
+                "position": {
+                    "x": 36.75529,
+                    "y": -1.139151,
+                    "z": 38.3771
+                },
+                "rotation": {
+                    "x": 5.972891,
+                    "y": 315,
+                    "z": 270
+                },
+                "frequency": "DONOTCONECTTOANYTHINGATALLPLEASE_iurg785n"
+            }
+        ]
+    },
+    "Volumes": {
+        "speedTrapVolumes": [
+            {
+                "radius": 120,
+                "acceleration": 4
+            }
+        ],
+        "interferenceVolumes": [
+            {
+                "radius": 160
+            }
+        ],
+        "mapRestrictionVolumes": [
+            {
+                "radius": 160//,
+                //"targetColliderRadius": 60
+            }
+        ],
+        "oxygenVolumes": [
+            {
+                "treeVolume": true,
+                "position": {
+                    "x": -41.91263,
+                    "y": -3.306288,
+                    "z": 33.21879
+                },
+                "radius": 30
+            }
+        ]
+    },
+    "Cloak": {
+        "radius": 1000
+    },
+    "ReferenceFrame": {
+        "maxTargetDistance": 120,
+        "hideInMap": true,
+        "targetWhenClose": true,
+        "targetColliderRadius": 80
+
+    }
+
+}
+
+

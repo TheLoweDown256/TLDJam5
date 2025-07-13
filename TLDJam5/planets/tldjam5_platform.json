@@ -1,0 +1,82 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
+    "name": "TheLoweDown256_Jam5_Platform",
+    "starSystem": "Jam5",
+    "extras": {
+        "isPlatform": true
+    },
+
+    "Props": {
+        "shuttles": [
+            {
+                "position": {
+                    "x": 0,
+                    "y": 0.394,
+                    "z": 60
+                },
+                "rotation": {"y": 180},
+                "id": "tldjam5_nshuttle"
+            }
+        ],
+        "details": [
+            {
+                "path": "QuantumIsland_Body/Sector_QuantumIsland/Interactables_QuantumTower/Prefab_NOM_DockingTractorBeam",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 60
+                },
+                "scale": 0.6,
+                "removeChildren": [
+                    "FluidGravityVolume",
+                    "BeamRings",
+                    "BeamParticles"
+                ]
+            },
+            {
+                "path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle",
+                "position": {
+                    "x": 2.2,
+                    "y": 1.078844E-05,
+                    "z": 49.77
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": 210,
+                    "z": 0
+                },
+                "rename": "Nomai1"
+            },
+            {
+                "rename": "Nomai_follower","path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle","rotation": {  "x": 0, "y": 210,"z": 0 }, 
+                "position": { "x": 3.21,  "y": 1.078844E-05, "z": 51.7 }
+            },
+            {
+                 "rename": "Nomai_follower","path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle","rotation": {  "x": 0, "y": 210,"z": 0 }, 
+                 "position": {"x": 4.546, "y": 1.078844E-05, "z": 49.73}
+            },
+            {
+                "rename": "Nomai_follower","path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle","rotation": {  "x": 0, "y": 210,"z": 0 }, 
+                "position": {"x": 6.846622, "y": 1.066923E-05, "z": 51.29522}
+            },
+            {
+                 "rename": "Nomai_follower","path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle","rotation": {  "x": 0, "y": 210,"z": 0 }, 
+                 "position": {"x": 5.945004, "y": 1.078844E-05, "z": 53.03972}
+            }
+        ],
+        "dialogue": [
+            {
+                "pathToAnimController": "Sector/Nomai1",
+                "lookAtRadius": 10,
+                "isRelativeToParent": true,
+                "position": {
+                    "y": 1.6
+                },
+                "radius": 1.5,
+                "range": 4,
+                "xmlFile": "planets/text/diolouge/PlatformNomai.xml"
+            }
+        ]
+
+    }
+}

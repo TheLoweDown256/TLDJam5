@@ -1,0 +1,53 @@
+﻿<DialogueTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/dialogue_schema.xsd">
+	<NameField>Protea</NameField>
+
+
+	<DialogueNode>
+		<Name>START</Name>
+		<EntryCondition>DEFAULT</EntryCondition>
+		<Dialogue>
+			<Page>Greetings traveler!</Page>
+		</Dialogue>
+		<DialogueTarget>ExplainEvacuation</DialogueTarget>
+	</DialogueNode>
+
+
+	<DialogueNode>
+		<Name>ExplainEvacuation</Name>
+		<Dialogue>
+			<Page>We came here from the [NAME] system to share the knowledge we found there. Unfortunatley, our vessel, [SP NAME], suffered damage upon our arival.</Page>
+			<Page>The black hole in our warp core malfunctioned in some way, and now [SP NAME] is rapidly miniaturizing into it!</Page>
+			<Page>Worse still, we couldn't even recover any of our exploration logs as all the computers refused to show anything other than "EVACUATE IMMEDIATELY"</Page>
+			<Page>If [SP NAME] isn't fixed, we won't be able to recover our exploration logs. And, if those logs aren't recovered, all the knowledge we gained will be lost.</Page>
+		</Dialogue>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<Text>I can help!</Text>
+				<DialogueTarget>HowToFix</DialogueTarget>
+			</DialogueOption>
+		<DialogueOption>
+				<Text>Well that sucks.</Text>
+				<DialogueTarget>RejectHelp</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+
+	
+	<DialogueNode>
+		<Name>RejectHelp</Name>
+		<Dialogue>
+			<Page>If only we had enough time to fix [SP NAME]...</Page>
+		</Dialogue>
+	</DialogueNode>
+	
+	<DialogueNode>
+		<Name>HowToFix</Name>
+		<Dialogue>
+			<Page>We appreciate your offer, but I'm worried there's just no chance for us to save our exploration logs.</Page>
+			<Page>We would need to figure out what's wrong with [SP NAME], find a solution, and fix [SP NAME] all before it is sucked into the black hole.</Page>
+			<Page>We only had just over 20 minutes to evacuate so, unfortunately, I don't see any way to get all that done in what little time we have...</Page>
+			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to [SP NAME]. Just make sure to evacuate if you can't fix [SP NAME] before it's completely gone.</Page>
+		</Dialogue>
+	</DialogueNode>
+
+</DialogueTree>
