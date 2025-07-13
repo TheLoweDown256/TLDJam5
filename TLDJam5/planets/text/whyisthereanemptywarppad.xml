@@ -21,7 +21,7 @@
 	<TextBlock>
 		<ID>5</ID>
 		<ParentID>4</ParentID>
-		<Text>NAME2: The white hole core on <![CDATA[<color=orange>Hidden Light</color>]]> was also planned to be used for [SP NAME]'s warp core, but was broken. It is now at [ _____ ], along with another white hole core that was accidentaly made too big.</Text>
+		<Text>NAME2: The white hole core on <![CDATA[<color=orange>Hidden Light</color>]]> was also planned to be used for [SP NAME]'s warp core, but was broken. It is now at the storage area on top of the <![CDATA[<color=orange>Library</color>]]>, along with another white hole core that was accidentaly made too big.</Text>
 	</TextBlock>
 
 </NomaiObject>

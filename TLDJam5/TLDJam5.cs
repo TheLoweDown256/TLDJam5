@@ -6,6 +6,7 @@ using OWML.ModHelper;
 using UnityEngine;
 using UnityEngine.Playables;
 using NewHorizons.Components.SizeControllers;
+using System.Security.Policy;
 
 namespace TLDJam5
 {
@@ -29,7 +30,10 @@ namespace TLDJam5
         public NomaiInterfaceOrb[] towerOrbs = [null,null];
         public int[] towerOrbStayTimes = [0, 0];
         public bool towerOrbsSolved = false;
-        public int towerOrbSetStayTime = 20 * 60;
+        public int towerOrbSetStayTime = 25 * 60;
+
+        public bool towerRoofsOpen = false;
+        public NomaiInterfaceOrb towerOpenSwitch;
 
         public int[] treeSpots = [0,1,2,3,4,6,7,8,9,11,12,13,14,16,17,18,19]; 
 
@@ -43,6 +47,15 @@ namespace TLDJam5
 
         public StarEvolutionController miniSunEvolutionControler;
         public float miniSunSize=40;
+
+        public GameObject whiteWarpCore;
+        public float whiteWarpCoreScale = 2;
+        ItemTool playerItemCarryTool;
+
+        public Transform shrinkingPlanetSector;
+
+        public GameObject[] towerClosedRoofs = [null, null];
+        public GameObject[] towerOpenRoofs = [null, null];
 
         public void Awake()
         {
@@ -94,6 +107,7 @@ namespace TLDJam5
         {
             GameObject planetBody = GameObject.Find(planetBodyPath);
             planetRigidbody=planetBody.GetAttachedOWRigidbody();
+            shrinkingPlanetSector = GameObject.Find(planetBodyPath + "/Sector").transform;
             // ModHelper.Console.WriteLine("is this null plase not be nul: " + planetBody, MessageType.Info);
             shrinkingPlanetControler = planetBody.GetAddComponent<ShrinkingPlanetControler>();
             shrinkingPlanetControler.transformsToScale.Add(planetBody.transform.Find("Sector"));
@@ -123,19 +137,46 @@ namespace TLDJam5
             Transform tempTr;
             tempTr = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/EastOrbInterface/Prefab_NOM_InterfaceOrb").transform;
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
-            shrinkingPlanetControler.baseScales.Add(tempTr, 3);
+            shrinkingPlanetControler.baseScales.Add(tempTr, 2.5f);
             tempTr= GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/WestOrbInterface/Prefab_NOM_InterfaceOrb").transform;
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
-            shrinkingPlanetControler.baseScales.Add(tempTr, 3);
+            shrinkingPlanetControler.baseScales.Add(tempTr, 2.5f);
 
             tempTr= GameObject.Find(planetBodyPath + "/Sector/Prefab_NOM_WarpTransmitter").transform;
             tempTr.Find("Props_NOM_WarpCoreBlack").gameObject.SetActive(false);
             tempTr.Find("PointLight_NOM_WarpCoreBlack (1)").gameObject.SetActive(false);
             tempTr.Find("Structure_NOM_WarpTransmitter/Structure_NOM_WarpTransmitter_Effects").gameObject.SetActive(false);
 
+            tempTr = GameObject.Find(sunBodyPath + "/Sector/Prefab_NOM_WarpReceiver").transform;
+            tempTr.Find("PointLight_NOM_WarpCoreWhite (1)").gameObject.SetActive(false);
+            tempTr.Find("Props_NOM_WarpCoreWhite").gameObject.SetActive(false);
+            tempTr.Find("Structure_NOM_WarpReceiver_Effects").gameObject.SetActive(false);
+            tempTr.Find("PointLight_TH_WarpReceiver").gameObject.SetActive(false);
+            tempTr.Find("Effects_NOM_ReverseWarpParticles").gameObject.SetActive(false);
+
             miniSunSize = 40;
             miniSunEvolutionControler= GameObject.Find(sunBodyPath + "/Sector/Star").GetComponent<StarEvolutionController>();
 
+            GameObject.Find(planetBodyPath + "/Sector/Atmosphere").SetActive(false);
+
+            whiteWarpCore = GameObject.Find(planetBodyPath + "/Sector/ShrinkingPlanet_WarpCoreWhite");
+            whiteWarpCoreScale = 2;
+            if (whiteWarpCore == null)
+            {
+                ModHelper.Console.WriteLine("[logged error] WHITEHOLEWARPCORE is NULL ", MessageType.Error);
+            }
+
+            towerClosedRoofs[0] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_east/roof/closed");
+            towerClosedRoofs[1] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_west/roof/closed");
+            towerOpenRoofs[0] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_east/roof/open");
+            towerOpenRoofs[1] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_west/roof/open");
+
+            towerOpenRoofs[0].SetActive(false);
+            towerOpenRoofs[1].SetActive(false);
+            towerRoofsOpen = false;
+
+            towerOpenSwitch = GameObject.Find(planetBodyPath + "/Sector/OpenTowerSwRoot/OpenTowerSwitch/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
+            towerOpenSwitch._occupiedSlot = towerOpenSwitch._slots[0];
 
         }
 
@@ -200,10 +241,12 @@ namespace TLDJam5
                 if (!shrinkingPlanetControler.planetGone)
                 {
                     towerOrbsUpdate();
+                    towersOpenUpdate();
                     if (roofOpen!=roofOpenTarg)
                     {
                         roofOpenUpdate();
                     }
+                    warpCoreSizeUpdate();
                 }
                 else
                 {
@@ -211,6 +254,23 @@ namespace TLDJam5
                 }
 
                 scoutHelperDebugDeactivate();
+
+                if (playerItemCarryTool == null)
+                {
+                    var temp2 = Locator.GetPlayerController().transform.Find("PlayerCamera/ItemCarryTool");
+                    ModHelper.Console.WriteLine("TEMP2: " + temp2, MessageType.Info);
+                    if (temp2 == null)
+                    {
+                        ModHelper.Console.WriteLine("[logged error] temp2 is NULL ", MessageType.Error);
+                    }
+                    playerItemCarryTool = temp2.GetComponent<ItemTool>();
+
+
+                    if (playerItemCarryTool == null)
+                    {
+                        ModHelper.Console.WriteLine("[logged error] playerItemCarryTool is NULL ", MessageType.Error);
+                    }
+                }
 
             }
         }
@@ -272,6 +332,34 @@ namespace TLDJam5
 
 
 
+        public void towersOpenUpdate()
+        {
+            if (towerRoofsOpen)
+            {
+                if (towerOpenSwitch._occupiedSlot == towerOpenSwitch._slots[0])
+                {
+                    towerRoofsOpen = false;
+                    towerOpenRoofs[0].SetActive(false);
+                    towerOpenRoofs[1].SetActive(false);
+                    towerClosedRoofs[0].SetActive(true);
+                    towerClosedRoofs[1].SetActive(true);
+                }
+                    
+            }
+            else
+            {
+                if(towerOpenSwitch._occupiedSlot == towerOpenSwitch._slots[1])
+                {
+                    towerRoofsOpen = true;
+                    towerOpenRoofs[0].SetActive(true);
+                    towerOpenRoofs[1].SetActive(true);
+                    towerClosedRoofs[0].SetActive(false);
+                    towerClosedRoofs[1].SetActive(false);
+                }
+            }
+           
+        }
+
         public void towerOrbsUpdate()
         {
             if (towerOrbsSolved)
@@ -288,7 +376,7 @@ namespace TLDJam5
                 {
                     for (int i = 0; i < towerOrbs.Count(); i++)
                     {
-                        towerOrbs[i]._glowBaseColor = new UnityEngine.Color(0.0039f, 0.0037f, 0.01f, 1f);
+                        towerOrbs[i]._glowBaseColor = new UnityEngine.Color(0.0039f, 0.0037f, 0.01f, 1f);//blues
                         towerOrbs[i]._occupiedSlot = towerOrbs[i]._slots[0];
                     }
                     towerOrbsSolved = false;
@@ -303,9 +391,14 @@ namespace TLDJam5
                     if (towerOrbStayTimes[i] > 0)
                     {
                         towerOrbStayTimes[i]--;
+                        if(towerOrbs[i]._occupiedSlot == towerOrbs[i]._slots[0])
+                        {
+                            towerOrbStayTimes[i] = 0;
+                        }
                         if (towerOrbStayTimes[i] <= 0)
                         {
                             towerOrbs[i]._occupiedSlot = towerOrbs[i]._slots[0];
+                            towerOrbs[i]._glowBaseColor =new UnityEngine.Color(0.0039f, 0.0037f, 0.01f, 1f);//blue
                         }
                     }
                     else
@@ -313,6 +406,7 @@ namespace TLDJam5
                         if (towerOrbs[i]._occupiedSlot == towerOrbs[i]._slots[1])
                         {
                             towerOrbStayTimes[i] = towerOrbSetStayTime;
+                            towerOrbs[i]._glowBaseColor = new UnityEngine.Color(1f, 0.5f, 0.01f, 1f);//orange
                         }
                     }
                     if (towerOrbs[i]._occupiedSlot == towerOrbs[i]._slots[1])
@@ -326,7 +420,7 @@ namespace TLDJam5
                     towerOrbsSolved = true;
                     for (int i = 0; i < towerOrbs.Count(); i++)
                     {
-                        towerOrbs[i]._glowBaseColor = new UnityEngine.Color(0,1,0, 1f);
+                        towerOrbs[i]._glowBaseColor = new UnityEngine.Color(0,1f,0, 1f);//green
                     }
                     roofOpenTarg = 1;
                 }
@@ -334,7 +428,33 @@ namespace TLDJam5
         }
 
 
+        public void warpCoreSizeUpdate()
+        {
+            
+            bool isHeld = false;
+            if (playerItemCarryTool != null)
+            {
+                if (playerItemCarryTool._heldItem != null)
+                {
+                    isHeld = whiteWarpCore.GetComponent<WarpCoreItem>() == playerItemCarryTool._heldItem;
+                }
+            }
+            if (!isHeld)
+            {
+                Transform tryGetWarpCore = planetRigidbody.transform.Find("ShrinkingPlanet_WarpCoreWhite");
+                if (tryGetWarpCore!=null)
+                {
+                    tryGetWarpCore.localScale= Vector3.one*whiteWarpCoreScale;
+                    tryGetWarpCore.parent = shrinkingPlanetSector;
+                }
+                if (whiteWarpCore.transform.parent == shrinkingPlanetSector) {
+                    whiteWarpCoreScale -= shrinkingPlanetControler.shrinkPerSecond /30f;
+                }
+            }
 
+
+
+        }
 
 
         public bool doesShrinkingPlanetExist()

@@ -5,6 +5,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using NAudio.Mixer;
+using OWML.Common;
+using OWML.ModHelper;
 using UnityEngine;
 
 namespace TLDJam5
@@ -27,7 +29,9 @@ namespace TLDJam5
 
         public float curentScale = 1;
 
-        
+        public float sizeToAdd = 0;
+
+
         public void Awake()
         {
         }
@@ -56,8 +60,17 @@ namespace TLDJam5
         public void FixedUpdate()
         {
             if (planetGone) { return; }
-            curentScale -= shrinkPerSecond/60f; //Mathf.Max(1f-Mathf.Clamp01(Time.timeSinceLevelLoad / endTime),0.00001f);
-            endTime -= 1f / 60f;
+            if (sizeToAdd > 0)
+            {
+                float change = shrinkPerSecond / 2.5f;
+                curentScale = Mathf.Min(curentScale+change,1);
+                sizeToAdd -= change;
+            }
+            else
+            {
+                curentScale -= shrinkPerSecond / 60f; //Mathf.Max(1f-Mathf.Clamp01(Time.timeSinceLevelLoad / endTime),0.00001f);
+                endTime -= 1f / 60f;
+            }
 
             for (int i = 0; i < transformsToUnscale.Count; i++)
             {
@@ -103,7 +116,11 @@ namespace TLDJam5
             PlayerAttachPoint attPt= player.parent.GetComponent<PlayerAttachPoint>();
             if (attPt != null)
             {
-                attPt._attachOffset /= curentScale;
+                attPt.SetAttachOffset(attPt._attachOffset /= curentScale);
+            }
+            else
+            {
+                TLDJam5.Instance.ModHelper.Console.WriteLine("players attach point is null >::(",MessageType.Error);
             }
         }
         public void onExitCampFire()

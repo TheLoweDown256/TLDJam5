@@ -82,7 +82,7 @@
         ],
         "translatorText": [
             {
-                "xmlFile": "planets/text/evacuate.xml",
+                "xmlFile": "planets/text/suncomputer.xml",
                 "type": "computer",
                 "position": {
                     "x": -43.6702,
@@ -118,17 +118,55 @@
                 },
                 "type": "recorder",
                 "xmlFile": "planets/text/treeresearch.xml"
+            },
+            {
+                "position": {
+                    "x": -40.00722,
+                    "y": -3.944674,
+                    "z": 35.12425
+                },
+                "rotation": {
+                    "x": 323.3263,
+                    "y": 44.99997,
+                    "z": 90.00002
+                },
+                "normal": {
+                    "x": -0.7071072,
+                    "y": -3.874302E-07,
+                    "z": 0.7071065
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/connectthesun.xml"
+            },
+            {
+                "position": {
+                    "x": 40.01521,
+                    "y": 2.821115,
+                    "z": 36.16487
+                },
+                "rotation": {
+                    "x": 312.7016,
+                    "y": 135,
+                    "z": 90
+                },
+                "normal": {
+                    "x": 0.7071067,
+                    "y": -2.980232E-08,
+                    "z": 0.7071069
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/connectthesun.xml"//replace with stuff for warp
             }
         ],
         "warpReceivers": [
             {
                 "position": {
-                    "x": 36.75529,
-                    "y": -1.139151,
-                    "z": 38.3771
+                    "x": 37.5,
+                    "y": 0,
+                    "z": 37.5
                 },
                 "rotation": {
-                    "x": 5.972891,
+                    "x": 0,
                     "y": 315,
                     "z": 270
                 },
