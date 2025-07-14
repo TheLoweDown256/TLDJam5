@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using NewHorizons.Components.SizeControllers;
 using System.Security.Policy;
+using NewHorizons.Components.Props;
 
 namespace TLDJam5
 {
@@ -56,6 +57,8 @@ namespace TLDJam5
 
         public GameObject[] towerClosedRoofs = [null, null];
         public GameObject[] towerOpenRoofs = [null, null];
+
+        public NHItemSocket whiteWarpCoreSocket;
 
         public void Awake()
         {
@@ -142,7 +145,8 @@ namespace TLDJam5
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
             shrinkingPlanetControler.baseScales.Add(tempTr, 2.5f);
 
-            tempTr= GameObject.Find(planetBodyPath + "/Sector/Prefab_NOM_WarpTransmitter").transform;
+            
+            tempTr = GameObject.Find(planetBodyPath + "/Sector/Prefab_NOM_WarpTransmitter").transform;
             tempTr.Find("Props_NOM_WarpCoreBlack").gameObject.SetActive(false);
             tempTr.Find("PointLight_NOM_WarpCoreBlack (1)").gameObject.SetActive(false);
             tempTr.Find("Structure_NOM_WarpTransmitter/Structure_NOM_WarpTransmitter_Effects").gameObject.SetActive(false);
@@ -177,6 +181,16 @@ namespace TLDJam5
 
             towerOpenSwitch = GameObject.Find(planetBodyPath + "/Sector/OpenTowerSwRoot/OpenTowerSwitch/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
             towerOpenSwitch._occupiedSlot = towerOpenSwitch._slots[0];
+
+            shrinkingPlanetControler.transformsToScale.Add(towerOpenSwitch.transform);
+            shrinkingPlanetControler.baseScales.Add(towerOpenSwitch.transform, 2f);
+
+
+            tempTr = GameObject.Find(planetBodyPath + "/Sector/Prefab_GravityCannon/NomaiInterfaceOrb_Body").transform;
+            shrinkingPlanetControler.transformsToScale.Add(tempTr);
+            shrinkingPlanetControler.baseScales.Add(tempTr, 1f);
+
+            whiteWarpCoreSocket = GameObject.Find(planetBodyPath + "/Sector/Structure_NOM_WarpReceiver_CaveTwin_Copper").GetComponent<NHItemSocket>();
 
         }
 
@@ -452,7 +466,16 @@ namespace TLDJam5
                 }
             }
 
-
+            if (whiteWarpCoreScale< shrinkingPlanetControler.curentScale)
+            {
+                whiteWarpCoreSocket.ItemType = ItemType.WarpCore;
+            }
+            else
+            {
+                
+                whiteWarpCoreSocket.ItemType = ItemType.Invalid;
+            }
+            
 
         }
 

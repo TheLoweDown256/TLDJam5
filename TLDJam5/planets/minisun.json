@@ -52,7 +52,7 @@
                 //"keepLoaded": true,
                 "alignRadial": false,
                 "keepLoaded": true
-            },
+            }, /*,
             {
                 "path": "TimberHearth_Body/Sector_TH/Sector_Village/Interactables_Village/LaunchTower/Effects_HEA_Campfire",
                 "position": {
@@ -64,6 +64,17 @@
                     "x": 290.5773,
                     "y": 225,
                     "z": 270
+                }
+            },*/
+            {
+                "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
+                "position": {
+                   "x": -39.7749,"y": -2.274,
+                  "z":  35.4073
+                },
+                "rotation": {
+                  "x":  291.7625,"y": 142.5673,
+               "z":     270
                 }
             },
             {

@@ -53,8 +53,8 @@ namespace TLDJam5
 
             GlobalMessenger.AddListener("ExitRoastingMode", new Callback(this.onExitCampFire));
             GlobalMessenger.AddListener("StopSleepingAtCampfire", new Callback(this.onExitCampFire));
-            GlobalMessenger.AddListener("EnterRoastingMode", new Callback(this.onEnterCampFire));
-            GlobalMessenger.AddListener("StartSleepingAtCampfire", new Callback(this.onEnterCampFire));
+            GlobalMessenger<Campfire>.AddListener("EnterRoastingMode", new Callback<Campfire>(this.onEnterCampFire));
+            GlobalMessenger<bool>.AddListener("StartSleepingAtCampfire", new Callback<bool>(this.onEnterCampFire));
         }
 
         public void FixedUpdate()
@@ -97,14 +97,21 @@ namespace TLDJam5
                 gravityVolume._surfaceAcceleration = Mathf.Max(surfaceGravityStart * (float)Math.Pow(curentScale,1.5f)-0.1f,0);
                 //gravityVolume._upperSurfaceRadius = surfaceGravityRadiusStart * curentScale;
             }
-            if (curentScale <= 1.5/200)//0.02)
+            if (curentScale <= 2f/200f)//0.02)
             {
                 Destroy(transformsToScale[0].gameObject);
                 planetGone = true;
             }
         }
-        
-    
+
+        public void onEnterCampFire(bool isDreamFire)
+        {
+            onEnterCampFire();
+        }
+        public void onEnterCampFire(Campfire whoCares)
+        {
+            onEnterCampFire();
+        }
 
         public void onEnterCampFire()
         {
@@ -116,7 +123,9 @@ namespace TLDJam5
             PlayerAttachPoint attPt= player.parent.GetComponent<PlayerAttachPoint>();
             if (attPt != null)
             {
-                attPt.SetAttachOffset(attPt._attachOffset /= curentScale);
+                TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (Before): "+ attPt._attachOffset, MessageType.Info);
+                attPt.SetAttachOffset(attPt._attachOffset /= ((curentScale+1)/2));
+                TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (After): " + attPt._attachOffset, MessageType.Info);
             }
             else
             {

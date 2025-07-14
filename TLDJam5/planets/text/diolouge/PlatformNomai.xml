@@ -46,7 +46,7 @@
 			<Page>We appreciate your offer, but I'm worried there's just no chance for us to save our exploration logs.</Page>
 			<Page>We would need to figure out what's wrong with [SP NAME], find a solution, and fix [SP NAME] all before it is sucked into the black hole.</Page>
 			<Page>We only had just over 20 minutes to evacuate so, unfortunately, I don't see any way to get all that done in what little time we have...</Page>
-			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to [SP NAME]. Just make sure to evacuate if you can't fix [SP NAME] before it's completely gone.</Page>
+			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to [SP NAME], though it may be wise to bring your own ship just in case. Just make sure to evacuate if you can't fix [SP NAME] before it's completely gone.</Page>
 		</Dialogue>
 	</DialogueNode>
 

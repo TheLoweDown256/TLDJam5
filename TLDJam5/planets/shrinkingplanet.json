@@ -253,8 +253,34 @@
             },*/
             {
                 "path": "TimberHearth_Body/Sector_TH/Sector_Village/Interactables_Village/LaunchTower/Effects_HEA_Campfire",
-                "position": { "y": -200 },
+                "position": { "y": -200.7001 },
                 "alignRadial": true
+            },
+            {
+                "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
+                "position": {
+                    "x": -2.4321,
+                    "y": -200.7001,
+                    "z": -0.3797
+                },
+                "rotation": {
+                    "x": 270,
+                    "y": 314.5016,
+                    "z": 0
+                }
+            },
+            {
+                "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
+                "position": {
+                    "x": 88.919,
+                    "y": 29.8344,
+                    "z": -12.5067
+                },
+                "rotation": {
+                    "x": 320.4954,
+                    "y": 237.624,
+                    "z": 304.1633
+                }
             },
             {
                 "path": "TimberHearth_Body/Sector_TH/Sector_Village/Interactables_Village/LaunchTower/Effects_HEA_Campfire",
@@ -353,6 +379,27 @@
                 "xmlFile": "planets/text/evacuate.xml",
                 "type": "computer",
                 "position": {
+                    "x": 0,
+                    "y": 13.11111,
+                    "z": -94.9782
+                },
+                "rotation": {
+                    "x": 85.35738,
+                    "y": 89.99987,
+                    "z": 269.9999
+                },
+                "normal": {
+                    "x": 0,
+                    "y": -5.960464E-08,
+                    "z": -1
+                },
+                "parentPath": "Sector/NomaiComputers",
+                "rename": "bedroom"
+            },
+            {
+                "xmlFile": "planets/text/evacuate.xml",
+                "type": "computer",
+                "position": {
                     "x": 83.28505,
                     "y": 39.81155,
                     "z": 7.339825
@@ -369,6 +416,27 @@
                 },
                 "parentPath": "Sector/NomaiComputers",
                 "rename": "innerPlatform"
+            },
+            {
+                "xmlFile": "planets/text/evacuate.xml",
+                "type": "computer",
+                "position": {
+                    "x": 2.174578,
+                    "y": -200.7001,
+                    "z": -0.6283083
+                },
+                "rotation": {
+                    "x": 1.683275E-05,
+                    "y": 211.7254,
+                    "z": 180
+                },
+                "normal": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 3.576279E-07
+                },
+                "parentPath": "Sector/NomaiComputers",
+                "rename": "campsite"
             },
             {
                 "position": {
