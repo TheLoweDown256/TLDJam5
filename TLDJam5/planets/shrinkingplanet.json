@@ -246,6 +246,24 @@
                 "rename": "WestOrbInterface"
             },
 
+            {
+                "path": "TimeLoopRing_Body/Interactibles_TimeLoopRing_Hidden/RingShutdownInterface/Prefab_NOM_OrbTrack_Vertical",
+
+                "scale": 2,
+                "position": {
+                    "x": 0,
+                    "y": 26.19988,
+                    "z": -94.9782
+                },
+                "rotation": {
+                    "x": 270,
+                    "y": 0,
+                    "z": 0
+                },
+                "parentPath": "Sector",
+                "rename": "WarpStabilizer"
+            },
+
             { "rename": "DontScale" },
             /*{
                 "rename": "blackhole",
@@ -355,7 +373,7 @@
                 "rename": "shuttlestairs"
             },
             {
-                "xmlFile": "planets/text/evacuate.xml",
+                "xmlFile": "planets/text/librarycomputer.xml",
                 "type": "computer",
                 "position": {
                     "x": 0,
@@ -380,7 +398,7 @@
                 "type": "computer",
                 "position": {
                     "x": 0,
-                    "y": 13.11111,
+                    "y": 9.5,
                     "z": -94.9782
                 },
                 "rotation": {
@@ -437,6 +455,26 @@
                 },
                 "parentPath": "Sector/NomaiComputers",
                 "rename": "campsite"
+            },
+            {
+                "xmlFile": "planets/text/warpstabilizer_computer.xml",
+                "type": "computer",
+                "position": {
+                    "x": 3.844038,
+                    "y": 23.91694,
+                    "z": -94.97821
+                },
+                "rotation": {
+                    "x": 68.99693,
+                    "y": 270,
+                    "z": 90.00002
+                },
+                "normal": {
+                    "x": 0,
+                    "y": -5.960464E-08,
+                    "z": -1
+                },
+                "rename": "WarpSComputer"
             },
             {
                 "position": {

@@ -31,6 +31,7 @@ namespace TLDJam5
 
         public float sizeToAdd = 0;
 
+        public NomaiComputer sunComputer;
 
         public void Awake()
         {
@@ -101,6 +102,9 @@ namespace TLDJam5
             {
                 Destroy(transformsToScale[0].gameObject);
                 planetGone = true;
+
+                sunComputer.ClearAllEntries();
+                sunComputer.DisplayEntry(3);
             }
         }
 
@@ -124,7 +128,7 @@ namespace TLDJam5
             if (attPt != null)
             {
                 TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (Before): "+ attPt._attachOffset, MessageType.Info);
-                attPt.SetAttachOffset(attPt._attachOffset /= ((curentScale+1)/2));
+                attPt.SetAttachOffset(attPt._attachOffset /= ((curentScale*3f+1f)/4f));
                 TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (After): " + attPt._attachOffset, MessageType.Info);
             }
             else

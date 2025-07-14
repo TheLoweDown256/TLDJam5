@@ -34,7 +34,7 @@
             "g": 60,
             "b": 10
         },*/
-        "lightRadius": 2100,
+        "lightRadius": 1650,//2100
 
         "stellarDeathType": "none"
     },
@@ -109,7 +109,7 @@
                     "x": -0.7071067,
                     "y": -1.788139E-07,
                     "z": 0.7071068
-                }
+                },"rename": "sunComputer"
             },
             {
                 "position": {

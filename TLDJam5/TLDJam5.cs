@@ -8,6 +8,7 @@ using UnityEngine.Playables;
 using NewHorizons.Components.SizeControllers;
 using System.Security.Policy;
 using NewHorizons.Components.Props;
+using System.Collections.Generic;
 
 namespace TLDJam5
 {
@@ -26,12 +27,12 @@ namespace TLDJam5
         public GameObject sunCloakingObject;
         public float cloakDisableRadius = 100;
 
-        public int startDelay = 10;
+        //public int startDelay = 10;
 
         public NomaiInterfaceOrb[] towerOrbs = [null,null];
         public int[] towerOrbStayTimes = [0, 0];
         public bool towerOrbsSolved = false;
-        public int towerOrbSetStayTime = 25 * 60;
+        public int towerOrbSetStayTime = 1000;// <- a bit over 15 sec      //25 * 60;
 
         public bool towerRoofsOpen = false;
         public NomaiInterfaceOrb towerOpenSwitch;
@@ -59,6 +60,15 @@ namespace TLDJam5
         public GameObject[] towerOpenRoofs = [null, null];
 
         public NHItemSocket whiteWarpCoreSocket;
+
+        public List<NomaiComputer> nComputers = new();
+
+        public bool isTheMainCoreFixed=false;
+
+        public bool hasDoneComputerInit;
+
+        public NomaiComputer warpSComputer;
+        public NomaiInterfaceOrb warpSOrb;
 
         public void Awake()
         {
@@ -98,7 +108,7 @@ namespace TLDJam5
             shrinkingPlanetControler = null;
             if (inJam5System)
             {
-                startDelay = 10;
+                //startDelay = 10;
                 isSunCloakingActive = true;
                 sunCloakingObject = GameObject.Find(sunBodyPath + "/Sector/CloakingField");
                 postNHInit();          
@@ -118,6 +128,10 @@ namespace TLDJam5
             // ModHelper.Console.WriteLine("is this null plase not be nul: " + shrinkingPlanetControler.transformToScale, MessageType.Info);
             makeSolarPanelTrees();
 
+            NomaiComputer temp3 = GameObject.Find(sunBodyPath + "/Sector/sunComputer").GetComponent<NomaiComputer>();
+            shrinkingPlanetControler.sunComputer = temp3;
+            
+
             GameObject.Find(planetBodyPath + "/Sector/Structure_NOM_WarpReceiver_CaveTwin_Copper/Socket").transform.localScale *= 2;
 
             towerOrbsSolved = false;
@@ -126,6 +140,8 @@ namespace TLDJam5
             towerOrbs[1] = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/WestOrbInterface/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
             towerOrbs[0]._occupiedSlot = towerOrbs[0]._slots[0];
             towerOrbs[1]._occupiedSlot = towerOrbs[1]._slots[0];
+
+            hasDoneComputerInit = false;
 
             roofPivot = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/roof/roof_pivot").transform;
             roofLocations[0] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/roof/pivot_closed").transform;
@@ -145,7 +161,14 @@ namespace TLDJam5
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
             shrinkingPlanetControler.baseScales.Add(tempTr, 2.5f);
 
-            
+            tempTr = GameObject.Find(planetBodyPath + "/Sector/WarpStabilizer/Prefab_NOM_InterfaceOrb").transform;
+            shrinkingPlanetControler.transformsToScale.Add(tempTr);
+            shrinkingPlanetControler.baseScales.Add(tempTr, 2f);
+
+            warpSOrb = tempTr.GetComponent<NomaiInterfaceOrb>();
+            warpSOrb._occupiedSlot = warpSOrb._slots[0];
+
+
             tempTr = GameObject.Find(planetBodyPath + "/Sector/Prefab_NOM_WarpTransmitter").transform;
             tempTr.Find("Props_NOM_WarpCoreBlack").gameObject.SetActive(false);
             tempTr.Find("PointLight_NOM_WarpCoreBlack (1)").gameObject.SetActive(false);
@@ -163,12 +186,17 @@ namespace TLDJam5
 
             GameObject.Find(planetBodyPath + "/Sector/Atmosphere").SetActive(false);
 
+            
+
+
             whiteWarpCore = GameObject.Find(planetBodyPath + "/Sector/ShrinkingPlanet_WarpCoreWhite");
             whiteWarpCoreScale = 2;
             if (whiteWarpCore == null)
             {
                 ModHelper.Console.WriteLine("[logged error] WHITEHOLEWARPCORE is NULL ", MessageType.Error);
             }
+
+            isTheMainCoreFixed = false;
 
             towerClosedRoofs[0] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_east/roof/closed");
             towerClosedRoofs[1] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_west/roof/closed");
@@ -185,12 +213,27 @@ namespace TLDJam5
             shrinkingPlanetControler.transformsToScale.Add(towerOpenSwitch.transform);
             shrinkingPlanetControler.baseScales.Add(towerOpenSwitch.transform, 2f);
 
+            warpSComputer = GameObject.Find(planetBodyPath + "/Sector/WarpSComputer").GetComponent<NomaiComputer>();
+
 
             tempTr = GameObject.Find(planetBodyPath + "/Sector/Prefab_GravityCannon/NomaiInterfaceOrb_Body").transform;
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
             shrinkingPlanetControler.baseScales.Add(tempTr, 1f);
 
             whiteWarpCoreSocket = GameObject.Find(planetBodyPath + "/Sector/Structure_NOM_WarpReceiver_CaveTwin_Copper").GetComponent<NHItemSocket>();
+
+            tempTr = GameObject.Find(planetBodyPath + "/Sector/NomaiComputers").transform;
+
+            nComputers = new();
+            for(int i = 0; i < tempTr.childCount; i++)
+            {
+                NomaiComputer com=tempTr.GetChild(i).GetComponent<NomaiComputer>();
+                if (com != null)
+                {
+                    nComputers.Add(com);
+                    
+                }
+            }
 
         }
 
@@ -243,13 +286,31 @@ namespace TLDJam5
         {
             if (inJam5System)
             {
-                if (startDelay!=-1)
-                {
-                    if (startDelay == 0)
-                    {
+               // if (startDelay!=-1)
+                //{
+                 //   if (startDelay == 0)
+                  //  {
                         
+                  //  }
+                 //   startDelay--;
+              //  }
+
+                if (!hasDoneComputerInit)
+                {
+                    if ((Locator.GetPlayerBody().GetPosition() - TLDJam5.Instance.planetRigidbody.GetPosition()).magnitude < 1000f)
+                    {
+                        shrinkingPlanetControler.sunComputer.ClearEntry(3);
+                        for (int i = 0; i < nComputers.Count; i++)
+                        {
+                            NomaiComputer com=nComputers[i];
+                            for (int j = 3; j <= com.GetNumTextBlocks(); j++)
+                            {
+                                com.ClearEntry(j);
+                            }
+                        }
+                        warpSComputer.ClearAllEntries();
+                        hasDoneComputerInit = true;
                     }
-                    startDelay--;
                 }
                 sunCloakUpdate();
                 if (!shrinkingPlanetControler.planetGone)
@@ -260,7 +321,12 @@ namespace TLDJam5
                     {
                         roofOpenUpdate();
                     }
-                    warpCoreSizeUpdate();
+
+                    if (!isTheMainCoreFixed)
+                    {
+                        warpCoreSizeUpdate();
+                    }
+                    
                 }
                 else
                 {
@@ -469,16 +535,36 @@ namespace TLDJam5
             if (whiteWarpCoreScale< shrinkingPlanetControler.curentScale)
             {
                 whiteWarpCoreSocket.ItemType = ItemType.WarpCore;
+                if (whiteWarpCoreSocket.GetSocketedItem() == whiteWarpCore)
+                {
+                    finalThingDone();
+                }
             }
             else
             {
-                
                 whiteWarpCoreSocket.ItemType = ItemType.Invalid;
             }
             
 
         }
 
+        public void finalThingDone()
+        {
+            shrinkingPlanetControler.sizeToAdd = 9999;
+            whiteWarpCoreSocket.EnableInteraction(false);
+
+            for (int i = 0; i < nComputers.Count; i++)
+            {
+                nComputers[i].ClearEntry(1);
+                nComputers[i].ClearEntry(2);
+                for (int j = 3; j <= nComputers[i].GetNumTextBlocks(); j++)
+                {
+                    nComputers[i].DisplayEntry(j);
+                }
+            }
+            shrinkingPlanetControler.sunComputer.ClearAllEntries();
+            isTheMainCoreFixed = true;
+        }
 
         public bool doesShrinkingPlanetExist()
         {
