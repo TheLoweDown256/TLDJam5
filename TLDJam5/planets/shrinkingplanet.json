@@ -571,7 +571,7 @@
     },
     "ShipLog": {
         "mapMode": {
-            "invisibleWhenHidden": true
+            //"invisibleWhenHidden": true
             // "revealedSprite": "planets/shiplog/img/MAP_HiddenLight.png"
         },
         "xmlFile": "planets/shiplog/shrinkingplanet.xml",
