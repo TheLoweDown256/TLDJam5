@@ -290,6 +290,19 @@
             {
                 "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
                 "position": {
+                    "x": -2.5964,
+                    "y": -20.9504,
+                    "z": 216.9447
+                },
+                "rotation": {
+                    "x": 357.2436,
+                    "y": 174.1755,
+                    "z": 40.1884
+                }
+            },
+            {
+                "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
+                "position": {
                     "x": 88.919,
                     "y": 29.8344,
                     "z": -12.5067
@@ -521,7 +534,7 @@
         },
         "zeroGravityVolumes": [
             {
-                "radius": 62,
+                "radius": 72,
                 "layer": 0,
                 "priority": 5
             }
@@ -555,7 +568,16 @@
         "useAtmosphereShader": false,
         "atmosphereSunIntensity": 0,
         "size": 175
+    },
+    "ShipLog": {
+        "mapMode": {
+            "invisibleWhenHidden": true
+            // "revealedSprite": "planets/shiplog/img/MAP_HiddenLight.png"
+        },
+        "xmlFile": "planets/shiplog/shrinkingplanet.xml",
+        "spriteFolder": "planets/shiplog/img/entries"
     }
+
 
     /* "Lava": {
         "size": 200,

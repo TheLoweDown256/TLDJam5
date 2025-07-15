@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿//CALL THE [SP NAME]   "The Astrophytum"
+
+using System.Linq;
 using System.Reflection;
 using HarmonyLib;
 using OWML.Common;
@@ -20,6 +22,9 @@ namespace TLDJam5
 
         public string planetBodyPath = "TheLoweDown256_ShrinkingPlanet_Body";
         public string sunBodyPath = "HiddenLight_Body";
+
+        public bool InGame => LoadManager.GetCurrentScene() == OWScene.SolarSystem ||
+       LoadManager.GetCurrentScene() == OWScene.EyeOfTheUniverse;
 
         public OWRigidbody planetRigidbody;
 
@@ -69,6 +74,13 @@ namespace TLDJam5
 
         public NomaiComputer warpSComputer;
         public NomaiInterfaceOrb warpSOrb;
+        public int warpSStage=0;
+
+        public Transform ventCover;
+        public bool detatchedVent = false;
+
+        public int WHEREISTHATWIERDBROKENSHUTTLEBODY=0;
+
 
         public void Awake()
         {
@@ -118,6 +130,9 @@ namespace TLDJam5
 
         public void postNHInit()
         {
+            WHEREISTHATWIERDBROKENSHUTTLEBODY = 20;
+            
+
             GameObject planetBody = GameObject.Find(planetBodyPath);
             planetRigidbody=planetBody.GetAttachedOWRigidbody();
             shrinkingPlanetSector = GameObject.Find(planetBodyPath + "/Sector").transform;
@@ -134,13 +149,16 @@ namespace TLDJam5
 
             GameObject.Find(planetBodyPath + "/Sector/Structure_NOM_WarpReceiver_CaveTwin_Copper/Socket").transform.localScale *= 2;
 
-            towerOrbsSolved = false;
+            roofOpen = 0f;
+        roofOpenTarg = 0f;
+        towerOrbsSolved = false;
             towerOrbStayTimes = [0, 0];
             towerOrbs[0] = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/EastOrbInterface/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
             towerOrbs[1] = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/WestOrbInterface/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
             towerOrbs[0]._occupiedSlot = towerOrbs[0]._slots[0];
             towerOrbs[1]._occupiedSlot = towerOrbs[1]._slots[0];
 
+            nComputers = new();
             hasDoneComputerInit = false;
 
             roofPivot = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/roof/roof_pivot").transform;
@@ -152,6 +170,11 @@ namespace TLDJam5
                 GameObject light= GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/light/inLight"+i);
                 shrinkingPlanetControler.lights.Add(light.GetComponent<Light>());
             }
+
+            warpSStage = 0;
+
+            detatchedVent = false;
+            ventCover= GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/interior/ventcover").transform;
 
             Transform tempTr;
             tempTr = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/EastOrbInterface/Prefab_NOM_InterfaceOrb").transform;
@@ -208,7 +231,7 @@ namespace TLDJam5
             towerRoofsOpen = false;
 
             towerOpenSwitch = GameObject.Find(planetBodyPath + "/Sector/OpenTowerSwRoot/OpenTowerSwitch/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
-            towerOpenSwitch._occupiedSlot = towerOpenSwitch._slots[0];
+            towerOpenSwitch._occupiedSlot = towerOpenSwitch._slots[0]; 
 
             shrinkingPlanetControler.transformsToScale.Add(towerOpenSwitch.transform);
             shrinkingPlanetControler.baseScales.Add(towerOpenSwitch.transform, 2f);
@@ -284,20 +307,35 @@ namespace TLDJam5
 
         public void FixedUpdate()
         {
-            if (inJam5System)
+            if (inJam5System&& InGame)
             {
-               // if (startDelay!=-1)
+                // if (startDelay!=-1)
                 //{
-                 //   if (startDelay == 0)
-                  //  {
-                        
-                  //  }
-                 //   startDelay--;
-              //  }
+                //   if (startDelay == 0)
+                //  {
+
+                //  }
+                //   startDelay--;
+                //  }
+
+                if (WHEREISTHATWIERDBROKENSHUTTLEBODY > 0)
+                {
+                    GameObject wierdBrokenShuttle = GameObject.Find("Shuttle_Body");
+                    if (wierdBrokenShuttle != null)
+                    {
+                        if (wierdBrokenShuttle.transform.childCount == 3) 
+                        {
+                            wierdBrokenShuttle.SetActive(false);
+                            WHEREISTHATWIERDBROKENSHUTTLEBODY = 0;
+                        }
+                    }
+                    WHEREISTHATWIERDBROKENSHUTTLEBODY--;
+                }
+
 
                 if (!hasDoneComputerInit)
                 {
-                    if ((Locator.GetPlayerBody().GetPosition() - TLDJam5.Instance.planetRigidbody.GetPosition()).magnitude < 1000f)
+                    if ((Locator.GetPlayerBody().GetPosition() - planetRigidbody.GetPosition()).magnitude < 1000f)
                     {
                         shrinkingPlanetControler.sunComputer.ClearEntry(3);
                         for (int i = 0; i < nComputers.Count; i++)
@@ -326,7 +364,16 @@ namespace TLDJam5
                     {
                         warpCoreSizeUpdate();
                     }
-                    
+                    warpSUpdate();
+
+                    if (!detatchedVent)
+                    {
+                        if (ventCover ==Locator.GetProbe().transform.parent)
+                        {
+                            ventCover.gameObject.SetActive(false);
+                        }
+                    }
+
                 }
                 else
                 {
@@ -334,6 +381,9 @@ namespace TLDJam5
                 }
 
                 scoutHelperDebugDeactivate();
+
+                
+                
 
                 if (playerItemCarryTool == null)
                 {
@@ -364,6 +414,57 @@ namespace TLDJam5
             }
             
         }
+        
+
+        public void warpSUpdate()
+        {
+            if (warpSStage == 0)
+            {
+                if (warpSOrb._occupiedSlot == warpSOrb._slots[1])
+                {
+                    warpSOrb._occupiedSlot = warpSOrb._slots[0];
+                    warpSStage = 1;
+                    warpSComputer.DisplayEntry(1);
+                }
+            }
+            else if (warpSStage <= 2)
+            {
+                if (warpSOrb._occupiedSlot == warpSOrb._slots[1])
+                {
+                    warpSOrb._occupiedSlot = warpSOrb._slots[0];
+                    warpSStage ++;
+                }
+            }
+            else if (warpSStage == 3)
+            {
+                if (warpSOrb._occupiedSlot == warpSOrb._slots[1])
+                {
+                    warpSStage = 10;
+                    warpSComputer.DisplayEntry(2);
+                    Locator.GetShipLogManager().RevealFact("TLD256_WARPSTABILIZER_PRIMED", true, true);
+                }
+            }
+            else if (warpSStage == 10)
+            {
+                if (warpSOrb._occupiedSlot == warpSOrb._slots[0])
+                {
+                    warpSStage = 3;
+                    warpSComputer.ClearEntry(2);
+                }else if (shrinkingPlanetControler.curentScale<0.2f)
+                {
+                    warpSStage = 11;
+                    warpSComputer.ClearAllEntries();
+                    warpSComputer.DisplayEntry(3);
+                    shrinkingPlanetControler.sizeToAdd = 0.55f;
+                   // Locator.GetShipLogManager().RevealFact("TLD256_WARPSTABILIZER_PRIMED", true, true);
+                }
+            }else if (warpSStage==11)
+            {
+                warpSOrb._occupiedSlot = warpSOrb._slots[1];
+            }
+        }
+    
+
 
 
 
@@ -535,7 +636,7 @@ namespace TLDJam5
             if (whiteWarpCoreScale< shrinkingPlanetControler.curentScale)
             {
                 whiteWarpCoreSocket.ItemType = ItemType.WarpCore;
-                if (whiteWarpCoreSocket.GetSocketedItem() == whiteWarpCore)
+                if (whiteWarpCoreSocket.GetSocketedItem() == whiteWarpCore.GetComponent<WarpCoreItem>())
                 {
                     finalThingDone();
                 }

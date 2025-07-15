@@ -10,7 +10,7 @@
 	</TextBlock>
 	<TextBlock>
 		<ID>3</ID>
-		<ParentID>3</ParentID>
+		<ParentID>2</ParentID>
 		<Text>DEUTZIA: A strange thing I've noticed is that the trees actualy produce the greatest amount of energy at 20% of their maximum size. If the Photovoltaic Trees were to grow to their full size, they would only be able to generate around 20 NEU total.</Text>
 	</TextBlock>
 	<TextBlock>

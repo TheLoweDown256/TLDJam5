@@ -66,6 +66,7 @@ namespace TLDJam5
                 float change = shrinkPerSecond / 2.5f;
                 curentScale = Mathf.Min(curentScale+change,1);
                 sizeToAdd -= change;
+                endTime += change/60f;
             }
             else
             {

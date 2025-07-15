@@ -3,5 +3,11 @@
         <ID>1</ID>
 		<Text>not enoguht energy, need 50, have 20, are teh trees broken, guy lost notes on teh sun</Text>
 	</TextBlock>
+	<TextBlock>
+		<ID>2</ID>
+		<ParentID>1</ParentID>
+		<Text>There's no time! We have less than 3 days until this star dies!</Text>
+	</TextBlock>
+
 
 </NomaiObject>

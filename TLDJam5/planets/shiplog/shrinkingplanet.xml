@@ -1,0 +1,20 @@
+<AstroObjectEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/shiplog_schema.xsd">
+	<ID>TheLoweDown256_ShrinkingPlanet</ID>
+	<!-- The ID of the planet this xml file is for -->
+
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_WARPSTABILIZER</ID>
+		<!-- The ID of this entry -->
+		<Name>Warp Stabilizer</Name>
+
+
+		<ExploreFact>
+			<!-- An explore fact that belongs to this entry -->
+			<ID>TLD256_WARPSTABILIZER_PRIMED</ID>
+			<!-- The ID of this fact -->
+			<Text>I primed the <![CDATA[<color=orange>Warp Stabilizer</color>]]> by attempting to activate it 4 times.</Text>
+		</ExploreFact>
+	</Entry>
+</AstroObjectEntry>

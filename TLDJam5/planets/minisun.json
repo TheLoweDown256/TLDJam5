@@ -109,7 +109,8 @@
                     "x": -0.7071067,
                     "y": -1.788139E-07,
                     "z": 0.7071068
-                },"rename": "sunComputer"
+                },
+                "rename": "sunComputer"
             },
             {
                 "position": {
@@ -129,6 +130,25 @@
                 },
                 "type": "recorder",
                 "xmlFile": "planets/text/treeresearch.xml"
+            },
+            {
+                "position": {
+                    "x": -4.971865,
+                    "y": 23.07001,
+                    "z": 2.05594379
+                },
+                "rotation": {
+                    "x": -9.914573E-06,
+                    "y": 211.4297,
+                    "z": -2.616E-06
+                },
+                "normal": {
+                    "x": -4.377216E-08,
+                    "y": 1,
+                    "z": -1.247972E-07
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/stabilizerhelp.xml"
             },
             {
                 "position": {
@@ -166,7 +186,7 @@
                     "z": 0.7071069
                 },
                 "type": "recorder",
-                "xmlFile": "planets/text/connectthesun.xml"//replace with stuff for warp
+                "xmlFile": "planets/text/connectthesun.xml" //replace with stuff for warp
             }
         ],
         "warpReceivers": [
@@ -183,6 +203,17 @@
                 },
                 "frequency": "DONOTCONECTTOANYTHINGATALLPLEASE_iurg785n"
             }
+        ],
+        "entryLocation": [
+            {
+                "cloaked": true,
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "id": "TLD256_HIDDEN_LIGHT"
+            }
         ]
     },
     "Volumes": {
@@ -192,6 +223,13 @@
                 "acceleration": 4
             }
         ],
+        "revealVolumes": [
+            {
+                "revealOn": "enter",
+                "reveals": [ "TLD256_HIDDEN_LIGHT_DISCOVER" ],
+                "radius": 100
+            }
+        ],
         "interferenceVolumes": [
             {
                 "radius": 160
@@ -199,7 +237,7 @@
         ],
         "mapRestrictionVolumes": [
             {
-                "radius": 160//,
+                "radius": 160 //,
                 //"targetColliderRadius": 60
             }
         ],
@@ -224,6 +262,12 @@
         "targetWhenClose": true,
         "targetColliderRadius": 80
 
+    },
+    "ShipLog": {
+        "mapMode": {
+            "invisibleWhenHidden": true,
+            "revealedSprite": "planets/shiplog/img/MAP_HiddenLight.png"
+        },"xmlFile": "planets/shiplog/hiddenlight.xml","spriteFolder": "planets/shiplog/img/entries"
     }
 
 }

@@ -1,0 +1,22 @@
+﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
+    <TextBlock>
+        <ID>1</ID>
+		<Text>DEUTZIA: <![CDATA[<color=orange>Warp Stabilizer</color>]]> troubleshooting:</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>2</ID>
+		<ParentID>1</ParentID>
+		<Text>DEUTZIA: The most likely reason for the <![CDATA[<color=orange>Warp Stabilizer</color>]]> to not activate is due to insufficient power.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>3</ID>
+		<ParentID>2</ParentID>
+		<Text>DEUTZIA: The <![CDATA[<color=orange>Warp Stabilizer</color>]]> can be primed by attempting to activate it 4 times. While primed, the <![CDATA[<color=orange>Warp Stabilizer</color>]]> will activate immediately once power is restored.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>4</ID>
+		<ParentID>3</ParentID>
+		<Text>DEUTZIA: Keep in mind the <![CDATA[<color=orange>Warp Stabilizer</color>]]> will not be able to fix [SP NAME] on its own in the event of warp-induced damage. For this reason, is is extremely important to activate the <![CDATA[<color=orange>Warp Stabilizer</color>]]> before warping.</Text>
+	</TextBlock>
+
+</NomaiObject>
