@@ -1,0 +1,32 @@
+﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
+    <TextBlock>
+        <ID>1</ID>
+		<Text>PROTEA: In preperation for the Silverflame system's death, everything we have writen on the nearby planets will be moved to this computer.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>2</ID>
+		<ParentID>1</ParentID>
+		<Text>BEGONIA: I'm unsure if this computer is the best place to store our <![CDATA[<color=orange>Exploration Logs</color>]]>. Should there be an error with <![CDATA[<color=orange>The Astrophytum</color>]]>, the computer wouldn't allow us to access our logs until repairs are made.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>3</ID>
+		<ParentID>3</ParentID>
+		<Text>PROTEA: This is our best option. We only have 5 days to leave this system, and it would take too long to move anything written on walls to <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
+	</TextBlock>
+
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_EXPLORATIONLOGS_RUMOR2</FactID>
+			<Condition>1</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_LIBRARY_THISISWHERE</FactID>
+			<Condition>1</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_LIBRARY_BUTWHATIF</FactID>
+			<Condition>2</Condition>
+		</RevealFact>
+	</ShipLogConditions>
+
+</NomaiObject>

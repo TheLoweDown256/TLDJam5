@@ -1,0 +1,33 @@
+﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
+    <TextBlock>
+        <ID>1</ID>
+		<Text>BEGONIA: How do we access the <![CDATA[<color=orange>Tower Controlers</color>]]>?</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>2</ID>
+		<ParentID>1</ParentID>
+		<Text>PROTEA: There is a loose panel straight ahead just before turning right into the <![CDATA[<color=orange>Interior Entrance</color>]]>.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>3</ID>
+		<ParentID>2</ParentID>
+		<Text>PROTEA: There's probably a correct way to open it, but I usualy just throw somthing at it.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>4</ID>
+		<ParentID>3</ParentID>
+		<Text>PROTEA: After taking the panel off the wall you can continue on to the <![CDATA[<color=orange>Tower Controlers</color>]]>. It's dark though, so make sure to bring a flashlight</Text>
+	</TextBlock>
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_BEDROOM_VENTCOVER</FactID>
+			<Condition>2,3</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_TOWERSCONTROLER_RUMOR</FactID>
+			<Condition>2</Condition>
+		</RevealFact>
+	</ShipLogConditions>
+	
+
+</NomaiObject>

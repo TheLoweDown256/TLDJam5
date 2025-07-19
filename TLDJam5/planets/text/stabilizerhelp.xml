@@ -16,7 +16,17 @@
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>DEUTZIA: Keep in mind the <![CDATA[<color=orange>Warp Stabilizer</color>]]> will not be able to fix [SP NAME] on its own in the event of warp-induced damage. For this reason, is is extremely important to activate the <![CDATA[<color=orange>Warp Stabilizer</color>]]> before warping.</Text>
+		<Text>DEUTZIA: Keep in mind the <![CDATA[<color=orange>Warp Stabilizer</color>]]> will not be able to fix <![CDATA[<color=orange>The Astrophytum</color>]]> on its own in the event of warp-induced damage. For this reason, is is extremely important to activate the <![CDATA[<color=orange>Warp Stabilizer</color>]]> before warping.</Text>
 	</TextBlock>
-
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_HLS_WARPSTABILIZER_HOW2PRIME</FactID>
+			<Condition>3</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_HLS_WARPSTABILIZER_WARNING</FactID>
+			<Condition>4</Condition>
+		</RevealFact>
+	</ShipLogConditions>
+	
 </NomaiObject>

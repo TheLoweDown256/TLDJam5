@@ -1,6 +1,6 @@
 ﻿{
     "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
-    "name": "TheLoweDown256_ShrinkingPlanet",
+    "name": "The Astrophytum",
     "starSystem": "Jam5",
     "Base": {
         //"gravityFallOff": "inverseSquared",
@@ -43,9 +43,11 @@
                 "computer": {
                     "position": {
                         "x": 0,
-                        "y": 300,
-                        "z": -50
-                    }
+                        "y": 0,
+                        "z": 0
+                    },
+                    "isRelativeToParent": true,
+                    "alignRadial": true
                 },
                 "detailed": true
             }
@@ -65,7 +67,7 @@
         "warpTransmitters": [
             {
                 "position": {
-                    "x": -68.3,
+                    "x": -68.4,
                     "y": 0,
                     "z": 68.3
                 },
@@ -256,8 +258,8 @@
                     "z": -94.9782
                 },
                 "rotation": {
-                    "x": 270,
-                    "y": 0,
+                    "x": 90,
+                    "y": 180,
                     "z": 0
                 },
                 "parentPath": "Sector",
@@ -431,22 +433,34 @@
                 "xmlFile": "planets/text/evacuate.xml",
                 "type": "computer",
                 "position": {
-                    "x": 83.28505,
-                    "y": 39.81155,
-                    "z": 7.339825
+                    "x": 85.97691,
+                    "y": 34.97522,
+                    "z": -13.0094
                 },
                 "rotation": {
-                    "x": 57.66814,
-                    "y": 61.56524,
-                    "z": 335.4143
+                    "x": 352.3113,
+                    "y": 355.6906,
+                    "z": 299.3897
                 },
                 "normal": {
-                    "x": 0.8737723,
+                    "x": 0.8737721,
                     "y": 0.4863354,
-                    "z": -5.79757E-08
+                    "z": -1.347119E-07
                 },
                 "parentPath": "Sector/NomaiComputers",
                 "rename": "innerPlatform"
+            },
+            {
+                "xmlFile": "planets/text/errorreport.xml",
+                "type": "computer",
+                "position": {
+                    "x": 63.3364,
+                    "y": 71.92762,
+                    "z": 0
+                },
+                "parentPath": "Sector/NomaiComputers",
+                "rename": "errorReport",
+                "alignRadial": true
             },
             {
                 "xmlFile": "planets/text/evacuate.xml",
@@ -502,6 +516,34 @@
                 },
                 "type": "recorder",
                 "xmlFile": "planets/text/whyisthereanemptywarppad.xml"
+            },
+            {
+                "position": {
+                    "x": 2.395728,
+                    "y": -1.163666,
+                    "z": 94.97821
+                },
+                "rotation": {
+                    "x": 68.17391,
+                    "y": 89.99994,
+                    "z": 89.99994
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/libraryrecorder.xml"
+            },
+            {
+                "position": {
+                    "x": -3.276405,
+                    "y": 24.78615,
+                    "z": -94.97821
+                },
+                "rotation": {
+                    "x": 83.05183,
+                    "y": 90.00004,
+                    "z": 270
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/whydoesntthestabilizerwork.xml"
             }
 
         ]
@@ -544,6 +586,38 @@
                 "radius": 230,
                 "treeVolume": true
             }
+        ],
+        "notificationVolumes": [
+            {
+                "position": { "y": 27.3 },
+                "radius": 5,
+                "entryNotification": { "displayMessage": "Warp Core is too big." },
+                "rename": "CoreTooBigVolume",
+                "target": "player"
+            }
+        ],
+        "revealVolumes": [
+            {
+                "radius": 8,
+                "revealOn": "enter",
+                "position": {
+                    "x": 4.481338,
+                    "y": -1.807468,
+                    "z": 116.1529
+                },
+                "reveals": [ "TLD256_STORAGE_EXPLORE" ],
+            },
+            {
+                "radius": 70,
+                "revealOn": "enter",
+                "position": {
+                    "x": 4.481338,
+                    "y": -1.807468,
+                    "z": 116.1529
+                },
+                "reveals": [ "TLD256_CORE_ENTER" ],
+                "revealFor": "player"
+            }
         ]
     },
     "Rings": [
@@ -572,7 +646,9 @@
     "ShipLog": {
         "mapMode": {
             //"invisibleWhenHidden": true
-            // "revealedSprite": "planets/shiplog/img/MAP_HiddenLight.png"
+            "revealedSprite": "planets/shiplog/img/MAP_ShrinkingPlanet.png",
+            "outlineSprite": "planets/shiplog/img/MAP_ShrinkingPlanet_outline.png",
+            "offset": 0.15
         },
         "xmlFile": "planets/shiplog/shrinkingplanet.xml",
         "spriteFolder": "planets/shiplog/img/entries"

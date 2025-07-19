@@ -1,13 +1,40 @@
 ﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
     <TextBlock>
         <ID>1</ID>
-		<Text>not enoguht energy, need 50, have 20, are teh trees broken, guy lost notes on teh sun</Text>
+		<Text>BEGONIA: We have a problem with the <![CDATA[<color=orange>Warp Stabilizer</color>]]>. It requires 50 NEU to activate, but only 20 NEU is being generated.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>2</ID>
 		<ParentID>1</ParentID>
-		<Text>There's no time! We have less than 3 days until this star dies!</Text>
+		<Text>PROTEA: I don't understand! All the Photovoltaic Trees are fully grown and healthy.</Text>
 	</TextBlock>
-
+	<TextBlock>
+		<ID>3</ID>
+		<ParentID>2</ParentID>
+		<Text>BEGONIA: I remember Deutzia's notes on the <![CDATA[<color=orange>Warp Stabilizer</color>]]> were lost somewhere on <![CDATA[<color=orange>Hidden Light</color>]]>.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>4</ID>
+		<ParentID>3</ParentID>
+		<Text>PROTEA: There's no time to look there! We have less than 2 days until this star dies! We need to warp as soon as possible!</Text>
+	</TextBlock>
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_HIDDENLIGHTSECRET_RUMOR</FactID>
+			<Condition>3</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_WARPSTABILIZER_TREES</FactID>
+			<Condition>2</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_WARPSTABILIZER_REQUIRE</FactID>
+			<Condition>1</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_WARPSTABILIZER_HURRY</FactID>
+			<Condition>4</Condition>
+		</RevealFact>
+	</ShipLogConditions>
 
 </NomaiObject>

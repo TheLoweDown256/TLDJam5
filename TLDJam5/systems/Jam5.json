@@ -1,0 +1,20 @@
+{
+    "$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/star_system_schema.json",
+    "curiosities": [
+        {
+            "id": "TLD256_EXPLORATIONLOGS",
+            "color": {
+                "r": 105, //90//200,
+                "g": 94, //98//240,
+                "b": 255,
+                "a": 255
+            },
+            "highlightColor": {
+                "r": 165, //90//200,
+                "g": 130, //98//240,
+                "b": 255,
+                "a": 255
+            }
+        }
+    ]
+}

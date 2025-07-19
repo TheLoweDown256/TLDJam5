@@ -1,20 +1,236 @@
 <AstroObjectEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/shiplog_schema.xsd">
-	<ID>TheLoweDown256_ShrinkingPlanet</ID>
+	<ID>The Astrophytum</ID>
 	<!-- The ID of the planet this xml file is for -->
 
 	<Entry>
 		<!-- An Entry For This Planet -->
-		<ID>TLD256_WARPSTABILIZER</ID>
+		<ID>TLD256_ASTROPHYTUM</ID>
 		<!-- The ID of this entry -->
-		<Name>Warp Stabilizer</Name>
+		<Name>The Astrophytum</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
 
+
+		<RumorFact>
+			<!-- A rumor fact that belongs to this entry -->
+			<ID>TLD256_ASTROPHYTUM_RUMOR</ID>
+			<SourceID>TLD256_PLATFORMNOMAI</SourceID>
+			<!-- The ID of this fact -->
+			<RumorName>The Astrophytum</RumorName>
+			
+			<!-- The name of the rumor this fact relates to -->
+			<Text>Protea's Vessel is called The Astrophytum. It is currently miniaturizing into a black hole.</Text>
+			<!-- The Text to display for this fact -->
+		</RumorFact>
+	</Entry>
+	
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_BEDROOM</ID>
+		<!-- The ID of this entry -->
+		<Name>Bedroom</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
 
 		<ExploreFact>
-			<!-- An explore fact that belongs to this entry -->
-			<ID>TLD256_WARPSTABILIZER_PRIMED</ID>
-			<!-- The ID of this fact -->
-			<Text>I primed the <![CDATA[<color=orange>Warp Stabilizer</color>]]> by attempting to activate it 4 times.</Text>
+			<ID>TLD256_BEDROOM_VENTCOVER</ID>
+			<Text>A Nomai named Protea normaly accesses the Towers Controler by throwing an object at a loose tile just before the Interior Entrance.</Text>
 		</ExploreFact>
+			
+			
+		<Entry>
+			<!-- An Entry For This Planet -->
+			<ID>TLD256_WARPSTABILIZER</ID>
+			<!-- The ID of this entry -->
+			<Name>Warp Stabilizer</Name>
+			<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+
+			<ExploreFact>
+				<!-- An explore fact that belongs to this entry -->
+				<ID>TLD256_WARPSTABILIZER_REQUIRE</ID>
+				<!-- The ID of this fact -->
+				<Text>The Warp Stabilizer requires 50 "NEU".</Text>
+			</ExploreFact>
+			<ExploreFact>
+				<!-- An explore fact that belongs to this entry -->
+				<ID>TLD256_WARPSTABILIZER_TREES</ID>
+				<!-- The ID of this fact -->
+				<Text>All Photovoltaic Trees on The Astrophytum are fully grown, yet are only producing 20 "NEU".</Text>
+			</ExploreFact>
+			<ExploreFact>
+				<!-- An explore fact that belongs to this entry -->
+				<ID>TLD256_WARPSTABILIZER_PRIMED</ID>
+				<!-- The ID of this fact -->
+				<Text>I primed the Warp Stabilizer by attempting to activate it 4 times.</Text>
+			</ExploreFact>
+			<ExploreFact>
+				<!-- An explore fact that belongs to this entry -->
+				<ID>TLD256_WARPSTABILIZER_HURRY</ID>
+				<!-- The ID of this fact -->
+				<Text>Protea's clan was in a rush to escape a dying star and warped without activating the Warp Stabilizer.</Text>
+			</ExploreFact>
+		</Entry>
+		
+	</Entry>
+	
+
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_LIBRARY</ID>
+		<!-- The ID of this entry -->
+		<Name>Library</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		<ExploreFact>
+			<!-- An explore fact that belongs to this entry -->
+			<ID>TLD256_LIBRARY_THISISWHERE</ID>
+			<!-- The ID of this fact -->
+			<Text>Protea's clan's Exploration Logs were put on a computer in the Library to preserve them after a star's death.</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<!-- An explore fact that belongs to this entry -->
+			<ID>TLD256_LIBRARY_BUTWHATIF</ID>
+			<!-- The ID of this fact -->
+			<Text>A Nomai pointed out the logs would not be able to be accessed in the event of damage until The Astrophytum is fixed.</Text>
+		</ExploreFact>
+		
+		<Entry>
+			<!-- An Entry For This Planet -->
+			<ID>TLD256_STORAGE</ID>
+			<!-- The ID of this entry -->
+			<Name>Storage Area</Name>
+			<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+			<RumorFact>
+				<ID>TLD256_STORAGE_RUMOR</ID>
+				<SourceID>TLD256_HIDDEN_LIGHT</SourceID>
+				<RumorName>Storage Area</RumorName>
+				<Text>A broken warp core and an oversized white hole core were put in a storage area above the Library.</Text>
+			</RumorFact>
+			<ExploreFact>
+				<ID>TLD256_STORAGE_EXPLORE</ID>
+				<Text>There is a broken warp core and an oversized white hole core on a table here.</Text>
+			</ExploreFact>
+			<ExploreFact>
+				<ID>TLD256_STORAGE_NOSHRINK</ID>
+				<Text>The white hole core does not change size with the planet when I hold it.</Text>
+			</ExploreFact>
+			
+		</Entry>
+	</Entry>
+	
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_TOWERSCONTROLER</ID>
+		<!-- The ID of this entry -->
+		<Name>Towers Controler</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		<RumorFact>
+			<ID>TLD256_TOWERSCONTROLER_RUMOR</ID>
+			<Text>Access to the Towers Controler is blocked by a loose panel.</Text>
+		</RumorFact>
+		<ExploreFact>
+			<ID>TLD256_TOWERSCONTROLER_HOW2OPEN</ID>
+			<Text>Both towers must be activated within around 15 seconds of eachother to open access to the Central Core. This should require two people as The Astrophytum is too large to activate both towers in time.</Text>
+		</ExploreFact>
+			
+	</Entry>
+		
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_TOWERS</ID>
+		<!-- The ID of this entry -->
+		<Name>Equitorial Towers</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		<RumorFact>
+			<ID>TLD256_TOWERS_RUMOR</ID>
+			<Text>The Equitorial Towers are required to access the Central Core.</Text>
+		</RumorFact>
+		<ExploreFact>
+			<ID>TLD256_TOWERS_OPENED</ID>
+			<Text>I entered an Equitorial Tower after opening them with the Towers Controler.</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<ID>TLD256_TOWERS_COLORS</ID>
+			<Text>The orb interfaces in the Equitorial Towers are blue when no towers are active, yellow when only that tower is active, and geen when both towers are active.</Text>
+		</ExploreFact>
+			
+	</Entry>
+	
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_INTERIORENTRANCE</ID>
+		<!-- The ID of this entry -->
+		<Name>Interior Entrance</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		<ExploreFact>
+			<ID>TLD256_INTERIORENTRANCE_ERRORREPORT</ID>
+			<Text>The white hole core in The Astrophytum's Central Core requires replacement.</Text>
+		</ExploreFact>
+			
+	</Entry>
+	
+	
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_WARPPLATFORM</ID>
+		<!-- The ID of this entry -->
+		<Name>Unused Warp Platform</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		<ExploreFact>
+			<ID>TLD256_WARPPLATFORM_EXPLORE</ID>
+			<Text>The warp cores connecting The Astrophytum and Hidden Light were repurposed for The Astrophytum's Central Core.</Text>
+		</ExploreFact>
+			
+	</Entry>
+		
+		
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_CORE</ID>
+		<!-- The ID of this entry -->
+		<Name>Central Core</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		<RumorFact>
+			<ID>TLD256_CORE_RUMOR</ID>
+			<SourceID>TLD256_INTERIORENTRANCE</SourceID>
+			<Text>The Central Core was damaged durring The Astrophytum's warp to this system.</Text>
+		</RumorFact>
+		<ExploreFact>
+			<ID>TLD256_CORE_ENTER</ID>
+			<Text>I entered The Astrophytum's Central Core.</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<ID>TLD256_CORE_FIX</ID>
+			<Text>I fixed The Astrophytum by replacing the white hole core.</Text>
+		</ExploreFact>
+	</Entry>
+
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_EXPLORATIONLOGS</ID>
+		<!-- The ID of this entry -->
+		<Name>Exploration Logs</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		<IsCuriosity/>
+
+
+		<RumorFact>
+			<!-- A rumor fact that belongs to this entry -->
+			<ID>TLD256_EXPLORATIONLOGS_RUMOR</ID>
+			<SourceID>TLD256_PLATFORMNOMAI</SourceID>
+			<!-- The ID of this fact -->
+			<RumorName>Exploration Logs</RumorName>
+			<!-- The name of the rumor this fact relates to -->
+			<Text>Protea's clan was unable to recover their exploration logs while evacuating their Vessel.</Text>
+			<!-- The Text to display for this fact -->
+		</RumorFact>
+		<RumorFact>
+			<!-- A rumor fact that belongs to this entry -->
+			<ID>TLD256_EXPLORATIONLOGS_RUMOR2</ID>
+			<SourceID>TLD256_LIBRARY</SourceID>
+			<!-- The ID of this fact -->
+			<RumorName>Exploration Logs</RumorName>
+			<!-- The name of the rumor this fact relates to -->
+			<Text>The Exploration Logs are stored on a computer in the Library.</Text>
+			<!-- The Text to display for this fact -->
+		</RumorFact>
 	</Entry>
 </AstroObjectEntry>

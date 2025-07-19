@@ -1,0 +1,30 @@
+﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
+    <TextBlock>
+        <ID>1</ID>
+		<Text>DEUTZIA: Now that everything is done here, I am leaving <![CDATA[<color=orange>Hidden Light</color>]]>.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>2</ID>
+		<ParentID>1</ParentID>
+		<Text>DEUTZIA: I was planning to use the white hole core from this warp pad to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core, but unfortunately it has been broken from exposure to <![CDATA[<color=orange>Hidden Light</color>]]>.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>3</ID>
+		<ParentID>3</ParentID>
+		<Text>DEUTZIA: I will put this broken warp core in the storage area on top of the <![CDATA[<color=orange>Library</color>]]>, along with the white hole core that was too large to be used for this warp reciever (or <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core).</Text>
+	</TextBlock>
+
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_STORAGE_RUMOR</FactID>
+			<Condition>3</Condition>
+		</RevealFact>
+	</ShipLogConditions>
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_HIDDEN_LIGHT_TOOBIGCORE</FactID>
+			<Condition>3</Condition>
+		</RevealFact>
+	</ShipLogConditions>
+
+</NomaiObject>

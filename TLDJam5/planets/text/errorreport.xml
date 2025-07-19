@@ -1,0 +1,21 @@
+﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
+    <TextBlock>
+        <ID>1</ID>
+		<Text><![CDATA[<color=orange>Astrophytum</color>]]> central warp core damaged. White hole core destroyed.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>2</ID>
+		<ParentID>1</ParentID>
+		<Text>Black hole core unstable. WHITE HOLE CORE REPLACEMENT REQUIRED.</Text>
+	</TextBlock>
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_CORE_RUMOR</FactID>
+			<Condition>1</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_INTERIORENTRANCE_ERRORREPORT</FactID>
+			<Condition>2</Condition>
+		</RevealFact>
+	</ShipLogConditions>
+</NomaiObject>

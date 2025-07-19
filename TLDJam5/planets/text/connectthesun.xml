@@ -11,7 +11,7 @@
 	<TextBlock>
 		<ID>3</ID>
 		<ParentID>2</ParentID>
-		<Text>DEUTZIA: All that's left to do is to make sure <![CDATA[<color=orange>Hidden Light</color>]]> can detect [SP NAME]...</Text>
+		<Text>DEUTZIA: All that's left to do is to make sure <![CDATA[<color=orange>Hidden Light</color>]]> can detect <![CDATA[<color=orange>The Astrophytum</color>]]>...</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>4</ID>
@@ -21,8 +21,14 @@
 	<TextBlock>
 		<ID>5</ID>
 		<ParentID>4</ParentID>
-		<Text>DEUTZIA: This will surely be enough solar energy to power [SP NAME].</Text>
+		<Text>DEUTZIA: This will surely be enough solar energy to power <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
 	</TextBlock>
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_HIDDEN_LIGHT_SHRINKHINT</FactID>
+			<Condition>3,4</Condition>
+		</RevealFact>
+	</ShipLogConditions>
 	
 
 </NomaiObject>

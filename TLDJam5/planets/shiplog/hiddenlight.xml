@@ -8,7 +8,9 @@
 		<ID>TLD256_HIDDEN_LIGHT</ID>
 		<!-- The ID of this entry -->
 		<Name>Hidden Light</Name>
-
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		
+		
 		<RumorFact>
 			<!-- A rumor fact that belongs to this entry -->
 			<ID>TLD256_HIDDEN_LIGHT_RUMOR1</ID>
@@ -21,7 +23,63 @@
 			<!-- An explore fact that belongs to this entry -->
 			<ID>TLD256_HIDDEN_LIGHT_DISCOVER</ID>
 			<!-- The ID of this fact -->
-			<Text>A star orbiting [SP NAME]. there is an artificial ring-like structure around it.</Text>
+			<Text>A star orbiting The Astrophytum. there is an artificial ring-like structure around it.</Text>
 		</ExploreFact>
+		<ExploreFact>
+			<!-- An explore fact that belongs to this entry -->
+			<ID>TLD256_HIDDEN_LIGHT_TOOBIGCORE</ID>
+			<!-- The ID of this fact -->
+			<Text>The white hole core in the Storage Area is too big to be used in The Astrophytum's Central Core.</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<!-- An explore fact that belongs to this entry -->
+			<ID>TLD256_HIDDEN_LIGHT_SHRINKHINT</ID>
+			<!-- The ID of this fact -->
+			<Text>Hidden Light grew in size upon detecting The Astrophytum.</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<!-- An explore fact that belongs to this entry -->
+			<ID>TLD256_HIDDEN_LIGHT_SHRINKED</ID>
+			<!-- The ID of this fact -->
+			<Text>I saw Hidden Light miniaturize after The Astrophytum was fully consumed by the black hole.</Text>
+		</ExploreFact>
+		
+		<Entry>
+			<!-- An Entry For This Planet -->
+			<ID>TLD256_HIDDENLIGHTSECRET</ID>
+			<!-- The ID of this entry -->
+			<Name>Lost Recorders</Name>
+			<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+
+
+			<RumorFact>
+				<!-- A rumor fact that belongs to this entry -->
+				<ID>TLD256_HIDDENLIGHTSECRET_RUMOR</ID>
+				<!-- The name of the rumor this fact relates to -->
+				<SourceID>TLD256_WARPSTABILIZER</SourceID>
+				<RumorName>Lost Recorders</RumorName>
+				<Text>Notes related to the Warp Stabilizer were lost somewhere on Hidden Light.</Text>
+				<!-- The Text to display for this fact -->
+			</RumorFact>
+
+			<ExploreFact>
+				<!-- An explore fact that belongs to this entry -->
+				<ID>TLD256_HIDDENLIGHTSECRET_TREES</ID>
+				<!-- The ID of this fact -->
+				<Text>The Photovoltaic Trees on The Astrophytum should generate a total of over 50 Nomaian Energy Units at 20% growth. However, they would only generate 20 NEU at full growth.</Text>
+			</ExploreFact>
+			<ExploreFact>
+				<!-- An explore fact that belongs to this entry -->
+				<ID>TLD256_HLS_WARPSTABILIZER_HOW2PRIME</ID>
+				<!-- The ID of this fact -->
+				<Text>The Warp Stabilizer can be primed by attempting to activate it 4 times.</Text>
+			</ExploreFact>
+			<ExploreFact>
+				<!-- An explore fact that belongs to this entry -->
+				<ID>TLD256_HLS_WARPSTABILIZER_WARNING</ID>
+				<!-- The ID of this fact -->
+				<Text>The Warp Stabilizer must be activated before warping to prevent damage to The Astrophytum.</Text>
+			</ExploreFact>
+		</Entry>
 	</Entry>
 </AstroObjectEntry>

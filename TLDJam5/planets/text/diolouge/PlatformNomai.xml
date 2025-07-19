@@ -15,38 +15,53 @@
 	<DialogueNode>
 		<Name>ExplainEvacuation</Name>
 		<Dialogue>
-			<Page>We came here from the [NAME] system to share the knowledge we found there. Unfortunatley, our vessel, [SP NAME], suffered damage upon our arival.</Page>
-			<Page>The black hole in our warp core malfunctioned in some way, and now [SP NAME] is rapidly miniaturizing into it!</Page>
+			<Page>We came here from the Silverflame system to escape its dying star. Unfortunatley, our vessel, <![CDATA[<color=orange>The Astrophytum</color>]]>, suffered damage upon our arival.</Page>
+			<Page>The black hole in our warp core malfunctioned in some way, and now <![CDATA[<color=orange>The Astrophytum</color>]]> is rapidly miniaturizing into it!</Page>
 			<Page>Worse still, we couldn't even recover any of our exploration logs as all the computers refused to show anything other than "EVACUATE IMMEDIATELY"</Page>
-			<Page>If [SP NAME] isn't fixed, we won't be able to recover our exploration logs. And, if those logs aren't recovered, all the knowledge we gained will be lost.</Page>
+			<Page>If <![CDATA[<color=orange>The Astrophytum</color>]]> isn't fixed, we won't be able to recover our exploration logs. And, if those logs aren't recovered, all the knowledge we gained will be lost.</Page>
 		</Dialogue>
+
+		<RevealFacts>
+			<FactID>TLD256_PLATFORMNOMAI_MEET</FactID>
+			<FactID>TLD256_ASTROPHYTUM_RUMOR</FactID>
+			<FactID>TLD256_EXPLORATIONLOGS_RUMOR</FactID>
+		</RevealFacts>
+
+
 		<DialogueOptionsList>
 			<DialogueOption>
 				<Text>I can help!</Text>
 				<DialogueTarget>HowToFix</DialogueTarget>
 			</DialogueOption>
-		<DialogueOption>
+			<DialogueOption>
 				<Text>Well that sucks.</Text>
 				<DialogueTarget>RejectHelp</DialogueTarget>
 			</DialogueOption>
 		</DialogueOptionsList>
 	</DialogueNode>
 
-	
+
 	<DialogueNode>
 		<Name>RejectHelp</Name>
 		<Dialogue>
-			<Page>If only we had enough time to fix [SP NAME]...</Page>
+			<Page>If only we had enough time to fix <![CDATA[<color=orange>The Astrophytum</color>]]>...</Page>
 		</Dialogue>
 	</DialogueNode>
-	
+
 	<DialogueNode>
 		<Name>HowToFix</Name>
 		<Dialogue>
 			<Page>We appreciate your offer, but I'm worried there's just no chance for us to save our exploration logs.</Page>
-			<Page>We would need to figure out what's wrong with [SP NAME], find a solution, and fix [SP NAME] all before it is sucked into the black hole.</Page>
+			<Page>We would need to figure out what's wrong with <![CDATA[<color=orange>The Astrophytum</color>]]>, find a solution, and fix <![CDATA[<color=orange>The Astrophytum</color>]]> all before it is sucked into the black hole.</Page>
 			<Page>We only had just over 20 minutes to evacuate so, unfortunately, I don't see any way to get all that done in what little time we have...</Page>
-			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to [SP NAME], though it may be wise to bring your own ship just in case. Just make sure to evacuate if you can't fix [SP NAME] before it's completely gone.</Page>
+			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to <![CDATA[<color=orange>The Astrophytum</color>]]>, though it may be wise to bring your own ship just in case. Just make sure to evacuate if you can't fix [SP NAME] before it's completely gone.</Page>
+		</Dialogue>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>Ending</Name>
+		<Dialogue>
+			<Page>We will take time to explore the other miniature systems in this area, then see if any nearby Nomai would be willing to share their Vessel with us.</Page>
 		</Dialogue>
 	</DialogueNode>
 

@@ -10,18 +10,18 @@
     },
     "Orbit": {
         "semiMajorAxis": 800,
-        "primaryBody": "TheLoweDown256_ShrinkingPlanet",
+        "primaryBody": "The Astrophytum",
         "isTidallyLocked": true,
         "showOrbitLine": false
         //"initialRotation": 90
-        
+
     },
     "Star": {
         "size": 40,
         "solarLuminosity": 0.9,
         "lightTint": {
-            "r": 150,//200,
-            "g": 158,//240,
+            "r": 150, //200,
+            "g": 158, //240,
             "b": 255
         },
         "tint": {
@@ -34,7 +34,7 @@
             "g": 60,
             "b": 10
         },*/
-        "lightRadius": 1650,//2100
+        "lightRadius": 1650, //2100
 
         "stellarDeathType": "none"
     },
@@ -52,29 +52,31 @@
                 //"keepLoaded": true,
                 "alignRadial": false,
                 "keepLoaded": true
-            }, /*,
+            },
             {
                 "path": "TimberHearth_Body/Sector_TH/Sector_Village/Interactables_Village/LaunchTower/Effects_HEA_Campfire",
                 "position": {
-                    "x": -39.67871,
-                    "y": 0.02052116,
-                    "z": 35.45271
+                    "x": -44.98524,
+                    "y": -4.887447,
+                    "z": 30.14622
                 },
                 "rotation": {
-                    "x": 290.5773,
-                    "y": 225,
-                    "z": 270
+                    "x": 302.716,
+                    "y": 44.99995,
+                    "z": 90.00001
                 }
-            },*/
+            },
             {
                 "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
                 "position": {
-                   "x": -39.7749,"y": -2.274,
-                  "z":  35.4073
+                    "x": -39.7749,
+                    "y": -2.274,
+                    "z": 35.4073
                 },
                 "rotation": {
-                  "x":  291.7625,"y": 142.5673,
-               "z":     270
+                    "x": 291.7625,
+                    "y": 142.5673,
+                    "z": 270
                 }
             },
             {
@@ -128,7 +130,7 @@
                     "y": 1,
                     "z": -1.247972E-07
                 },
-                "type": "recorder",
+                "type": "preCrashRecorder",
                 "xmlFile": "planets/text/treeresearch.xml"
             },
             {
@@ -147,7 +149,7 @@
                     "y": 1,
                     "z": -1.247972E-07
                 },
-                "type": "recorder",
+                "type": "preCrashRecorder",
                 "xmlFile": "planets/text/stabilizerhelp.xml"
             },
             {
@@ -166,7 +168,7 @@
                     "y": -3.874302E-07,
                     "z": 0.7071065
                 },
-                "type": "recorder",
+                "type": "preCrashRecorder",
                 "xmlFile": "planets/text/connectthesun.xml"
             },
             {
@@ -185,8 +187,8 @@
                     "y": -2.980232E-08,
                     "z": 0.7071069
                 },
-                "type": "recorder",
-                "xmlFile": "planets/text/connectthesun.xml" //replace with stuff for warp
+                "type": "preCrashRecorder",
+                "xmlFile": "planets/text/sunwarppad.xml" //replace with stuff for warp
             }
         ],
         "warpReceivers": [
@@ -267,7 +269,9 @@
         "mapMode": {
             "invisibleWhenHidden": true,
             "revealedSprite": "planets/shiplog/img/MAP_HiddenLight.png"
-        },"xmlFile": "planets/shiplog/hiddenlight.xml","spriteFolder": "planets/shiplog/img/entries"
+        },
+        "xmlFile": "planets/shiplog/hiddenlight.xml",
+        "spriteFolder": "planets/shiplog/img/entries"
     }
 
 }

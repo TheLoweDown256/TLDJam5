@@ -14,7 +14,7 @@
                     "y": 0.394,
                     "z": 60
                 },
-                "rotation": {"y": 180},
+                "rotation": { "y": 180 },
                 "id": "tldjam5_nshuttle"
             }
         ],
@@ -48,20 +48,60 @@
                 "rename": "Nomai1"
             },
             {
-                "rename": "Nomai_follower","path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle","rotation": {  "x": 0, "y": 210,"z": 0 }, 
-                "position": { "x": 3.21,  "y": 1.078844E-05, "z": 51.7 }
+                "rename": "Nomai_follower",
+                "path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle",
+                "rotation": {
+                    "x": 0,
+                    "y": 210,
+                    "z": 0
+                },
+                "position": {
+                    "x": 3.21,
+                    "y": 1.078844E-05,
+                    "z": 51.7
+                }
             },
             {
-                 "rename": "Nomai_follower","path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle","rotation": {  "x": 0, "y": 210,"z": 0 }, 
-                 "position": {"x": 4.546, "y": 1.078844E-05, "z": 49.73}
+                "rename": "Nomai_follower",
+                "path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle",
+                "rotation": {
+                    "x": 0,
+                    "y": 210,
+                    "z": 0
+                },
+                "position": {
+                    "x": 4.546,
+                    "y": 1.078844E-05,
+                    "z": 49.73
+                }
             },
             {
-                "rename": "Nomai_follower","path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle","rotation": {  "x": 0, "y": 210,"z": 0 }, 
-                "position": {"x": 6.846622, "y": 1.066923E-05, "z": 51.29522}
+                "rename": "Nomai_follower",
+                "path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle",
+                "rotation": {
+                    "x": 0,
+                    "y": 210,
+                    "z": 0
+                },
+                "position": {
+                    "x": 6.846622,
+                    "y": 1.066923E-05,
+                    "z": 51.29522
+                }
             },
             {
-                 "rename": "Nomai_follower","path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle","rotation": {  "x": 0, "y": 210,"z": 0 }, 
-                 "position": {"x": 5.945004, "y": 1.078844E-05, "z": 53.03972}
+                "rename": "Nomai_follower",
+                "path": "QuantumMoon_Body/Sector_QuantumMoon/State_EYE/Interactables_EYEState/ConversationPivot/Character_NOM_Solanum/Nomai_ANIM_SkyWatching_Idle",
+                "rotation": {
+                    "x": 0,
+                    "y": 210,
+                    "z": 0
+                },
+                "position": {
+                    "x": 5.945004,
+                    "y": 1.078844E-05,
+                    "z": 53.03972
+                }
             }
         ],
         "dialogue": [
@@ -78,5 +118,14 @@
             }
         ]
 
+    },
+    "ShipLog": {
+        "mapMode": {
+            //"invisibleWhenHidden": true
+            // "revealedSprite": "planets/shiplog/img/MAP_HiddenLight.png"
+            "remove": true
+        },
+        "xmlFile": "planets/shiplog/platform.xml",
+        "spriteFolder": "planets/shiplog/img/entries"
     }
 }

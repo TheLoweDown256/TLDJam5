@@ -1,0 +1,20 @@
+<AstroObjectEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/shiplog_schema.xsd">
+	<ID>The Astrophytum</ID>
+	<!-- The ID of the planet this xml file is for -->
+
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_PLATFORMNOMAI</ID>
+		<!-- The ID of this entry -->
+		<Name>Protea's Clan</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+
+		<ExploreFact>
+			<!-- An explore fact that belongs to this entry -->
+			<ID>TLD256_PLATFORMNOMAI_MEET</ID>
+			<!-- The ID of this fact -->
+			<Text>I met a Nomai named Protea. Her clan was forced to evacuate their Vessel, The Astrophytum after warping to this system.</Text>
+		</ExploreFact>
+	</Entry>
+</AstroObjectEntry>
