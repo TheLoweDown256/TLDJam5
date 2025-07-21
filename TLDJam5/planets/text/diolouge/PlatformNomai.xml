@@ -16,9 +16,9 @@
 		<Name>ExplainEvacuation</Name>
 		<Dialogue>
 			<Page>We came here from the Silverflame system to escape its dying star. Unfortunatley, our vessel, <![CDATA[<color=orange>The Astrophytum</color>]]>, suffered damage upon our arival.</Page>
-			<Page>The black hole in our warp core malfunctioned in some way, and now <![CDATA[<color=orange>The Astrophytum</color>]]> is rapidly miniaturizing into it!</Page>
-			<Page>Worse still, we couldn't even recover any of our exploration logs as all the computers refused to show anything other than "EVACUATE IMMEDIATELY"</Page>
-			<Page>If <![CDATA[<color=orange>The Astrophytum</color>]]> isn't fixed, we won't be able to recover our exploration logs. And, if those logs aren't recovered, all the knowledge we gained will be lost.</Page>
+			<Page>The black hole in our Central Warp Core malfunctioned in some way, and now <![CDATA[<color=orange>The Astrophytum</color>]]> is rapidly miniaturizing into it!</Page>
+			<Page>Worse still, we couldn't even recover any of our <![CDATA[<color=orange>Exploration Logs</color>]]> as most of the computers were stuck telling us to evacuate.</Page>
+			<Page>If <![CDATA[<color=orange>The Astrophytum</color>]]> isn't fixed, we won't be able to recover our <![CDATA[<color=orange>Exploration Logs</color>]]>. And, if those logs aren't recovered, all the knowledge we gained will be lost.</Page>
 		</Dialogue>
 
 		<RevealFacts>
@@ -29,6 +29,15 @@
 
 
 		<DialogueOptionsList>
+			<DialogueOption>
+				<RequiredLogCondition>TLD256_EXLOGS_1</RequiredLogCondition>
+				<RequiredLogCondition>TLD256_EXLOGS_2</RequiredLogCondition>
+				<RequiredLogCondition>TLD256_EXLOGS_3</RequiredLogCondition>
+				<RequiredLogCondition>TLD256_EXLOGS_4</RequiredLogCondition>
+				<RequiredLogCondition>TLD256_EXLOGS_5</RequiredLogCondition>
+				<Text>I recovered your Exploration Logs!.</Text>
+				<DialogueTarget>Ending</DialogueTarget>
+			</DialogueOption>
 			<DialogueOption>
 				<Text>I can help!</Text>
 				<DialogueTarget>HowToFix</DialogueTarget>
@@ -63,6 +72,9 @@
 		<Dialogue>
 			<Page>We will take time to explore the other miniature systems in this area, then see if any nearby Nomai would be willing to share their Vessel with us.</Page>
 		</Dialogue>
+		<RevealFacts>
+			<FactID>TLD256_PLATFORMNOMAI_ENDED</FactID>
+		</RevealFacts>
 	</DialogueNode>
 
 </DialogueTree>

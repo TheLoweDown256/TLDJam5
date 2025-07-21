@@ -16,5 +16,12 @@
 			<!-- The ID of this fact -->
 			<Text>I met a Nomai named Protea. Her clan was forced to evacuate their Vessel, The Astrophytum after warping to this system.</Text>
 		</ExploreFact>
+		<ExploreFact>
+			<!-- An explore fact that belongs to this entry -->
+			<ID>TLD256_PLATFORMNOMAI_ENDED</ID>
+			<!-- The ID of this fact -->
+			<Text>I recovered Protea's clan's Exploration Logs.</Text>
+			
+		</ExploreFact>
 	</Entry>
 </AstroObjectEntry>

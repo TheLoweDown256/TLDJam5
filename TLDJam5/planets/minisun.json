@@ -12,7 +12,7 @@
         "semiMajorAxis": 800,
         "primaryBody": "The Astrophytum",
         "isTidallyLocked": true,
-        "showOrbitLine": false
+        "showOrbitLine": false,"trueAnomaly": -90
         //"initialRotation": 90
 
     },
@@ -259,7 +259,7 @@
         "radius": 1000
     },
     "ReferenceFrame": {
-        "maxTargetDistance": 120,
+        "maxTargetDistance": 150,
         "hideInMap": true,
         "targetWhenClose": true,
         "targetColliderRadius": 80

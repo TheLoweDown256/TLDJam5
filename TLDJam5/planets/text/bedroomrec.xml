@@ -16,7 +16,7 @@
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>PROTEA: After taking the panel off the wall you can continue on to the <![CDATA[<color=orange>Tower Controlers</color>]]>. It's dark though, so make sure to bring a flashlight</Text>
+		<Text>PROTEA: After taking the panel off the wall you can continue on to the <![CDATA[<color=orange>Tower Controlers</color>]]>. It's dark though, so make sure to bring a flashlight!</Text>
 	</TextBlock>
 	<ShipLogConditions>
 		<RevealFact>
@@ -26,6 +26,10 @@
 		<RevealFact>
 			<FactID>TLD256_TOWERSCONTROLER_RUMOR</FactID>
 			<Condition>2</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_TOWERS_RUMOR</FactID>
+			<Condition>1</Condition>
 		</RevealFact>
 	</ShipLogConditions>
 	

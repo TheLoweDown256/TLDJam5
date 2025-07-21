@@ -1,28 +1,27 @@
 ﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
     <TextBlock>
         <ID>1</ID>
-		<Text>NAME: Why is there an empty warp transmitter here?</Text>
+		<Text>BEGONIA: Why is there an empty warp transmitter here?</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>2</ID>
 		<ParentID>1</ParentID>
-		<Text>NAME2: This warp transmitter used to lead to <![CDATA[<color=orange>Hidden Light</color>]]>, the invisible star orbiting <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
+		<Text>PROTEA: This warp transmitter used to lead to <![CDATA[<color=orange>Hidden Light</color>]]>, the invisible star orbiting <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>3</ID>
-		<ParentID>3</ParentID>
-		<Text>NAME2: <![CDATA[<color=orange>Hidden Light</color>]]>'s orbit is marked by the purple energy ring around <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
-
+		<ParentID>2</ParentID>
+		<Text>PROTEA: <![CDATA[<color=orange>Hidden Light</color>]]>'s orbit is marked by the purple energy ring around <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>NAME2: The warp core from this transmitter was repurposed to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core.</Text>
+		<Text>PROTEA: The warp core from this transmitter was repurposed to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core.</Text>
 	</TextBlock>
 	<ShipLogConditions>
 		<RevealFact>
 			<FactID>TLD256_HIDDEN_LIGHT_RUMOR</FactID>
-			<Condition>2,3</Condition>
+			<Condition>3</Condition>
 		</RevealFact>
 		<RevealFact>
 			<FactID>TLD256_WARPPLATFORM_EXPLORE</FactID>

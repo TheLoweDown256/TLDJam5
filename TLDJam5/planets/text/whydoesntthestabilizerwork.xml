@@ -16,7 +16,7 @@
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>PROTEA: There's no time to look there! We have less than 2 days until this star dies! We need to warp as soon as possible!</Text>
+		<Text>PROTEA: There's no time to look on <![CDATA[<color=orange>Hidden Light</color>]]>! We have less than 2 days until this star dies! We need to warp as soon as possible!</Text>
 	</TextBlock>
 	<ShipLogConditions>
 		<RevealFact>

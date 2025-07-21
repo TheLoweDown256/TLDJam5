@@ -36,7 +36,7 @@ namespace TLDJam5
         [HarmonyPatch(typeof(PlayerCharacterController), nameof(PlayerCharacterController.IsGroundedOnRisingSand))]
         public static bool PlayerOnRisingSandPrefix(ref bool __result, ref PlayerCharacterController __instance)
         {
-            if (TLDJam5.Instance.isPlayerAroundShrinkingPlanet()) { 
+            if (TLDJam5.Instance.isPlayerAroundShrinkingPlanet() && !PlayerState.IsInsideShip() && !PlayerState.IsInsideShuttle()) { 
                 __result = __instance.IsGrounded();
                 return false;
             }

@@ -22,6 +22,14 @@
 			<Text>Protea's Vessel is called The Astrophytum. It is currently miniaturizing into a black hole.</Text>
 			<!-- The Text to display for this fact -->
 		</RumorFact>
+		<ExploreFact>
+			<ID>TLD256_ASTROPHYTUM_DISCOVER</ID>
+			<Text>This is Protea's Vessel. It is currently miniaturizing into a black hole.</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<ID>TLD256_ASTROPHYTUM_CAMPSITEHINT</ID>
+			<Text>I found a sign saying there is a campsite at the south pole of The Astrophytum.</Text>
+		</ExploreFact>
 	</Entry>
 	
 	<Entry>
@@ -124,8 +132,13 @@
 		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
 		<RumorFact>
 			<ID>TLD256_TOWERSCONTROLER_RUMOR</ID>
+			<SourceID>TLD256_BEDROOM</SourceID>
 			<Text>Access to the Towers Controler is blocked by a loose panel.</Text>
 		</RumorFact>
+		<ExploreFact>
+			<ID>TLD256_TOWERSCONTROLER_DISCOVER</ID>
+			<Text>I entered the room with the Towers Controler by launching my scout at a loose wall panel.</Text>
+		</ExploreFact>
 		<ExploreFact>
 			<ID>TLD256_TOWERSCONTROLER_HOW2OPEN</ID>
 			<Text>Both towers must be activated within around 15 seconds of eachother to open access to the Central Core. This should require two people as The Astrophytum is too large to activate both towers in time.</Text>
@@ -141,6 +154,7 @@
 		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
 		<RumorFact>
 			<ID>TLD256_TOWERS_RUMOR</ID>
+			<SourceID>TLD256_BEDROOM</SourceID>
 			<Text>The Equitorial Towers are required to access the Central Core.</Text>
 		</RumorFact>
 		<ExploreFact>
@@ -149,7 +163,7 @@
 		</ExploreFact>
 		<ExploreFact>
 			<ID>TLD256_TOWERS_COLORS</ID>
-			<Text>The orb interfaces in the Equitorial Towers are blue when no towers are active, yellow when only that tower is active, and geen when both towers are active.</Text>
+			<Text>According to a Nomai recorder in the West Tower: the orb interfaces in the Equitorial Towers are blue when no towers are active, yellow when only that tower is active, and geen when both towers are active.</Text>
 		</ExploreFact>
 			
 	</Entry>
@@ -193,6 +207,11 @@
 			<SourceID>TLD256_INTERIORENTRANCE</SourceID>
 			<Text>The Central Core was damaged durring The Astrophytum's warp to this system.</Text>
 		</RumorFact>
+		<RumorFact>
+			<ID>TLD256_CORE_RUMOR2</ID>
+			<SourceID>TLD256_TOWERSCONTROLER</SourceID>
+			<Text>The Equitorial Towers must be activated to access the Central Core.</Text>
+		</RumorFact>
 		<ExploreFact>
 			<ID>TLD256_CORE_ENTER</ID>
 			<Text>I entered The Astrophytum's Central Core.</Text>
@@ -232,5 +251,27 @@
 			<Text>The Exploration Logs are stored on a computer in the Library.</Text>
 			<!-- The Text to display for this fact -->
 		</RumorFact>
+	
+		<ExploreFact>
+			<ID>TLD256_EXLOGS_1</ID>
+			<Text>"PROTEA: We have just warped to the Silverflame system! The Astrophytum is currently orbiting a gas giant we have named Golden Titan."</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<ID>TLD256_EXLOGS_2</ID>
+			<Text>"BEGONIA: We just landed our shuttle on Golden Titan's moon, Bronze Observer. This moon seems to be the ideal location for studying this system!"</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<ID>TLD256_EXLOGS_3</ID>
+			<Text>"BEGONIA: From our site on Bronze Observer, we have discovered a massive ocean under Golden Titan's clouds, featuring multiple islands that seem to drift with the ocean's current! I wonder if more planets like this exist."</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<ID>TLD256_EXLOGS_4</ID>
+			<Text>"PROTEA: Our first landing on Golden Titan was a success! This island seems to have the same composition as Bronze Observer. Hypothesis: Bronze Observer was originaly much larger, but pieces of it broke off some time ago and landed on Golden Titan."</Text>
+		</ExploreFact>
+		<ExploreFact>
+			<ID>TLD256_EXLOGS_5</ID>
+			<Text>"PROTEA: We just recieved many reports of stars across the universe all going supernova. Using our instruments on Bronze Observer, we have learned Silverflame's star will die in just 8 days. Our clan needs to leave here as soon as possible."</Text>
+		</ExploreFact>
+	
 	</Entry>
 </AstroObjectEntry>

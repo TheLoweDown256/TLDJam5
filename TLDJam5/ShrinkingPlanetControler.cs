@@ -33,6 +33,8 @@ namespace TLDJam5
 
         public NomaiComputer sunComputer;
 
+        public int antiLagCycle = 0;
+
         public void Awake()
         {
         }
@@ -60,7 +62,15 @@ namespace TLDJam5
 
         public void FixedUpdate()
         {
+            
             if (planetGone) { return; }
+
+            antiLagCycle--;
+            if (antiLagCycle < 0)
+            {
+                antiLagCycle = 5;
+            }
+
             if (sizeToAdd > 0)
             {
                 float change = shrinkPerSecond / 2.5f;
@@ -74,39 +84,53 @@ namespace TLDJam5
                 endTime -= 1f / 60f;
             }
 
-            for (int i = 0; i < transformsToUnscale.Count; i++)
-            {
-                transformsToUnscale[i].localScale=Vector3.one/curentScale;
-            }
-
-            for (int i = 0; i < lights.Count; i++)
-            {
-                lights[i].range=lightStartRange*curentScale;
-            }
-
             if (transformsToScale != null)
             {
-                for (int i = 0; i < transformsToScale.Count; i++) {
+                if (TLDJam5.Instance.playerIsAroundSP < 2000)
+                {
+                    for (int i = 0; i < transformsToScale.Count; i++)
+                    {
 
-                    float toScale = curentScale;
-                    if (baseScales.ContainsKey(transformsToScale[i])) {
-                        toScale*=baseScales[transformsToScale[i]];
+                        float toScale = curentScale;
+                        if (baseScales.ContainsKey(transformsToScale[i]))
+                        {
+                            toScale *= baseScales[transformsToScale[i]];
+                        }
+                        transformsToScale[i].localScale = Vector3.one * toScale;
                     }
-                    transformsToScale[i].localScale = Vector3.one * toScale;
+                }else
+                {
+                    transformsToScale[0].localScale = Vector3.one * curentScale;
                 }
             }
-            if (gravityVolume != null) {
-                gravityVolume._surfaceAcceleration = Mathf.Max(surfaceGravityStart * (float)Math.Pow(curentScale,1.5f)-0.1f,0);
-                //gravityVolume._upperSurfaceRadius = surfaceGravityRadiusStart * curentScale;
-            }
-            if (curentScale <= 2f/200f)//0.02)
-            {
-                Destroy(transformsToScale[0].gameObject);
-                planetGone = true;
 
-                sunComputer.ClearAllEntries();
-                sunComputer.DisplayEntry(3);
+            if (antiLagCycle == 0)
+            {
+                for (int i = 0; i < transformsToUnscale.Count; i++)
+                {
+                    transformsToUnscale[i].localScale = Vector3.one / curentScale;
+                }
+
+                for (int i = 0; i < lights.Count; i++)
+                {
+                    lights[i].range = lightStartRange * curentScale;
+                }
+                if (gravityVolume != null)
+                {
+                    gravityVolume._surfaceAcceleration = Mathf.Max(surfaceGravityStart * (float)Math.Pow(curentScale, 1.5f) - 0.1f, 0);
+                    //gravityVolume._upperSurfaceRadius = surfaceGravityRadiusStart * curentScale;
+                }
+                if (curentScale <= 2.2f / 200f)//0.02)
+                {
+                    Destroy(transformsToScale[0].gameObject);
+                    planetGone = true;
+
+                    sunComputer.ClearAllEntries();
+                    sunComputer.DisplayEntry(3);
+                }
             }
+
+            
         }
 
         public void onEnterCampFire(bool isDreamFire)
@@ -128,9 +152,9 @@ namespace TLDJam5
             PlayerAttachPoint attPt= player.parent.GetComponent<PlayerAttachPoint>();
             if (attPt != null)
             {
-                TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (Before): "+ attPt._attachOffset, MessageType.Info);
+               // TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (Before): "+ attPt._attachOffset, MessageType.Info);
                 attPt.SetAttachOffset(attPt._attachOffset /= ((curentScale*3f+1f)/4f));
-                TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (After): " + attPt._attachOffset, MessageType.Info);
+               // TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (After): " + attPt._attachOffset, MessageType.Info);
             }
             else
             {

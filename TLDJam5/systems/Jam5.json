@@ -1,20 +1,128 @@
 {
     "$schema": "https://raw.githubusercontent.com/xen-42/outer-wilds-new-horizons/main/NewHorizons/Schemas/star_system_schema.json",
+    "name": "Jam5",
     "curiosities": [
         {
             "id": "TLD256_EXPLORATIONLOGS",
             "color": {
-                "r": 105, //90//200,
-                "g": 94, //98//240,
+                "r": 90, //90//200,
+                "g": 84, //98//240,
                 "b": 255,
                 "a": 255
             },
             "highlightColor": {
-                "r": 165, //90//200,
-                "g": 130, //98//240,
+                "r": 155, //90//200,
+                "g": 120, //98//240,
                 "b": 255,
                 "a": 255
             }
         }
+    ],
+    "entryPositions": [
+        {
+            "id": "TLD256_EXPLORATIONLOGS",
+            "position": {
+                "x": 2000,
+                "y": 1200
+            }
+        },
+        {
+            "id": "TLD256_PLATFORMNOMAI",
+            "position": {
+                "x": 590,
+                "y": 1300
+            }
+        },
+        {
+            "id": "TLD256_LIBRARY",
+            "position": {
+                "x": 1730,
+                "y": 930
+            }
+        },
+        {
+            "id": "TLD256_STORAGE",
+            "position": {
+                "x": 1650,
+                "y": 880
+            }
+        },
+        {
+            "id": "TLD256_ASTROPHYTUM",
+            "position": {
+                "x": 840,
+                "y": 1560
+            }
+        },
+        {
+            "id": "TLD256_CORE",
+            "position": {
+                "x": 1740,
+                "y": 1560
+            }
+        },
+        {
+            "id": "TLD256_WARPPLATFORM",
+            "position": {
+                "x": 1100,
+                "y": 1580
+            }
+        },
+        {
+            "id": "TLD256_TOWERSCONTROLER",
+            "position": {
+                "x": 1470,
+                "y": 1380
+            }
+        },
+        {
+            "id": "TLD256_TOWERS",
+            "position": {
+                "x": 1300,
+                "y": 1560
+            }
+        },
+        {
+            "id": "TLD256_INTERIORENTRANCE",
+            "position": {
+                "x": 1450,
+                "y": 1020
+            }
+        },
+        {
+            "id": "TLD256_HIDDEN_LIGHT",
+            "position": {
+                "x": 550,
+                "y": 900
+            }
+        },
+        {
+            "id": "TLD256_HIDDENLIGHTSECRET",
+            "position": {
+                "x": 630,
+                "y": 820
+            }
+        },
+        {
+            "id": "TLD256_BEDROOM",
+            "position": {
+                "x": 1120,
+                "y": 1050
+            }
+        },
+        {
+            "id": "TLD256_WARPSTABILIZER",
+            "position": {
+                "x": 1040,
+                "y": 1100
+            }
+        } /*,
+        {
+            "id": "TLD256_WARPSTABILIZER",
+            "position": {
+                "x": 980,
+                "y": 810
+            }
+        }*/
     ]
 }

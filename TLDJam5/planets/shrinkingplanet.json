@@ -9,13 +9,9 @@
         "centerOfSolarSystem": true
         //"groundSize": 200
     },
-    /*"Orbit": {
-        "staticPosition": {
-            "x": 1000,
-            "y": 2000,
-            "z": 5000
-        }
-    },*/
+    "Orbit": {
+        "siderealPeriod": 4
+    },
 
     "MapMarker": { "enabled": true },
     "Props": {
@@ -44,9 +40,8 @@
                     "position": {
                         "x": 0,
                         "y": 0,
-                        "z": 0
+                        "z": 195
                     },
-                    "isRelativeToParent": true,
                     "alignRadial": true
                 },
                 "detailed": true
@@ -184,6 +179,20 @@
                 "removeComponents": true,
                 "scale": 1
             },
+            {
+                "path": "CaveTwin_Body/Sector_CaveTwin/Sector_NorthHemisphere/Sector_NorthSurface/Sector_TimeLoopExperiment/WarpCoreWallSockets/WarpCoreSocket (1)/Props_NOM_WarpCoreBlack (2)",
+                "position": {
+                    "x": 0,
+                    "y": -1,
+                    "z": 0
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": 270,
+                    "z": 90
+                },
+                "removeComponents": true
+            },
 
             {
                 "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Interactibles_WhiteholeStation/Prefab_NOM_Tablet",
@@ -316,6 +325,19 @@
                 }
             },
             {
+                "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
+                "position": {
+                    "x": 7.6725,
+                    "y": -0.4361,
+                    "z": 108.222
+                },
+                "rotation": {
+                    "x": 330.0114,
+                    "y": 252.4329,
+                    "z": 192.6419
+                }
+            },
+            {
                 "path": "TimberHearth_Body/Sector_TH/Sector_Village/Interactables_Village/LaunchTower/Effects_HEA_Campfire",
                 "position": {
                     "x": 89.754,
@@ -338,7 +360,7 @@
                 "parentPath": "Sector/solarpaneltrees",
                 "rename": "paneltree",
                 "scale": 10,
-                "keepLoaded": true
+                "keepLoaded": false
             },
 
             { "rename": "NomaiComputers" }
@@ -544,6 +566,144 @@
                 },
                 "type": "recorder",
                 "xmlFile": "planets/text/whydoesntthestabilizerwork.xml"
+            },
+            {
+
+                "position": {
+                    "x": 198.9505,
+                    "y": 3.067138,
+                    "z": 4.731155
+                },
+                "rotation": {
+                    "x": 308.5622,
+                    "y": 344.0341,
+                    "z": 278.881
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/towerrec.xml"
+            },
+            {
+
+                "position": {
+                    "x": -2.3554,
+                    "y": -2.8607,
+                    "z": -96.4095
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": 90,
+                    "z": 270
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/bedroomrec.xml"
+            },
+            {
+
+                "position": {
+                    "x": 168.8372,
+                    "y": 18.97181,
+                    "z": 4.652586
+                },
+                "rotation": {
+                    "x": 73.28999,
+                    "y": 103.7124,
+                    "z": 13.15394
+                },
+                "type": "recorder",
+                "xmlFile": "planets/text/controlerrec.xml"
+            },
+            {
+
+                "position": {
+                    "x": 3.738731,
+                    "y": -46.94405,
+                    "z": 191.6771
+                },
+                "rotation": {
+                    "x": 280.2401,
+                    "y": 11.13746,
+                    "z": 169.0564
+                },
+                "type": "cairnTH",
+                "xmlFile": "planets/text/campfire.xml"
+            },
+            {
+
+                "position": {
+                 "x":   -0.7054,"y": 23.8552,
+                 "z":   -95.7063
+                },
+                "rotation": {
+                    "x": 35.77824,
+                    "y": 335.8,
+                    "z": 165.2782
+                },
+                "normal": {
+                    "x": 8.940697E-08,
+                    "y": -0.7846523,
+                    "z": -0.6199363
+                },
+                "type": "wall",
+                "xmlFile": "planets/text/labels/warpstabilizer.xml"
+            },
+            {
+
+                "position": {
+                  "x":  169.7396,"y": 19.0215,
+                 "z":   1.6688
+                },
+                "rotation": {
+                    "x": 52.53819,
+                    "y": 286.2355,
+                    "z": 210.4423
+                },
+                "normal": {
+                    "x": 0.7986984,
+                    "y": -0.5243814,
+                    "z": 0.2951359
+                },
+                "type": "wall",
+                "xmlFile": "planets/text/labels/towercontrols.xml"
+            },
+            {
+
+                "position": {
+                    "x": -200.6523,
+                    "y": -0.2319255,
+                    "z": 3.16478
+                },
+                "rotation": {
+                    "x": 26.06084,
+                    "y": 51.68851,
+                    "z": 90
+                },
+                "normal": {
+                    "x": -0.6199364,
+                    "y": -3.695108E-08,
+                    "z": 0.784652
+                },
+                "type": "wall",
+                "xmlFile": "planets/text/labels/easttower.xml"
+            },
+            {
+
+                "position": {
+              "x":      200.6109,"y": 0.1675,
+               "z":     3.2234
+                },
+                "rotation": {
+                    "x": 352.7142,
+                    "y": 308.3115,
+                    "z": 270
+                },
+                "normal": {
+                    "x": 0.6199365,
+                    "y": 1.049722E-08,
+                    "z": 0.7846522
+                },
+
+                "type": "wall",
+                "xmlFile": "planets/text/labels/westtower.xml"
             }
 
         ]
@@ -605,17 +765,61 @@
                     "y": -1.807468,
                     "z": 116.1529
                 },
-                "reveals": [ "TLD256_STORAGE_EXPLORE" ],
+                "reveals": [ "TLD256_STORAGE_EXPLORE" ]
             },
             {
                 "radius": 70,
                 "revealOn": "enter",
                 "position": {
-                    "x": 4.481338,
-                    "y": -1.807468,
-                    "z": 116.1529
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
                 },
                 "reveals": [ "TLD256_CORE_ENTER" ],
+                "revealFor": "player"
+            },
+            {
+                "radius": 15,
+                "revealOn": "enter",
+                "position": {
+                    "x": 176.1026,
+                    "y": 22.54825,
+                    "z": 0.07047737
+                },
+                "reveals": [ "TLD256_TOWERSCONTROLER_DISCOVER" ],
+                "revealFor": "player"
+            },
+            {
+                "radius": 22,
+                "revealOn": "enter",
+                "position": {
+                    "x": 206,
+                    "y": 0,
+                    "z": 0
+                },
+                "reveals": [ "TLD256_TOWERS_OPENED" ],
+                "revealFor": "player"
+            },
+            {
+                "radius": 22,
+                "revealOn": "enter",
+                "position": {
+                    "x": -206,
+                    "y": 0,
+                    "z": 0
+                },
+                "reveals": [ "TLD256_TOWERS_OPENED" ],
+                "revealFor": "player"
+            },
+            {
+                "radius": 350,
+                "revealOn": "enter",
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "reveals": [ "TLD256_ASTROPHYTUM_DISCOVER" ],
                 "revealFor": "player"
             }
         ]
@@ -624,7 +828,7 @@
         {
             "texture": "planets/shrinkingplanet_rings.png",
             "unlit": true,
-            "rotationSpeed": 6,
+            "rotationSpeed": 3.8, //3.75,//6,
             "innerRadius": 760,
             "outerRadius": 840,
             "fluidType": "none"
@@ -647,8 +851,8 @@
         "mapMode": {
             //"invisibleWhenHidden": true
             "revealedSprite": "planets/shiplog/img/MAP_ShrinkingPlanet.png",
-            "outlineSprite": "planets/shiplog/img/MAP_ShrinkingPlanet_outline.png",
-            "offset": 0.15
+            "outlineSprite": "planets/shiplog/img/MAP_ShrinkingPlanet_outline.png"
+            // "offset": 0.15
         },
         "xmlFile": "planets/shiplog/shrinkingplanet.xml",
         "spriteFolder": "planets/shiplog/img/entries"

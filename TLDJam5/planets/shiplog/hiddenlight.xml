@@ -13,9 +13,10 @@
 		
 		<RumorFact>
 			<!-- A rumor fact that belongs to this entry -->
-			<ID>TLD256_HIDDEN_LIGHT_RUMOR1</ID>
+			<ID>TLD256_HIDDEN_LIGHT_RUMOR</ID>
 			<!-- The name of the rumor this fact relates to -->
-			<Text>theres a star or somthing</Text>
+			<SourceID>TLD256_WARPPLATFORM</SourceID>
+			<Text>There is an invisible star called Hidden Light orbiting The Astrophytum along a purple energy ring.</Text>
 			<!-- The Text to display for this fact -->
 		</RumorFact>
 

@@ -87,6 +87,10 @@ namespace TLDJam5
         public bool gaveCoreDontShrinkEntry=false;
         public bool gaveSunShrinkLog = false;
 
+        public GameObject blackHole;
+        public Transform tempSHUTTLE;
+
+        public int playerIsAroundSP=999;
         public void Awake()
         {
             Instance = this;
@@ -135,8 +139,12 @@ namespace TLDJam5
 
         public void postNHInit()
         {
-            WHEREISTHATWIERDBROKENSHUTTLEBODY = 20;
+            WHEREISTHATWIERDBROKENSHUTTLEBODY =15;
+            tryRemoveBrokenShuttle();
             gaveSunShrinkLog = false;
+
+           tempSHUTTLE = GameObject.Find("TheLoweDown256_Jam5_Platform_Body/Sector/Prefab_QM_Shuttle")?.transform;
+            
 
             GameObject planetBody = GameObject.Find(planetBodyPath);
             planetRigidbody= planetBody.GetAttachedOWRigidbody();
@@ -218,7 +226,7 @@ namespace TLDJam5
 
             GameObject.Find(planetBodyPath + "/Sector/Atmosphere").SetActive(false);
 
-            
+            blackHole = GameObject.Find(planetBodyPath + "/Sector/DontScale/BlackHole");
 
 
             whiteWarpCore = GameObject.Find(planetBodyPath + "/Sector/ShrinkingPlanet_WarpCoreWhite");
@@ -327,73 +335,73 @@ namespace TLDJam5
                 //   startDelay--;
                 //  }
 
-                if (WHEREISTHATWIERDBROKENSHUTTLEBODY > 0)
-                {
-                    GameObject wierdBrokenShuttle = GameObject.Find("Shuttle_Body");
-                    if (wierdBrokenShuttle != null)
-                    {
-                        if (wierdBrokenShuttle.transform.childCount == 3) 
-                        {
-                            wierdBrokenShuttle.SetActive(false);
-                            WHEREISTHATWIERDBROKENSHUTTLEBODY = 0;
-                        }
+                   if (WHEREISTHATWIERDBROKENSHUTTLEBODY > 0)
+                   {
+                     tryRemoveBrokenShuttle();
                     }
-                    WHEREISTHATWIERDBROKENSHUTTLEBODY--;
+
+                if (tempSHUTTLE != null)
+                {
+                    tempSHUTTLE.SetLocalPositionY(tempSHUTTLE.localPosition.y - 100);
+                    tempSHUTTLE = null;
                 }
 
+                playerIsAroundSP = PRE_isPlayerAroundShrinkingPlanet();
 
-                if (!hasDoneComputerInit)
+                if (playerIsAroundSP < 2500)
                 {
-                    if ((Locator.GetPlayerBody().GetPosition() - planetRigidbody.GetPosition()).magnitude < 1000f)
+                    if (!hasDoneComputerInit)
                     {
-                        shrinkingPlanetControler.sunComputer.ClearEntry(3);
-                        for (int i = 0; i < nComputers.Count; i++)
+                        if (playerIsAroundSP < 1000)
                         {
-                            NomaiComputer com=nComputers[i];
-                            for (int j = 3; j <= com.GetNumTextBlocks(); j++)
+                            shrinkingPlanetControler.sunComputer.ClearEntry(3);
+                            for (int i = 0; i < nComputers.Count; i++)
                             {
-                                com.ClearEntry(j);
+                                NomaiComputer com = nComputers[i];
+                                for (int j = 3; j <= com.GetNumTextBlocks(); j++)
+                                {
+                                    com.ClearEntry(j);
+                                }
                             }
+                            warpSComputer.ClearAllEntries();
+                            hasDoneComputerInit = true;
                         }
-                        warpSComputer.ClearAllEntries();
-                        hasDoneComputerInit = true;
                     }
-                }
-                sunCloakUpdate();
-                if (!shrinkingPlanetControler.planetGone)
-                {
-                    towerOrbsUpdate();
-                    towersOpenUpdate();
-                    if (roofOpen!=roofOpenTarg)
+                    sunCloakUpdate();
+                    if (!shrinkingPlanetControler.planetGone)
                     {
-                        roofOpenUpdate();
-                    }
-
-                    if (!isTheMainCoreFixed)
-                    {
-                        warpCoreSizeUpdate();
-                    }
-                    warpSUpdate();
-
-                    if (!detatchedVent)
-                    {
-                        SurveyorProbe p = Locator.GetProbe();
-                        if (p!=null)
+                        towerOrbsUpdate();
+                        towersOpenUpdate();
+                        if (roofOpen != roofOpenTarg)
                         {
-                            if (ventCover == p.transform.parent)
-                            {
-                                ventCover.gameObject.SetActive(false);
-                            }
+                            roofOpenUpdate();
                         }
-                        
+
+                        if (!isTheMainCoreFixed)
+                        {
+                            warpCoreSizeUpdate();
+                        }
+                        warpSUpdate();
+
+                        if (!detatchedVent)
+                        {
+                            SurveyorProbe p = Locator.GetProbe();
+                            if (p != null)
+                            {
+                                if (ventCover == p.transform.parent)
+                                {
+                                    ventCover.gameObject.SetActive(false);
+                                }
+                            }
+
+                        }
+
                     }
-
+                    else
+                    {
+                        sunSizeUpdate();
+                    }
                 }
-                else
-                {
-                    sunSizeUpdate();
-                }
-
                 scoutHelperDebugDeactivate();
 
                 
@@ -402,7 +410,7 @@ namespace TLDJam5
                 if (playerItemCarryTool == null)
                 {
                     var temp2 = Locator.GetPlayerController().transform.Find("PlayerCamera/ItemCarryTool");
-                    ModHelper.Console.WriteLine("TEMP2: " + temp2, MessageType.Info);
+                //    ModHelper.Console.WriteLine("TEMP2: " + temp2, MessageType.Info);
                     if (temp2 == null)
                     {
                         ModHelper.Console.WriteLine("[logged error] temp2 is NULL ", MessageType.Error);
@@ -437,6 +445,21 @@ namespace TLDJam5
             
         }
         
+        public void tryRemoveBrokenShuttle() { 
+        
+            GameObject wierdBrokenShuttle = GameObject.Find("Shuttle_Body");
+            if (wierdBrokenShuttle != null)
+            {
+                if (wierdBrokenShuttle.transform.childCount == 3 && wierdBrokenShuttle.transform.parent==null)
+                {
+                    wierdBrokenShuttle.SetActive(false);
+                    GameObject.Find("TheLoweDown256_Jam5_Platform_Body/Sector/Prefab_QM_Shuttle/Shuttle_Body")?.SetActive(true);
+                     //WHEREISTHATWIERDBROKENSHUTTLEBODY = 0;
+                }
+            }
+            WHEREISTHATWIERDBROKENSHUTTLEBODY--;
+        }
+
 
         public void warpSUpdate()
         {
@@ -517,6 +540,7 @@ namespace TLDJam5
 
         public void roofOpenUpdate()
         {
+            if (roofOpen == roofOpenTarg) { return; }  
             if (roofOpen<roofOpenTarg)
             {
                 roofOpen += roofOpenSpeed;
@@ -694,6 +718,8 @@ namespace TLDJam5
             shrinkingPlanetControler.sizeToAdd = 99999;
             whiteWarpCoreSocket.EnableInteraction(false);
 
+            blackHole.SetActive(false);
+
             for (int i = 0; i < nComputers.Count; i++)
             {
                 nComputers[i].ClearEntry(1);
@@ -714,19 +740,26 @@ namespace TLDJam5
 
         public bool isPlayerAroundShrinkingPlanet()
         {
+            return playerIsAroundSP<300f * TLDJam5.Instance.shrinkingPlanetControler.curentScale;
+        }
+
+        public int PRE_isPlayerAroundShrinkingPlanet()
+        {
             if (doesShrinkingPlanetExist())
             {
-                float pDist = (Locator.GetPlayerBody().GetPosition() - TLDJam5.Instance.planetRigidbody.GetPosition()).magnitude;
-                if (pDist < 300f * TLDJam5.Instance.shrinkingPlanetControler.curentScale)
-                {
-                    return true;
-                }
+                int pDist = (int)(Locator.GetPlayerBody().GetPosition() - TLDJam5.Instance.planetRigidbody.GetPosition()).magnitude;
+                return pDist;
+               // if (pDist < 300f * TLDJam5.Instance.shrinkingPlanetControler.curentScale)
+               // {
+               //     return true;
+              //  }
             }
-            return false;
+            //return false;
+            return 99999;
         }
 
 
-        public void scoutHelperDebugDeactivate()
+            public void scoutHelperDebugDeactivate()
         {
             if (OWInput.IsNewlyPressed(InputLibrary.autopilot, InputMode.Character))
             {

@@ -8,20 +8,54 @@
 		<ParentID>1</ParentID>
 		<Text><![CDATA[<color=orange>The Astrophytum</color>]]> is &lt;TLDJam5_ShrinkPercent&gt;% normal size. EVACUATE IMMEDIATELY.</Text>
 	</TextBlock>
+
 	<TextBlock>
 		<ID>3</ID>
 		<ParentID>2</ParentID>
-		<Text>library data 1</Text>
+		<Text>PROTEA: We have just warped to the Silverflame system! The Astrophytum is currently orbiting a gas giant we have named Golden Titan.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>library data 2</Text>
+		<Text>BEGONIA: We just landed our shuttle on Golden Titan's moon, Bronze Observer. This moon seems to be the ideal location for studying this system!</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>5</ID>
 		<ParentID>4</ParentID>
-		<Text>library data 3</Text>
+		<Text>BEGONIA: From our site on Bronze Observer, we have discovered a massive ocean under Golden Titan's clouds, featuring multiple islands that seem to drift with the ocean's current! I wonder if more planets like this exist.</Text>
 	</TextBlock>
+	<TextBlock>
+		<ID>6</ID>
+		<ParentID>5</ParentID>
+		<Text>PROTEA: Our first landing on Golden Titan was a success! This island seems to have the same composition as Bronze Observer. Hypothesis: Bronze Observer was originaly much larger, but pieces of it broke off some time ago and landed on Golden Titan.</Text>
+	</TextBlock>
+	<TextBlock>
+		<ID>7</ID>
+		<ParentID>6</ParentID>
+		<Text>PROTEA: We just recieved many reports of stars across the universe all going supernova. Using our instruments on Bronze Observer, we have learned Silverflame's star will die in just 8 days. Our clan needs to leave here as soon as possible.</Text>
+	</TextBlock>
+
+	<ShipLogConditions>
+		<RevealFact>
+			<FactID>TLD256_EXLOGS_1</FactID>
+			<Condition>3</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_EXLOGS_2</FactID>
+			<Condition>4</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_EXLOGS_3</FactID>
+			<Condition>5</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_EXLOGS_4</FactID>
+			<Condition>6</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_EXLOGS_5</FactID>
+			<Condition>7</Condition>
+		</RevealFact>
+	</ShipLogConditions>
 
 </NomaiObject>
