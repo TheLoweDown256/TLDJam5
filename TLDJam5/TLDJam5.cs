@@ -91,6 +91,10 @@ namespace TLDJam5
         public Transform tempSHUTTLE;
 
         public int playerIsAroundSP=999;
+        public GameObject treesRoot;
+
+        int antiLag2 = 2;
+
         public void Awake()
         {
             Instance = this;
@@ -292,6 +296,8 @@ namespace TLDJam5
 
             Transform rootTransform=GameObject.Find(planetBodyPath + "/Sector/solarpaneltrees").transform;
 
+            treesRoot = rootTransform.gameObject;
+
             for (int i = 0; i < treeSpots.Count(); i++)
             {
                 Transform newTree=Instantiate(baseTree).transform;
@@ -322,6 +328,52 @@ namespace TLDJam5
             Destroy(baseTree.gameObject);
         }
 
+
+        public void Update() {
+
+            antiLag2--;
+            if (antiLag2 < 0) {
+                antiLag2 = 2;
+            }
+            if (antiLag2 != 0) { return; }
+
+            if (inJam5System && InGame)
+            {
+                playerIsAroundSP = PRE_isPlayerAroundShrinkingPlanet();
+                if (playerIsAroundSP < 2500)
+                {
+                    if (treesRoot!=null)
+                   {
+                        treesRoot.SetActive(true);
+                    }
+
+                    sunCloakUpdate();
+                    if (!shrinkingPlanetControler.planetGone)
+                    {
+                        towersOpenUpdate();
+                        warpSUpdate();
+                        if (!detatchedVent)
+                        {
+                            SurveyorProbe p = Locator.GetProbe();
+                            if (p != null)
+                            {
+                                if (ventCover == p.transform.parent)
+                                {
+                                    ventCover.gameObject.SetActive(false);
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+                else
+                {
+                    if (treesRoot != null) { treesRoot.SetActive(false); }
+                }
+            }
+        }
+
         public void FixedUpdate()
         {
             if (inJam5System&& InGame)
@@ -346,7 +398,7 @@ namespace TLDJam5
                     tempSHUTTLE = null;
                 }
 
-                playerIsAroundSP = PRE_isPlayerAroundShrinkingPlanet();
+                
 
                 if (playerIsAroundSP < 2500)
                 {
@@ -367,11 +419,11 @@ namespace TLDJam5
                             hasDoneComputerInit = true;
                         }
                     }
-                    sunCloakUpdate();
+                    
                     if (!shrinkingPlanetControler.planetGone)
                     {
                         towerOrbsUpdate();
-                        towersOpenUpdate();
+                        
                         if (roofOpen != roofOpenTarg)
                         {
                             roofOpenUpdate();
@@ -381,20 +433,9 @@ namespace TLDJam5
                         {
                             warpCoreSizeUpdate();
                         }
-                        warpSUpdate();
+                        
 
-                        if (!detatchedVent)
-                        {
-                            SurveyorProbe p = Locator.GetProbe();
-                            if (p != null)
-                            {
-                                if (ventCover == p.transform.parent)
-                                {
-                                    ventCover.gameObject.SetActive(false);
-                                }
-                            }
-
-                        }
+                        
 
                     }
                     else

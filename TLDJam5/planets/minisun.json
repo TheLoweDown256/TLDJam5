@@ -12,7 +12,7 @@
         "semiMajorAxis": 800,
         "primaryBody": "The Astrophytum",
         "isTidallyLocked": true,
-        "showOrbitLine": false,"trueAnomaly": -90
+        "showOrbitLine": false//,"trueAnomaly": -90
         //"initialRotation": 90
 
     },

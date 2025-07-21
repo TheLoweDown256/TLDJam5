@@ -16,7 +16,7 @@
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>DEUTZIA: Once that is done, you will be able to access the <![CDATA[<color=orange>Central Core</color>]]>.</Text>
+		<Text>DEUTZIA: Once that is done, the <![CDATA[<color=orange>Central Core</color>]]> can be entered from <![CDATA[<color=orange>The Astrophytum's</color>]]> noth pole.</Text>
 	</TextBlock>
 	<ShipLogConditions>
 		<RevealFact>
@@ -25,6 +25,10 @@
 		</RevealFact>
 		<RevealFact>
 			<FactID>TLD256_CORE_RUMOR2</FactID>
+			<Condition>4</Condition>
+		</RevealFact>
+		<RevealFact>
+			<FactID>TLD256_CORE_RUMOR2B</FactID>
 			<Condition>4</Condition>
 		</RevealFact>
 	</ShipLogConditions>

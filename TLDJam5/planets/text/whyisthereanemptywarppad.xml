@@ -11,7 +11,7 @@
 	<TextBlock>
 		<ID>3</ID>
 		<ParentID>2</ParentID>
-		<Text>PROTEA: <![CDATA[<color=orange>Hidden Light</color>]]>'s orbit is marked by the purple energy ring around <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
+		<Text>PROTEA: <![CDATA[<color=orange>Hidden Light</color>]]>'s orbits along the purple energy ring around <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>4</ID>

@@ -60,56 +60,59 @@ namespace TLDJam5
             GlobalMessenger<bool>.AddListener("StartSleepingAtCampfire", new Callback<bool>(this.onEnterCampFire));
         }
 
-        public void FixedUpdate()
+        public void Update()
         {
-            
+
             if (planetGone) { return; }
+
+            bool ldm = TLDJam5.Instance.playerIsAroundSP > 2000;
 
             antiLagCycle--;
             if (antiLagCycle < 0)
             {
-                antiLagCycle = 5;
-            }
-
-            if (sizeToAdd > 0)
-            {
-                float change = shrinkPerSecond / 2.5f;
-                curentScale = Mathf.Min(curentScale+change,1);
-                sizeToAdd -= change;
-                endTime += change/60f;
-            }
-            else
-            {
-                curentScale -= shrinkPerSecond / 60f; //Mathf.Max(1f-Mathf.Clamp01(Time.timeSinceLevelLoad / endTime),0.00001f);
-                endTime -= 1f / 60f;
-            }
-
-            if (transformsToScale != null)
-            {
-                if (TLDJam5.Instance.playerIsAroundSP < 2000)
+                if (ldm)
                 {
-                    for (int i = 0; i < transformsToScale.Count; i++)
+                    antiLagCycle = 100;
+                }
+                else
+                {
+                    antiLagCycle = 10;
+                }
+            }
+
+
+            if (!ldm || antiLagCycle==0)
+            {
+                if (transformsToScale != null)
+                {
+                    if (!ldm)
                     {
-
-                        float toScale = curentScale;
-                        if (baseScales.ContainsKey(transformsToScale[i]))
+                        for (int i = 0; i < transformsToScale.Count; i++)
                         {
-                            toScale *= baseScales[transformsToScale[i]];
+
+                            float toScale = curentScale;
+                            if (baseScales.ContainsKey(transformsToScale[i]))
+                            {
+                                toScale *= baseScales[transformsToScale[i]];
+                            }
+                            transformsToScale[i].localScale = Vector3.one * toScale;
                         }
-                        transformsToScale[i].localScale = Vector3.one * toScale;
                     }
-                }else
+                    else
+                    {
+                        transformsToScale[0].localScale = Vector3.one * curentScale;
+                    }
+                }
+
+                for (int i = 0; i < transformsToUnscale.Count; i++)
                 {
-                    transformsToScale[0].localScale = Vector3.one * curentScale;
+                    transformsToUnscale[i].localScale = Vector3.one / curentScale;
                 }
             }
 
             if (antiLagCycle == 0)
             {
-                for (int i = 0; i < transformsToUnscale.Count; i++)
-                {
-                    transformsToUnscale[i].localScale = Vector3.one / curentScale;
-                }
+                
 
                 for (int i = 0; i < lights.Count; i++)
                 {
@@ -129,6 +132,29 @@ namespace TLDJam5
                     sunComputer.DisplayEntry(3);
                 }
             }
+        }
+
+        public void FixedUpdate()
+        {
+            
+            if (planetGone) { return; }
+
+            
+
+            if (sizeToAdd > 0)
+            {
+                float change = shrinkPerSecond / 2.5f;
+                curentScale = Mathf.Min(curentScale+change,1);
+                sizeToAdd -= change;
+                endTime += change/60f;
+            }
+            else
+            {
+                curentScale -= shrinkPerSecond / 60f; //Mathf.Max(1f-Mathf.Clamp01(Time.timeSinceLevelLoad / endTime),0.00001f);
+                endTime -= 1f / 60f;
+            }
+
+            
 
             
         }

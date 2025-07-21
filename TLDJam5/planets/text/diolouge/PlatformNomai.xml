@@ -6,9 +6,35 @@
 		<Name>START</Name>
 		<EntryCondition>DEFAULT</EntryCondition>
 		<Dialogue>
-			<Page>Greetings traveler!</Page>
+			<Page>Hello, traveler.</Page>
+			<Page>We are currently in a troubling situation. Would you care to hear how we got here?</Page>
 		</Dialogue>
-		<DialogueTarget>ExplainEvacuation</DialogueTarget>
+		<SetCondition>TLD256_PROTEA_TALKEDTO</SetCondition>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<RequiredLogCondition>TLD256_PLATFORMNOMAI_MEET</RequiredLogCondition>
+				<Text>I'm in a hurry, can I ask you somthing?</Text>
+				<DialogueTarget>ImInAHurry</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Yes</Text>
+				<DialogueTarget>ExplainEvacuation</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>No</Text>
+				<DialogueTarget>OkBye</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>ImInAHurry</Name>
+		<Dialogue>
+			<Page>Of course!</Page>
+		</Dialogue>
+		<DialogueOptionsList>
+			<ReuseDialogueOptionsListFrom>Questions</ReuseDialogueOptionsListFrom>
+		</DialogueOptionsList>
 	</DialogueNode>
 
 
@@ -16,10 +42,12 @@
 		<Name>ExplainEvacuation</Name>
 		<Dialogue>
 			<Page>We came here from the Silverflame system to escape its dying star. Unfortunatley, our vessel, <![CDATA[<color=orange>The Astrophytum</color>]]>, suffered damage upon our arival.</Page>
-			<Page>The black hole in our Central Warp Core malfunctioned in some way, and now <![CDATA[<color=orange>The Astrophytum</color>]]> is rapidly miniaturizing into it!</Page>
-			<Page>Worse still, we couldn't even recover any of our <![CDATA[<color=orange>Exploration Logs</color>]]> as most of the computers were stuck telling us to evacuate.</Page>
-			<Page>If <![CDATA[<color=orange>The Astrophytum</color>]]> isn't fixed, we won't be able to recover our <![CDATA[<color=orange>Exploration Logs</color>]]>. And, if those logs aren't recovered, all the knowledge we gained will be lost.</Page>
+			<Page>Our Central Warp Core malfunctioned, and now <![CDATA[<color=orange>The Astrophytum</color>]]> is rapidly miniaturizing into a black hole!</Page>
+			<Page>Worse still, we couldn't even recover any of our <![CDATA[<color=orange>Exploration Logs</color>]]> from the Silverflame system as most of the computers were stuck telling us to evacuate.</Page>
+			<Page>If <![CDATA[<color=orange>The Astrophytum</color>]]> isn't fixed, we won't be able to recover our <![CDATA[<color=orange>Exploration Logs</color>]]>. And, if those logs aren't recovered, the history of the Silverflame system and the knowledge we gained will be lost.</Page>
 		</Dialogue>
+
+
 
 		<RevealFacts>
 			<FactID>TLD256_PLATFORMNOMAI_MEET</FactID>
@@ -27,17 +55,9 @@
 			<FactID>TLD256_EXPLORATIONLOGS_RUMOR</FactID>
 		</RevealFacts>
 
-
+		
 		<DialogueOptionsList>
-			<DialogueOption>
-				<RequiredLogCondition>TLD256_EXLOGS_1</RequiredLogCondition>
-				<RequiredLogCondition>TLD256_EXLOGS_2</RequiredLogCondition>
-				<RequiredLogCondition>TLD256_EXLOGS_3</RequiredLogCondition>
-				<RequiredLogCondition>TLD256_EXLOGS_4</RequiredLogCondition>
-				<RequiredLogCondition>TLD256_EXLOGS_5</RequiredLogCondition>
-				<Text>I recovered your Exploration Logs!.</Text>
-				<DialogueTarget>Ending</DialogueTarget>
-			</DialogueOption>
+		
 			<DialogueOption>
 				<Text>I can help!</Text>
 				<DialogueTarget>HowToFix</DialogueTarget>
@@ -56,16 +76,56 @@
 			<Page>If only we had enough time to fix <![CDATA[<color=orange>The Astrophytum</color>]]>...</Page>
 		</Dialogue>
 	</DialogueNode>
+	<DialogueNode>
+		<Name>OkBye</Name>
+		<Dialogue>
+			<Page>Bye for now.</Page>
+		</Dialogue>
+	</DialogueNode>
 
 	<DialogueNode>
 		<Name>HowToFix</Name>
 		<Dialogue>
 			<Page>We appreciate your offer, but I'm worried there's just no chance for us to save our exploration logs.</Page>
 			<Page>We would need to figure out what's wrong with <![CDATA[<color=orange>The Astrophytum</color>]]>, find a solution, and fix <![CDATA[<color=orange>The Astrophytum</color>]]> all before it is sucked into the black hole.</Page>
-			<Page>We only had just over 20 minutes to evacuate so, unfortunately, I don't see any way to get all that done in what little time we have...</Page>
-			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to <![CDATA[<color=orange>The Astrophytum</color>]]>, though it may be wise to bring your own ship just in case. Just make sure to evacuate if you can't fix [SP NAME] before it's completely gone.</Page>
+			<Page>We only had just over 20 minutes to evacuate, so unfortunately, I don't see any way to get all that done in what little time we have...</Page>
+			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to <![CDATA[<color=orange>The Astrophytum</color>]]>, though it may be wise to bring your own ship just in case. Just make sure to evacuate if you can't fix <![CDATA[<color=orange>The Astrophytum</color>]]> before it's fully consumed.</Page>
+			<Page>Thanks for your help and don't get crushed!</Page>
 		</Dialogue>
 	</DialogueNode>
+
+
+
+	<DialogueNode>
+		<Name>Questions</Name>
+		<EntryCondition>TLD256_PROTEA_TALKEDTO</EntryCondition>
+		<Dialogue>
+			<Page>Do you have anything to ask us?</Page>
+		</Dialogue>
+
+
+		<DialogueOptionsList>
+			<DialogueOption>
+				<RequiredLogCondition>TLD256_EXLOGS_1</RequiredLogCondition>
+				<RequiredLogCondition>TLD256_EXLOGS_2</RequiredLogCondition>
+				<RequiredLogCondition>TLD256_EXLOGS_3</RequiredLogCondition>
+				<RequiredLogCondition>TLD256_EXLOGS_4</RequiredLogCondition>
+				<RequiredLogCondition>TLD256_EXLOGS_5</RequiredLogCondition>
+				<Text>I recovered your Exploration Logs!</Text>
+				<DialogueTarget>Ending</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>How can I fix your Vessel?</Text>
+				<DialogueTarget>HowToFix</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Goodbye.</Text>
+				<DialogueTarget>OkBye</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+	
+	
 
 	<DialogueNode>
 		<Name>Ending</Name>

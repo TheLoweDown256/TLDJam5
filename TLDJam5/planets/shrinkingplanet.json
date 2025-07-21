@@ -10,7 +10,7 @@
         //"groundSize": 200
     },
     "Orbit": {
-        "siderealPeriod": 4
+        "siderealPeriod": 2.8//5
     },
 
     "MapMarker": { "enabled": true },
@@ -26,14 +26,13 @@
                 "shuttleID": "tldjam5_nshuttle",
                 "controls": {
                     "position": {
-                        "x": -2,
-                        "y": -14.70588,
-                        "z": 216.8475
+                        "x": -6.6909,"y": -25.73,
+                    "z":    216.8475
                     },
                     "rotation": {
-                        "x": 0,
-                        "y": 90.03278,
-                        "z": 90.03948
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
                     }
                 },
                 "computer": {
@@ -194,7 +193,7 @@
                 "removeComponents": true
             },
 
-            {
+           /* {
                 "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Interactibles_WhiteholeStation/Prefab_NOM_Tablet",
                 "position": {
                     "x": -3.3055,
@@ -211,7 +210,7 @@
                     "y": 1.5,
                     "z": 1.5
                 }
-            },
+            },*/
 
 
 
@@ -301,9 +300,8 @@
             {
                 "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
                 "position": {
-                    "x": -2.5964,
-                    "y": -20.9504,
-                    "z": 216.9447
+                "x":    -9.3928,"y": -30.6905,
+             "z":       216.9447
                 },
                 "rotation": {
                     "x": 357.2436,
@@ -360,7 +358,7 @@
                 "parentPath": "Sector/solarpaneltrees",
                 "rename": "paneltree",
                 "scale": 10,
-                "keepLoaded": false
+                "keepLoaded": true
             },
 
             { "rename": "NomaiComputers" }
@@ -368,7 +366,7 @@
 
         ],
         "translatorText": [
-            {
+          /*  {
                 "position": {
                     "x": -3.2926,
                     "y": -19.2271,
@@ -387,7 +385,7 @@
                 "xmlFile": "planets/text/dontuseshuttleatday.xml",
                 "type": "wall",
                 "seed": 463
-            },
+            },*/
             {
                 "xmlFile": "planets/text/evacuate.xml",
                 "type": "computer",

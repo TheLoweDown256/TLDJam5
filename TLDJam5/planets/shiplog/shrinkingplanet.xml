@@ -212,6 +212,11 @@
 			<SourceID>TLD256_TOWERSCONTROLER</SourceID>
 			<Text>The Equitorial Towers must be activated to access the Central Core.</Text>
 		</RumorFact>
+		<RumorFact>
+			<ID>TLD256_CORE_RUMOR2B</ID>
+			<SourceID>TLD256_TOWERSCONTROLER</SourceID>
+			<Text>The entrance to the Central Core is at The Astrophytum's north pole.</Text>
+		</RumorFact>
 		<ExploreFact>
 			<ID>TLD256_CORE_ENTER</ID>
 			<Text>I entered The Astrophytum's Central Core.</Text>
