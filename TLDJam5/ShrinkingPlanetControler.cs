@@ -145,8 +145,8 @@ namespace TLDJam5
                 
                     if (curentScale <= 2f / 100f)//0.02)
                     {
-                        Destroy(transformsToScale[0].gameObject);
-                        transformsToScale[0].localScale=Vector3.one*0.001f;
+                        transformsToScale[0].gameObject.SetActive(false);
+                        transformsToScale[1].localScale=Vector3.one*0.001f;
                        planetGone = true;
 
                         sunComputer.ClearAllEntries();

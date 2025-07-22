@@ -375,6 +375,7 @@ namespace TLDJam5
                                 if (ventCover == p.transform.parent)
                                 {
                                     ventCover.gameObject.SetActive(false);
+                                    Locator.GetProbe().Unanchor();
                                 }
                             }
 
