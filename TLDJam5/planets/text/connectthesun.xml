@@ -16,12 +16,12 @@
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>DEUTZIA: Yes! It works! <![CDATA[<color=orange>Hidden Light</color>]]> is expanding!</Text>
+		<Text>DEUTZIA: Yes! It works! <![CDATA[<color=orange>Hidden Light</color>]]> is expanding! It will not shrink again for as long as it detects <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>5</ID>
 		<ParentID>4</ParentID>
-		<Text>DEUTZIA: This will surely be enough solar energy to power <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
+		<Text>DEUTZIA: This will surely be enough solar energy to power <![CDATA[<color=orange>The Astrophytum</color>]]>!</Text>
 	</TextBlock>
 	<ShipLogConditions>
 		<RevealFact>

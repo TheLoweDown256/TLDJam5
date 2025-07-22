@@ -6,21 +6,21 @@
 	<TextBlock>
 		<ID>2</ID>
 		<ParentID>1</ParentID>
-		<Text>DEUTZIA: These trees are engineered to convert sunlight to energy useable by most Nomaian technology. In total, the Photovoltaic Trees installed on <![CDATA[<color=orange>The Astrophytum</color>]]> are currently producing 50 NEU (Nomaian Energy Units).</Text>
+		<Text>DEUTZIA: These trees are engineered to convert sunlight to energy useable by most Nomaian technology. In total, the Photovoltaic Trees installed on <![CDATA[<color=orange>The Astrophytum</color>]]> are currently producing over 50 NEU (Nomaian Energy Units).</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>3</ID>
 		<ParentID>2</ParentID>
-		<Text>DEUTZIA: A strange thing I've noticed is that the trees actualy produce the greatest amount of energy at 20% of their maximum size. If the Photovoltaic Trees were to grow to their full size, they would only be able to generate around 20 NEU total.</Text>
+		<Text>DEUTZIA: A strange thing I've noticed is that the trees actualy produce the greatest amount of energy at only 20% maximum growth. If the Photovoltaic Trees were to grow to their full size, they would only be able to generate around 20 NEU total.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>DEUTZIA: For this reason, it is important that we limit the Photovoltaic Trees to only 20% of their full growth potential.</Text>
+		<Text>DEUTZIA: For this reason, it is important that the Photovoltaic Trees are limited to only 20% of their full growth potential.</Text>
 	</TextBlock>
 	<ShipLogConditions>
 		<RevealFact>
-			<FactID>TLD256_HIDDEN_LIGHT_TREES</FactID>
+			<FactID>TLD256_HIDDENLIGHTSECRET_TREES</FactID>
 			<Condition>2,3</Condition>
 		</RevealFact>
 	</ShipLogConditions>

@@ -6,12 +6,12 @@
 	<TextBlock>
 		<ID>2</ID>
 		<ParentID>1</ParentID>
-		<Text>DEUTZIA: I was planning to use the white hole core from this warp pad to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core, but unfortunately it has been broken from exposure to <![CDATA[<color=orange>Hidden Light</color>]]>.</Text>
+		<Text>DEUTZIA: I was planning to use the white hole core from this warp pad to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core, but unfortunately it has been damaged from exposure to <![CDATA[<color=orange>Hidden Light</color>]]>.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>3</ID>
 		<ParentID>3</ParentID>
-		<Text>DEUTZIA: I will put this broken warp core in the storage area on top of the <![CDATA[<color=orange>Library</color>]]>, along with the white hole core that was too large to be used for this warp reciever (or <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core).</Text>
+		<Text>DEUTZIA: I will put this broken warp core in the storage area on top of the <![CDATA[<color=orange>Library</color>]]>, along with the white hole core that was exactly 2 times too large to be used for this warp reciever (or <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core).</Text>
 	</TextBlock>
 
 	<ShipLogConditions>

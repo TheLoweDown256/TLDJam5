@@ -357,10 +357,7 @@ namespace TLDJam5
                 playerIsAroundSP = PRE_isPlayerAroundShrinkingPlanet();
                 if (playerIsAroundSP < 2500)
                 {
-                    if (treesRoot != null)
-                    {
-                        treesRoot.SetActive(true);
-                    }
+                    
 
                     sunCloakUpdate();
                     if (!shrinkingPlanetControler.planetGone)
@@ -383,10 +380,18 @@ namespace TLDJam5
                     }
 
                 }
+
+              /*  if (playerIsAroundSP < 3000)
+                {
+                    if (treesRoot != null)
+                    {
+                        treesRoot.SetActive(true);
+                    }
+                }
                 else
                 {
                     if (treesRoot != null) { treesRoot.SetActive(false); }
-                }
+                }*/
             }
         }
 
@@ -445,10 +450,7 @@ namespace TLDJam5
                             roofOpenUpdate();
                         }
 
-                        if (!isTheMainCoreFixed)
-                        {
-                            warpCoreSizeUpdate();
-                        }
+                        
 
 
 
@@ -462,11 +464,20 @@ namespace TLDJam5
                 }
                     // scoutHelperDebugDeactivate();
                 
-                    if (shrinkingPlanetControler.planetGone)
+                if (shrinkingPlanetControler.planetGone)
+                {
+                   sunSizeUpdate();
+                }
+                else
+                {
+                    if (!isTheMainCoreFixed)
                     {
-                        sunSizeUpdate();
+                        warpCoreSizeUpdate();
                     }
+                }
+
                 
+
 
                 if (playerItemCarryTool == null)
                 {
@@ -752,7 +763,7 @@ namespace TLDJam5
             }
             else
             {
-                if (whiteWarpCoreScale < shrinkingPlanetControler.curentScale)
+                if (whiteWarpCoreScale < shrinkingPlanetControler.curentScale*1.15f)
                 {
                     coreTooBigVolume.SetActive(false);
                 }

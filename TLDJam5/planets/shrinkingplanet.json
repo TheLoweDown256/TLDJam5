@@ -10,7 +10,7 @@
         //"groundSize": 200
     },
     "Orbit": {
-        "siderealPeriod": 2.8//5
+        "siderealPeriod": 2.8 //5
     },
 
     "MapMarker": { "enabled": true },
@@ -478,13 +478,16 @@
                 "xmlFile": "planets/text/errorreport.xml",
                 "type": "computer",
                 "position": {
-                    "x": 63.3364,
-                    "y": 71.92762,
+                    "x": 69.04942,
+                    "y": 66.09359,
                     "z": 0
                 },
                 "parentPath": "Sector/NomaiComputers",
                 "rename": "errorReport",
-                "alignRadial": true
+                "rotation": {
+                    "z": 306
+                }
+                // "alignRadial": true
             },
             {
                 "xmlFile": "planets/text/evacuate.xml",
@@ -557,13 +560,13 @@
             },
             {
                 "position": {
-                    "x": -3.276405,
-                    "y": 24.78615,
-                    "z": -94.97821
+                    "x": -3.6691,
+                    "y": 20.6843,
+                    "z": -94.9782
                 },
                 "rotation": {
-                    "x": 83.05183,
-                    "y": 90.00004,
+                    "x": 70,
+                    "y": 90,
                     "z": 270
                 },
                 "type": "recorder",
@@ -632,8 +635,8 @@
             {
 
                 "position": {
-                    "x": 3.738731,
-                    "y": -46.94405,
+                    "x": 2.6951,
+                    "y": -47.675,
                     "z": 191.6771
                 },
                 "rotation": {
@@ -1009,7 +1012,7 @@
         {
             "texture": "planets/shrinkingplanet_rings.png",
             "unlit": true,
-            "rotationSpeed": 3.8, //3.75,//6,
+            "rotationSpeed": 6, //3.75,//6,
             "innerRadius": 760,
             "outerRadius": 840,
             "fluidType": "none"

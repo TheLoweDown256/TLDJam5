@@ -1,12 +1,12 @@
 ﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
     <TextBlock>
         <ID>1</ID>
-		<Text>BEGONIA: How do we access the <![CDATA[<color=orange>Tower Controlers</color>]]>?</Text>
+		<Text>BEGONIA: How do we access the <![CDATA[<color=orange>Towers Controler</color>]]>?</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>2</ID>
 		<ParentID>1</ParentID>
-		<Text>PROTEA: There is a loose panel straight ahead just before turning right into the <![CDATA[<color=orange>Interior Entrance</color>]]>.</Text>
+		<Text>PROTEA: Just before turning right into the <![CDATA[<color=orange>Interior Entrance</color>]]>, there is a loose panel straight ahead on the dimly lit wall.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>3</ID>

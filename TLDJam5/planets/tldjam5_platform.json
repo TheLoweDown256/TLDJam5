@@ -102,6 +102,85 @@
                     "y": 1.078844E-05,
                     "z": 53.03972
                 }
+            },
+
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Props_WhiteHoleStation/Prefab_NOM_NomaiTree_Var_1",
+                "position": {
+                    "x": -6.733777,
+                    "y": 1.215935E-05,
+                    "z": 67.95155
+                },
+                "rotation": {
+                    "x": 5.528834E-06,
+                    "y": 163.9368,
+                    "z": -1.385963E-06
+                }
+            },
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Props_WhiteHoleStation/Prefab_NOM_NomaiTree_Var_2",
+                "position": {
+                    "x": -7.166411,
+                    "y": 1.072884E-05,
+                    "z": 52.40071
+                },
+                "rotation": {
+                    "x": -4.478203E-06,
+                    "y": 326.0794,
+                    "z": 2.795212E-06
+                }
+            },
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Props_WhiteHoleStation/Prefab_NOM_NomaiTree_Var_3",
+                "position": {
+                    "x": 9.360041,
+                    "y": 1.108646E-05,
+                    "z": 55.82837
+                },
+                "rotation": {
+                    "x": 5.631706E-06,
+                    "y": 126.5827,
+                    "z": -4.022204E-06
+                }
+            },
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Props_WhiteHoleStation/Prefab_NOM_NomaiTree_Var_3",
+                "position": {
+                    "x": -10.3068,
+                    "y": 1.15633E-05,
+                    "z": 61.11716
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": 76.85824,
+                    "z": -4.877783E-06
+                }
+            },
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Props_WhiteHoleStation/Prefab_NOM_NomaiTree_Var_2",
+                "position": {
+                    "x": 2.475659,
+                    "y": 1.227856E-05,
+                    "z": 69.83636
+                },
+                "rotation": {
+                    "x": 3.957756E-06,
+                    "y": 175.7039,
+                    "z": -3.752388E-07
+                }
+            },
+            {
+                "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Props_WhiteHoleStation/Prefab_NOM_NomaiTree_Var_1",
+                "position": {
+                    "x": 8.790272,
+                    "y": 1.180172E-05,
+                    "z": 64.68549
+                },
+                "rotation": {
+                    "x": 3.759365E-06,
+                    "y": 218.7804,
+                    "z": 3.137295E-06
+                }
             }
         ],
         "dialogue": [

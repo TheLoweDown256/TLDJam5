@@ -6,7 +6,7 @@
 	<TextBlock>
 		<ID>2</ID>
 		<ParentID>1</ParentID>
-		<Text>DEUTZIA: It is an old type of Vessel from before advanced technologies such as warping had been discovered. I, however, had upgraded it with modern Nomai technology including a warp core and a gravity cannon.</Text>
+		<Text>DEUTZIA: It is an old type of Vessel from before advanced technologies such as warping had been discovered. I, however, have upgraded it with modern Nomai technology including a warp core and a gravity cannon.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>3</ID>
@@ -21,7 +21,7 @@
 	<TextBlock>
 		<ID>5</ID>
 		<ParentID>4</ParentID>
-		<Text>PROTEA: Thank you so much! I'm going to have a hard time waiting!</Text>
+		<Text>PROTEA: Thank you so much! I'm so exited to explore the universe!</Text>
 	</TextBlock>
 	
 	

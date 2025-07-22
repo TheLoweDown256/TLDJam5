@@ -11,12 +11,12 @@
 	<TextBlock>
 		<ID>3</ID>
 		<ParentID>2</ParentID>
-		<Text>PROTEA: <![CDATA[<color=orange>Hidden Light</color>]]>'s orbits along the purple energy ring around <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
+		<Text>PROTEA: <![CDATA[<color=orange>Hidden Light</color>]]> orbits along the purple energy ring around <![CDATA[<color=orange>The Astrophytum</color>]]>.</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>4</ID>
 		<ParentID>3</ParentID>
-		<Text>PROTEA: The warp core from this transmitter was repurposed to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s warp core.</Text>
+		<Text>PROTEA: The warp core from this transmitter was repurposed to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s <![CDATA[<color=orange>Central Core</color>]]>.</Text>
 	</TextBlock>
 	<ShipLogConditions>
 		<RevealFact>

@@ -14,7 +14,7 @@ namespace TLDJam5
 {
     public class ShrinkingPlanetControler : MonoBehaviour
     {
-        public float endTime=60*20;
+        public float endTime=60*18;
         public List<Transform> transformsToScale = new();
         public GravityVolume gravityVolume;
         public float surfaceGravityStart;

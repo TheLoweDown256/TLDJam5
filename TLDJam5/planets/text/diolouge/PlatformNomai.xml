@@ -9,7 +9,7 @@
 			<Page>Hello, traveler.</Page>
 			<Page>We are currently in a troubling situation. Would you care to hear how we got here?</Page>
 		</Dialogue>
-		<SetCondition>TLD256_PROTEA_TALKEDTO</SetCondition>
+		
 		<DialogueOptionsList>
 			<DialogueOption>
 				<RequiredLogCondition>TLD256_PLATFORMNOMAI_MEET</RequiredLogCondition>
@@ -32,6 +32,7 @@
 		<Dialogue>
 			<Page>Yes?</Page>
 		</Dialogue>
+		<SetCondition>TLD256_PROTEA_TALKEDTO</SetCondition>
 		<DialogueOptionsList>
 			<ReuseDialogueOptionsListFrom>Questions</ReuseDialogueOptionsListFrom>
 		</DialogueOptionsList>
@@ -43,7 +44,7 @@
 		<Dialogue>
 			<Page>We came here from the Silverflame system to escape its dying star. Unfortunatley, our vessel, <![CDATA[<color=orange>The Astrophytum</color>]]>, suffered damage upon our arival.</Page>
 			<Page>Our Central Warp Core malfunctioned, and now <![CDATA[<color=orange>The Astrophytum</color>]]> is rapidly miniaturizing into a black hole!</Page>
-			<Page>Worse still, we couldn't even recover any of our <![CDATA[<color=orange>Exploration Logs</color>]]> from the Silverflame system as most of the computers were stuck telling us to evacuate.</Page>
+			<Page>Worse still, we couldn't even recover any of our <![CDATA[<color=orange>Exploration Logs</color>]]> from the Silverflame system as most of <![CDATA[<color=orange>The Astrophytum</color>]]>'s computers were stuck telling us to evacuate.</Page>
 			<Page>If <![CDATA[<color=orange>The Astrophytum</color>]]> isn't fixed, we won't be able to recover our <![CDATA[<color=orange>Exploration Logs</color>]]>. And, if those logs aren't recovered, the history of the Silverflame system and the knowledge we gained will be lost.</Page>
 		</Dialogue>
 
@@ -92,6 +93,7 @@
 			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to <![CDATA[<color=orange>The Astrophytum</color>]]>, though it may be wise to bring your own ship just in case. </Page>
 			<Page>Just make sure to evacuate if you can't fix <![CDATA[<color=orange>The Astrophytum</color>]]> before it's fully consumed. Don't get crushed!</Page>
 		</Dialogue>
+		<SetCondition>TLD256_PROTEA_TALKEDTO</SetCondition>
 	</DialogueNode>
 
 	<DialogueNode>
