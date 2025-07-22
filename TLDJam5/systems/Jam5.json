@@ -55,6 +55,13 @@
             }
         },
         {
+            "id": "TLD256_CAMPSITE",
+            "position": {
+                "x": 650,
+                "y": 1550
+            }
+        },
+        {
             "id": "TLD256_CORE",
             "position": {
                 "x": 1740,

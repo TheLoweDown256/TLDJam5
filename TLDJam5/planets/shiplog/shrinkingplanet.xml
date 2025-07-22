@@ -26,10 +26,29 @@
 			<ID>TLD256_ASTROPHYTUM_DISCOVER</ID>
 			<Text>This is Protea's Vessel. It is currently miniaturizing into a black hole.</Text>
 		</ExploreFact>
-		<ExploreFact>
+		
+	<Entry>
+		<!-- An Entry For This Planet -->
+		<ID>TLD256_CAMPSITE</ID>
+		<!-- The ID of this entry -->
+		<Name>Campsite</Name>
+		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
+		
+		<RumorFact>
 			<ID>TLD256_ASTROPHYTUM_CAMPSITEHINT</ID>
-			<Text>I found a sign saying there is a campsite at the south pole of The Astrophytum.</Text>
+			<SourceID>TLD256_ASTROPHYTUM</SourceID>
+			<Text>There is a campsite at the south pole of The Astrophytum.</Text>
+		</RumorFact>
+		
+		<ExploreFact>
+			<ID>TLD256_CAMPSITE_1</ID>
+			<Text>I found a recording of a Nomai named Deutzia introducing Protea to The Astrophytum.</Text>
 		</ExploreFact>
+		<ExploreFact>
+			<ID>TLD256_CAMPSITE_2</ID>
+			<Text>The Astrophytum is an older Nomai Vessel with modern technology added by Deutzia.</Text>
+		</ExploreFact>
+	</Entry>
 	</Entry>
 	
 	<Entry>

@@ -30,7 +30,7 @@
 	<DialogueNode>
 		<Name>ImInAHurry</Name>
 		<Dialogue>
-			<Page>Of course!</Page>
+			<Page>Yes?</Page>
 		</Dialogue>
 		<DialogueOptionsList>
 			<ReuseDialogueOptionsListFrom>Questions</ReuseDialogueOptionsListFrom>
@@ -86,11 +86,21 @@
 	<DialogueNode>
 		<Name>HowToFix</Name>
 		<Dialogue>
-			<Page>We appreciate your offer, but I'm worried there's just no chance for us to save our exploration logs.</Page>
+			<Page>We appreciate your offer, but I'm worried there may not be enough time to save our <![CDATA[<color=orange>Exploration Logs</color>]]>.</Page>
 			<Page>We would need to figure out what's wrong with <![CDATA[<color=orange>The Astrophytum</color>]]>, find a solution, and fix <![CDATA[<color=orange>The Astrophytum</color>]]> all before it is sucked into the black hole.</Page>
-			<Page>We only had just over 20 minutes to evacuate, so unfortunately, I don't see any way to get all that done in what little time we have...</Page>
-			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to <![CDATA[<color=orange>The Astrophytum</color>]]>, though it may be wise to bring your own ship just in case. Just make sure to evacuate if you can't fix <![CDATA[<color=orange>The Astrophytum</color>]]> before it's fully consumed.</Page>
-			<Page>Thanks for your help and don't get crushed!</Page>
+			<Page>We only had just over 20 minutes to evacuate, so unfortunately, I'm doubtful there's any way to get all that done in what little time we have...</Page>
+			<Page>If you want to try anyways, you can use this shuttle behind me to warp directly to <![CDATA[<color=orange>The Astrophytum</color>]]>, though it may be wise to bring your own ship just in case. </Page>
+			<Page>Just make sure to evacuate if you can't fix <![CDATA[<color=orange>The Astrophytum</color>]]> before it's fully consumed. Don't get crushed!</Page>
+		</Dialogue>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>HowToFix2</Name>
+		<Dialogue>
+			<Page><![CDATA[<color=orange>The Astrophytum</color>]]> (our Vessel)'s Central Warp Core malfuntioned after we warped away from the Silverflame system.</Page>
+			<Page>We were unable to recover our <![CDATA[<color=orange>Exploration Logs</color>]]> durring the evacuation. Those logs have all of our knowledge we gathered at the Silverflame system.</Page>
+			<Page>In order to retrieve our <![CDATA[<color=orange>Exploration Logs</color>]]>, you must find a way to fix <![CDATA[<color=orange>The Astrophytum</color>]]> to return the computers to normal.</Page>
+			<Page>You can go to <![CDATA[<color=orange>The Astrophytum</color>]]> with the shuttle behind me or with your own ship.</Page>
 		</Dialogue>
 	</DialogueNode>
 
@@ -115,8 +125,8 @@
 				<DialogueTarget>Ending</DialogueTarget>
 			</DialogueOption>
 			<DialogueOption>
-				<Text>How can I fix your Vessel?</Text>
-				<DialogueTarget>HowToFix</DialogueTarget>
+				<Text>How can I help you?</Text>
+				<DialogueTarget>HowToFix2</DialogueTarget>
 			</DialogueOption>
 			<DialogueOption>
 				<Text>Goodbye.</Text>
@@ -131,6 +141,7 @@
 		<Name>Ending</Name>
 		<Dialogue>
 			<Page>We will take time to explore the other miniature systems in this area, then see if any nearby Nomai would be willing to share their Vessel with us.</Page>
+			<Page>Thank you so much for helping us!</Page>
 		</Dialogue>
 		<RevealFacts>
 			<FactID>TLD256_PLATFORMNOMAI_ENDED</FactID>
