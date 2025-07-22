@@ -12,7 +12,7 @@
         "semiMajorAxis": 800,
         "primaryBody": "The Astrophytum",
         "isTidallyLocked": true,
-        "showOrbitLine": false//,"trueAnomaly": -90
+        "showOrbitLine": false //,"trueAnomaly": -90
         //"initialRotation": 90
 
     },
@@ -215,6 +215,15 @@
                     "z": 0
                 },
                 "id": "TLD256_HIDDEN_LIGHT"
+            },
+            {
+                "cloaked": true,
+                "position": {
+                    "x": 0,
+                    "y": 23,
+                    "z": 0
+                },
+                "id": "TLD256_HIDDENLIGHTSECRET"
             }
         ]
     },

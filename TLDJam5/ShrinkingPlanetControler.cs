@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Mono.Cecil.Cil;
 using NAudio.Mixer;
 using OWML.Common;
 using OWML.ModHelper;
@@ -34,6 +35,9 @@ namespace TLDJam5
         public NomaiComputer sunComputer;
 
         public int antiLagCycle = 0;
+
+        public Campfire[] campfires = [null, null];
+        private bool didCampfires=false;   
 
         public void Awake()
         {
@@ -123,14 +127,31 @@ namespace TLDJam5
                     gravityVolume._surfaceAcceleration = Mathf.Max(surfaceGravityStart * (float)Math.Pow(curentScale, 1.5f) - 0.1f, 0);
                     //gravityVolume._upperSurfaceRadius = surfaceGravityRadiusStart * curentScale;
                 }
-                if (curentScale <= 2.2f / 200f)//0.02)
-                {
-                    Destroy(transformsToScale[0].gameObject);
-                    planetGone = true;
 
-                    sunComputer.ClearAllEntries();
-                    sunComputer.DisplayEntry(3);
+                if (!didCampfires)
+                {
+                    if (curentScale <= 15f / 200f)
+                    {
+                        for (int i = 0; i < campfires.Count(); i++)
+                        {
+                            campfires[i].StopRoasting();
+                            campfires[i].StopSleeping(true);
+                            campfires[i].SetInteractionEnabled(false);
+                        }
+                        didCampfires = true;
+                    }
                 }
+
+                
+                    if (curentScale <= 2f / 100f)//0.02)
+                    {
+                        Destroy(transformsToScale[0].gameObject);
+                        planetGone = true;
+
+                        sunComputer.ClearAllEntries();
+                        sunComputer.DisplayEntry(3);
+                    }
+                
             }
         }
 

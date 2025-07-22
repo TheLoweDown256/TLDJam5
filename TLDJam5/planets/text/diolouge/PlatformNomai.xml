@@ -140,12 +140,55 @@
 	<DialogueNode>
 		<Name>Ending</Name>
 		<Dialogue>
-			<Page>We will take time to explore the other miniature systems in this area, then see if any nearby Nomai would be willing to share their Vessel with us.</Page>
+			<Page>Woah. Thank you so much!</Page>
+			<Page>The history of the Silverflame system is saved!</Page>
+		</Dialogue>
+		<DialogueOptionsList>
+		<DialogueOption>
+			<Text>Unfortunately, your Vessel won't stay fixed for long.</Text>
+		<DialogueTarget>Ending_2</DialogueTarget>
+		</DialogueOption>
+			</DialogueOptionsList>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>Ending_2</Name>
+		<Dialogue>
+			<Page>Dispite how much <![CDATA[<color=orange>The Astrophytum</color>]]> means to me, I think I can accept this.</Page>
+			<Page>You wrote down everything else you found there in your own Ship Log, right?</Page>
+			<Page>That means the history of <![CDATA[<color=orange>The Astrophytum</color>]]> is also preserved.</Page>
+			<Page>I have seen at least one other Nomai around here, so I'm sure we can find someone willing to share their Vessel with us.</Page>
+			<Page>We will take time to explore the other miniature systems in this area. Now that our <![CDATA[<color=orange>Exploration Logs</color>]]> are no longer in immediate danger, I recommend you explore them too.</Page>
 			<Page>Thank you so much for helping us!</Page>
 		</Dialogue>
 		<RevealFacts>
 			<FactID>TLD256_PLATFORMNOMAI_ENDED</FactID>
 		</RevealFacts>
+		<DialogueTarget>Ending_Choice</DialogueTarget>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>Ending_Choice</Name>
+		<Dialogue>
+			<Page>Will you resume exploring right away, or do you want to rest here for a little bit?</Page>
+		</Dialogue>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<Text>I want to explore! [CONTINUE CURRENT LOOP]</Text>
+				<DialogueTarget>Ending_Continue</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>I'll rest for a little bit. [SEE END SCREEN]</Text>
+				<ConditionToSet>TLD256_SHOW_ENDSCREEN</ConditionToSet>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>Ending_Continue</Name>
+		<Dialogue>
+			<Page>We hope to see you again. Safe travels!</Page>
+		</Dialogue>
 	</DialogueNode>
 
 </DialogueTree>

@@ -26,8 +26,9 @@
                 "shuttleID": "tldjam5_nshuttle",
                 "controls": {
                     "position": {
-                        "x": -6.6909,"y": -25.73,
-                    "z":    216.8475
+                        "x": -6.6909,
+                        "y": -25.73,
+                        "z": 216.8475
                     },
                     "rotation": {
                         "x": 90,
@@ -193,7 +194,7 @@
                 "removeComponents": true
             },
 
-           /* {
+            /* {
                 "path": "WhiteholeStation_Body/Sector_WhiteholeStation/Interactibles_WhiteholeStation/Prefab_NOM_Tablet",
                 "position": {
                     "x": -3.3055,
@@ -282,7 +283,8 @@
             {
                 "path": "TimberHearth_Body/Sector_TH/Sector_Village/Interactables_Village/LaunchTower/Effects_HEA_Campfire",
                 "position": { "y": -200.7001 },
-                "alignRadial": true
+                "alignRadial": true,
+                "rename": "campfire_1"
             },
             {
                 "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
@@ -300,8 +302,9 @@
             {
                 "path": "Moon_Body/Sector_THM/Interactables_THM/Prefab_HEA_FuelTank",
                 "position": {
-                "x":    -9.3928,"y": -30.6905,
-             "z":       216.9447
+                    "x": -9.3928,
+                    "y": -30.6905,
+                    "z": 216.9447
                 },
                 "rotation": {
                     "x": 357.2436,
@@ -346,7 +349,8 @@
                     "x": 332.1842,
                     "y": 342.9231,
                     "z": 303.3583
-                }
+                },
+                "rename": "campfire_2"
             },
 
             { "rename": "solarpaneltrees" },
@@ -643,6 +647,36 @@
             {
 
                 "position": {
+                    "x": -1.715447,
+                    "y": -96.33233,
+                    "z": 3.014235
+                },
+                "rotation": {
+                    "x": 4.777311,
+                    "y": 183.8905,
+                    "z": 165.3199
+                },
+                "type": "cairnTH",
+                "xmlFile": "planets/text/labels/library.xml"
+            },
+            {
+
+                "position": {
+                    "x": 1.637197,
+                    "y": -96.25534,
+                    "z": -3.869029
+                },
+                "rotation": {
+                    "x": 4.553862,
+                    "y": 3.037045,
+                    "z": 165.2505
+                },
+                "type": "cairnTH",
+                "xmlFile": "planets/text/labels/bedroom.xml"
+            },
+            {
+
+                "position": {
                     "x": -0.7054,
                     "y": 23.8552,
                     "z": -95.7063
@@ -722,6 +756,24 @@
                 "xmlFile": "planets/text/labels/westtower.xml"
             }
 
+        ],
+        "entryLocation": [
+            {
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 220
+                },
+                "id": "TLD256_ASTROPHYTUM"
+            },
+            {
+                "position": {
+                    "x": 0,
+                    "y": -201,
+                    "z": 0
+                },
+                "id": "TLD256_CAMPSITE"
+            }
         ]
     },
     "Volumes": {
