@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="NewHorizons">
-      <HintPath>..\..\..\..\..\Users\TheLoweDown\AppData\Roaming\OuterWildsModManager\OWML\Mods\xen.NewHorizons\NewHorizons.dll</HintPath>
+      <HintPath>lib\NewHorizons.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
