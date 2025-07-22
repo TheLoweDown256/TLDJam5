@@ -677,6 +677,36 @@
             {
 
                 "position": {
+                    "x": 2.666516,
+                    "y": -96.32054,
+                    "z": 1.736486
+                },
+                "rotation": {
+                    "x": 5.439943,
+                    "y": 276.45,
+                    "z": 165.5497
+                },
+                "type": "cairnTH",
+                "xmlFile": "planets/text/labels/interiorentrance.xml"
+            },
+            {
+
+                "position": {
+                    "x": 91.63026,
+                    "y": 24.81828,
+                    "z": -2.272278
+                },
+                "rotation": {
+                    "x": 299.114,
+                    "y": 268.0528,
+                    "z": 1.701357
+                },
+                "type": "cairnTH",
+                "xmlFile": "planets/text/labels/crossroad.xml"
+            },
+            {
+
+                "position": {
                     "x": -0.7054,
                     "y": 23.8552,
                     "z": -95.7063
@@ -774,6 +804,87 @@
                     "z": 0
                 },
                 "id": "TLD256_CAMPSITE",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": 176.079,
+                    "y": 22.62934,
+                    "z": 0.3091431
+                },
+                "id": "TLD256_TOWERSCONTROLER",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": 83.88599,
+                    "y": 38.73191,
+                    "z": 4.457254
+                },
+                "id": "TLD256_INTERIORENTRANCE",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": -68.69081,
+                    "y": 0.03441417,
+                    "z": 68.83476
+                },
+                "id": "TLD256_WARPPLATFORM",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": 0,
+                    "y": -8.946007,
+                    "z": -100.2071
+                },
+                "id": "TLD256_BEDROOM",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": 0,
+                    "y": 26.2714,
+                    "z": -102.9543
+                },
+                "id": "TLD256_WARPSTABILIZER",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": 6.30312,
+                    "y": -1.775735,
+                    "z": 112.1746
+                },
+                "id": "TLD256_STORAGE",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 97.40976
+                },
+                "id": "TLD256_EXPLORATIONLOGS",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": 0,
+                    "y": -11.07606,
+                    "z": 102.311
+                },
+                "id": "TLD256_LIBRARY",
+                "parentPath": "Volumes"
+            },
+            {
+                "position": {
+                    "x": 0,
+                    "y": 65,
+                    "z": 0
+                },
+                "id": "TLD256_CORE",
                 "parentPath": "Volumes"
             }
         ]

@@ -18,7 +18,7 @@
     },
     "Star": {
         "size": 40,
-        "solarLuminosity": 0.9,
+        "solarLuminosity": 1,//0.9,
         "lightTint": {
             "r": 150, //200,
             "g": 158, //240,
@@ -34,7 +34,7 @@
             "g": 60,
             "b": 10
         },*/
-        "lightRadius": 1650, //2100
+        "lightRadius": 1680,
 
         "stellarDeathType": "none"
     },
