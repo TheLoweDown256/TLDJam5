@@ -151,6 +151,13 @@ namespace TLDJam5
 
             tempSHUTTLE = GameObject.Find("TheLoweDown256_Jam5_Platform_Body/Sector/Prefab_QM_Shuttle")?.transform;
 
+            Transform tempPlanetBody= GameObject.Find(planetBodyPath).transform;
+            ModHelper.Console.WriteLine("tempPlanetBody: " + tempPlanetBody, MessageType.Info);
+            Transform tempPlanetBodySector= tempPlanetBody.Find("Sector");
+            ModHelper.Console.WriteLine("tempPlanetBodySector: " + tempPlanetBodySector, MessageType.Info);
+            Transform tempPlanetBodySectorShPl = tempPlanetBodySector.Find("shrinkingplanet");
+            ModHelper.Console.WriteLine("tempPlanetBodySectorShPl: " + tempPlanetBodySectorShPl, MessageType.Info);
+
 
             GameObject planetBody = GameObject.Find(planetBodyPath);
             planetRigidbody = planetBody.GetAttachedOWRigidbody();
@@ -166,48 +173,48 @@ namespace TLDJam5
             NomaiComputer temp3 = GameObject.Find(sunBodyPath + "/Sector/sunComputer").GetComponent<NomaiComputer>();
             shrinkingPlanetControler.sunComputer = temp3;
 
-
-            GameObject.Find(planetBodyPath + "/Sector/Structure_NOM_WarpReceiver_CaveTwin_Copper/Socket").transform.localScale *= 2;
+            var temp4 = tempPlanetBodySector.Find("Structure_NOM_WarpReceiver_CaveTwin_Copper/Socket");
+            temp4.localScale *= 2;
 
             roofOpen = 0f;
             roofOpenTarg = 0f;
             towerOrbsSolved = false;
             towerOrbStayTimes = [0, 0];
-            towerOrbs[0] = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/EastOrbInterface/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
-            towerOrbs[1] = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/WestOrbInterface/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
+            towerOrbs[0] = tempPlanetBodySector.Find("TowerPuzzle/EastOrbInterface/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
+            towerOrbs[1] = tempPlanetBodySector.Find("TowerPuzzle/WestOrbInterface/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
             towerOrbs[0]._occupiedSlot = towerOrbs[0]._slots[0];
             towerOrbs[1]._occupiedSlot = towerOrbs[1]._slots[0];
 
             nComputers = new();
             hasDoneComputerInit = false;
 
-            roofPivot = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/roof/roof_pivot").transform;
-            roofLocations[0] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/roof/pivot_closed").transform;
-            roofLocations[1] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/roof/pivot_open").transform;
+            roofPivot = tempPlanetBodySectorShPl.Find("planet/roof/roof_pivot");
+            roofLocations[0] = tempPlanetBodySectorShPl.Find("planet/roof/pivot_closed");
+            roofLocations[1] = tempPlanetBodySectorShPl.Find("planet/roof/pivot_open");
 
             for (int i = 0; i < 5; i++)
             {
-                GameObject light = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/light/inLight" + i);
+                GameObject light = tempPlanetBodySectorShPl.Find("light/inLight" + i).gameObject;
                 shrinkingPlanetControler.lights.Add(light.GetComponent<Light>());
             }
 
             gaveCoreDontShrinkEntry = false;
             warpSStage = 0;
 
-            coreTooBigVolume = GameObject.Find(planetBodyPath + "/Sector/CoreTooBigVolume");
+            coreTooBigVolume = tempPlanetBodySector.Find("CoreTooBigVolume").gameObject;
 
             detatchedVent = false;
-            ventCover = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/interior/ventcover").transform;
+            ventCover = tempPlanetBodySector.Find("shrinkingplanet/planet/interior/ventcover");
 
             Transform tempTr;
-            tempTr = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/EastOrbInterface/Prefab_NOM_InterfaceOrb").transform;
+            tempTr = tempPlanetBodySector.Find("TowerPuzzle/EastOrbInterface/Prefab_NOM_InterfaceOrb");
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
             shrinkingPlanetControler.baseScales.Add(tempTr, 2.5f * 0.85f);
-            tempTr = GameObject.Find(planetBodyPath + "/Sector/TowerPuzzle/WestOrbInterface/Prefab_NOM_InterfaceOrb").transform;
+            tempTr = tempPlanetBodySector.Find("TowerPuzzle/WestOrbInterface/Prefab_NOM_InterfaceOrb");
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
             shrinkingPlanetControler.baseScales.Add(tempTr, 2.5f * 0.85f);
 
-            tempTr = GameObject.Find(planetBodyPath + "/Sector/WarpStabilizer/Prefab_NOM_InterfaceOrb").transform;
+            tempTr = tempPlanetBodySector.Find("WarpStabilizer/Prefab_NOM_InterfaceOrb");
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
             shrinkingPlanetControler.baseScales.Add(tempTr, 2f * 0.85f);
 
@@ -215,7 +222,7 @@ namespace TLDJam5
             warpSOrb._occupiedSlot = warpSOrb._slots[0];
 
 
-            tempTr = GameObject.Find(planetBodyPath + "/Sector/Prefab_NOM_WarpTransmitter").transform;
+            tempTr = tempPlanetBodySector.Find("Prefab_NOM_WarpTransmitter").transform;
             tempTr.Find("Props_NOM_WarpCoreBlack").gameObject.SetActive(false);
             tempTr.Find("PointLight_NOM_WarpCoreBlack (1)").gameObject.SetActive(false);
             tempTr.Find("Structure_NOM_WarpTransmitter/Structure_NOM_WarpTransmitter_Effects").gameObject.SetActive(false);
@@ -230,12 +237,12 @@ namespace TLDJam5
             miniSunSize = 40;
             miniSunEvolutionControler = GameObject.Find(sunBodyPath + "/Sector/Star").GetComponent<StarEvolutionController>();
 
-            GameObject.Find(planetBodyPath + "/Sector/Atmosphere").SetActive(false);
+            tempPlanetBodySector.Find("Atmosphere").gameObject.SetActive(false);
 
-            blackHole = GameObject.Find(planetBodyPath + "/Sector/DontScale/BlackHole");
+            blackHole = tempPlanetBodySector.Find("DontScale/BlackHole").gameObject;
 
 
-            whiteWarpCore = GameObject.Find(planetBodyPath + "/Sector/ShrinkingPlanet_WarpCoreWhite");
+            whiteWarpCore = tempPlanetBodySector.Find("ShrinkingPlanet_WarpCoreWhite").gameObject;
             whiteWarpCoreScale = 2;
             if (whiteWarpCore == null)
             {
@@ -244,34 +251,34 @@ namespace TLDJam5
 
             isTheMainCoreFixed = false;
 
-            towerClosedRoofs[0] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_east/roof/closed");
-            towerClosedRoofs[1] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_west/roof/closed");
-            towerOpenRoofs[0] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_east/roof/open");
-            towerOpenRoofs[1] = GameObject.Find(planetBodyPath + "/Sector/shrinkingplanet/planet/towers/tower_west/roof/open");
+            towerClosedRoofs[0] = tempPlanetBodySectorShPl.Find("planet/towers/tower_east/roof/closed").gameObject;
+            towerClosedRoofs[1] = tempPlanetBodySectorShPl.Find("planet/towers/tower_west/roof/closed").gameObject;
+            towerOpenRoofs[0] = tempPlanetBodySectorShPl.Find("planet/towers/tower_east/roof/open").gameObject;
+            towerOpenRoofs[1] = tempPlanetBodySectorShPl.Find("planet/towers/tower_west/roof/open").gameObject;
 
             towerOpenRoofs[0].SetActive(false);
             towerOpenRoofs[1].SetActive(false);
             towerRoofsOpen = false;
 
-            shrinkingPlanetControler.campfires[0] = GameObject.Find(planetBodyPath + "/Sector/campfire_1/Controller_Campfire").GetComponent<Campfire>();
-            shrinkingPlanetControler.campfires[1] = GameObject.Find(planetBodyPath + "/Sector/campfire_2/Controller_Campfire").GetComponent<Campfire>();
+            shrinkingPlanetControler.campfires[0] = tempPlanetBodySector.Find("campfire_1/Controller_Campfire").GetComponent<Campfire>();
+            shrinkingPlanetControler.campfires[1] = tempPlanetBodySector.Find("campfire_2/Controller_Campfire").GetComponent<Campfire>();
 
-            towerOpenSwitch = GameObject.Find(planetBodyPath + "/Sector/OpenTowerSwRoot/OpenTowerSwitch/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
+            towerOpenSwitch = tempPlanetBodySector.Find("OpenTowerSwRoot/OpenTowerSwitch/Prefab_NOM_InterfaceOrb").GetComponent<NomaiInterfaceOrb>();
             towerOpenSwitch._occupiedSlot = towerOpenSwitch._slots[0];
 
             shrinkingPlanetControler.transformsToScale.Add(towerOpenSwitch.transform);
             shrinkingPlanetControler.baseScales.Add(towerOpenSwitch.transform, 2f * 0.85f);
 
-            warpSComputer = GameObject.Find(planetBodyPath + "/Sector/WarpSComputer").GetComponent<NomaiComputer>();
+            warpSComputer = tempPlanetBodySector.Find("WarpSComputer").GetComponent<NomaiComputer>();
 
 
-            tempTr = GameObject.Find(planetBodyPath + "/Sector/Prefab_GravityCannon/NomaiInterfaceOrb_Body").transform;
+            tempTr = tempPlanetBodySector.Find("Prefab_GravityCannon/NomaiInterfaceOrb_Body").transform;
             shrinkingPlanetControler.transformsToScale.Add(tempTr);
             shrinkingPlanetControler.baseScales.Add(tempTr, 0.9f);
 
-            whiteWarpCoreSocket = GameObject.Find(planetBodyPath + "/Sector/Structure_NOM_WarpReceiver_CaveTwin_Copper").GetComponent<NHItemSocket>();
+            whiteWarpCoreSocket = tempPlanetBodySector.Find("Structure_NOM_WarpReceiver_CaveTwin_Copper").GetComponent<NHItemSocket>();
 
-            tempTr = GameObject.Find(planetBodyPath + "/Sector/NomaiComputers").transform;
+            tempTr = tempPlanetBodySector.Find("NomaiComputers");
 
             nComputers = new();
             for (int i = 0; i < tempTr.childCount; i++)
