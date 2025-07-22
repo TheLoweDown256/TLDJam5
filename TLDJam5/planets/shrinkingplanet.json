@@ -764,7 +764,8 @@
                     "y": 0,
                     "z": 220
                 },
-                "id": "TLD256_ASTROPHYTUM"
+                "id": "TLD256_ASTROPHYTUM",
+                "parentPath": "Volumes"
             },
             {
                 "position": {
@@ -772,7 +773,8 @@
                     "y": -201,
                     "z": 0
                 },
-                "id": "TLD256_CAMPSITE"
+                "id": "TLD256_CAMPSITE",
+                "parentPath": "Volumes"
             }
         ]
     },
