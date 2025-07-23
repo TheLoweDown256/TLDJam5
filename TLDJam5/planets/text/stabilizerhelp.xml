@@ -1,6 +1,6 @@
 ﻿<NomaiObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/text_schema.xsd">
-    <TextBlock>
-        <ID>1</ID>
+	<TextBlock>
+		<ID>1</ID>
 		<Text>DEUTZIA: <![CDATA[<color=orange>Warp Stabilizer</color>]]> troubleshooting:</Text>
 	</TextBlock>
 	<TextBlock>
@@ -18,6 +18,12 @@
 		<ParentID>3</ParentID>
 		<Text>DEUTZIA: Keep in mind the <![CDATA[<color=orange>Warp Stabilizer</color>]]> will not be able to fix <![CDATA[<color=orange>The Astrophytum</color>]]> on its own in the event of warp-induced damage. For this reason, is is extremely important to always activate the <![CDATA[<color=orange>Warp Stabilizer</color>]]> before warping.</Text>
 	</TextBlock>
+	<TextBlock>
+		<ID>5</ID>
+		<ParentID>4</ParentID>
+		<Text>DEUTZIA: (Though, if something does go wrong, the <![CDATA[<color=orange>Warp Stabilizer</color>]]> would give you some more time to fix the problem.)</Text>
+	</TextBlock>
+	
 	<ShipLogConditions>
 		<RevealFact>
 			<FactID>TLD256_HLS_WARPSTABILIZER_HOW2PRIME</FactID>
@@ -25,8 +31,8 @@
 		</RevealFact>
 		<RevealFact>
 			<FactID>TLD256_HLS_WARPSTABILIZER_WARNING</FactID>
-			<Condition>4</Condition>
+			<Condition>4,5</Condition>
 		</RevealFact>
 	</ShipLogConditions>
-	
+
 </NomaiObject>

@@ -79,7 +79,7 @@
 				<!-- An explore fact that belongs to this entry -->
 				<ID>TLD256_HLS_WARPSTABILIZER_WARNING</ID>
 				<!-- The ID of this fact -->
-				<Text>The Warp Stabilizer must be activated before warping to prevent damage to The Astrophytum.</Text>
+				<Text>While the Warp Stabilizer can't fix damage to The Astrophytum after warping, it can give more time to fix the issue.</Text>
 			</ExploreFact>
 		</Entry>
 	</Entry>

@@ -615,7 +615,8 @@
                     "z": 13.15394
                 },
                 "type": "recorder",
-                "xmlFile": "planets/text/controlerrec.xml"
+                "xmlFile": "planets/text/
+                    rec.xml"
             },
             {
 

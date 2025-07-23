@@ -6,7 +6,7 @@
 	<TextBlock>
 		<ID>2</ID>
 		<ParentID>1</ParentID>
-		<Text>Warp Stabilizer: PRIMED</Text>
+		<Text>Warp Stabilizer: PRIMED (will activate once power is restored)</Text>
 	</TextBlock>
 	<TextBlock>
 		<ID>3</ID>

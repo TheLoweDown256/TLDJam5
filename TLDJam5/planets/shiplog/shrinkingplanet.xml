@@ -60,7 +60,7 @@
 
 		<ExploreFact>
 			<ID>TLD256_BEDROOM_VENTCOVER</ID>
-			<Text>A Nomai named Protea normaly accesses the Towers Controler by throwing an object at a loose tile just before the Interior Entrance.</Text>
+			<Text>A Nomai named Protea normaly accesses the Towers Controller by throwing an object at a loose tile just before the Interior Entrance.</Text>
 		</ExploreFact>
 			
 			
@@ -81,7 +81,13 @@
 				<!-- An explore fact that belongs to this entry -->
 				<ID>TLD256_WARPSTABILIZER_TREES</ID>
 				<!-- The ID of this fact -->
-				<Text>All Photovoltaic Trees on The Astrophytum are fully grown, yet are only producing 20 "NEU".</Text>
+				<Text>All Photovoltaic Trees on The Astrophytum were at full size, yet are only producing 20 "NEU".</Text>
+			</ExploreFact>
+			<ExploreFact>
+				<!-- An explore fact that belongs to this entry -->
+				<ID>TLD256_WARPSTABILIZER_HURRY</ID>
+				<!-- The ID of this fact -->
+				<Text>Protea's clan was in a rush to escape a dying star and warped without activating the Warp Stabilizer.</Text>
 			</ExploreFact>
 			<ExploreFact>
 				<!-- An explore fact that belongs to this entry -->
@@ -91,10 +97,11 @@
 			</ExploreFact>
 			<ExploreFact>
 				<!-- An explore fact that belongs to this entry -->
-				<ID>TLD256_WARPSTABILIZER_HURRY</ID>
+				<ID>TLD256_WARPSTABILIZER_ACTIVATED</ID>
 				<!-- The ID of this fact -->
-				<Text>Protea's clan was in a rush to escape a dying star and warped without activating the Warp Stabilizer.</Text>
+				<Text>The Astrophytum grew in size a while after I primed the Warp Stabilizer.</Text>
 			</ExploreFact>
+			
 		</Entry>
 		
 	</Entry>
@@ -147,16 +154,16 @@
 		<!-- An Entry For This Planet -->
 		<ID>TLD256_TOWERSCONTROLER</ID>
 		<!-- The ID of this entry -->
-		<Name>Towers Controler</Name>
+		<Name>Towers Controller</Name>
 		<Curiosity>TLD256_EXPLORATIONLOGS</Curiosity>
 		<RumorFact>
 			<ID>TLD256_TOWERSCONTROLER_RUMOR</ID>
 			<SourceID>TLD256_BEDROOM</SourceID>
-			<Text>Access to the Towers Controler is blocked by a loose panel.</Text>
+			<Text>Access to the Towers Controller is blocked by a loose panel.</Text>
 		</RumorFact>
 		<ExploreFact>
 			<ID>TLD256_TOWERSCONTROLER_DISCOVER</ID>
-			<Text>I entered the room with the Towers Controler by launching my scout at a loose wall panel.</Text>
+			<Text>I entered the room with the Towers Controller by launching my scout at a loose wall panel.</Text>
 		</ExploreFact>
 		<ExploreFact>
 			<ID>TLD256_TOWERSCONTROLER_HOW2OPEN</ID>
@@ -178,7 +185,7 @@
 		</RumorFact>
 		<ExploreFact>
 			<ID>TLD256_TOWERS_OPENED</ID>
-			<Text>I entered an Equitorial Tower after opening them with the Towers Controler.</Text>
+			<Text>I entered an Equitorial Tower after opening them with the Towers Controller.</Text>
 		</ExploreFact>
 		<ExploreFact>
 			<ID>TLD256_TOWERS_COLORS</ID>

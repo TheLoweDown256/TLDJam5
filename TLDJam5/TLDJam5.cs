@@ -78,6 +78,8 @@ namespace TLDJam5
         public NomaiInterfaceOrb warpSOrb;
         public int warpSStage = 0;
 
+        public bool wasCoreHeldLastFrame = false;
+
         public Transform ventCover;
         public bool detatchedVent = false;
 
@@ -92,6 +94,8 @@ namespace TLDJam5
 
         public int playerIsAroundSP = 999;
         public GameObject treesRoot;
+
+        private SuitNotificationDisplay suitNotifDisplay;
 
         int antiLag2 = 2;
 
@@ -158,6 +162,8 @@ namespace TLDJam5
             Transform tempPlanetBodySectorShPl = tempPlanetBodySector.Find("shrinkingplanet");
             ModHelper.Console.WriteLine("tempPlanetBodySectorShPl: " + tempPlanetBodySectorShPl, MessageType.Info);
 
+            suitNotifDisplay = GameObject.Find("PlayerHUD/HelmetOnUI/UICanvas/Notifications")?.GetComponent<SuitNotificationDisplay>();
+
 
             GameObject planetBody = GameObject.Find(planetBodyPath);
             planetRigidbody = planetBody.GetAttachedOWRigidbody();
@@ -175,6 +181,8 @@ namespace TLDJam5
 
             var temp4 = tempPlanetBodySector.Find("Structure_NOM_WarpReceiver_CaveTwin_Copper/Socket");
             temp4.localScale *= 2;
+
+            wasCoreHeldLastFrame = false;
 
             roofOpen = 0f;
             roofOpenTarg = 0f;
@@ -575,7 +583,7 @@ namespace TLDJam5
                     warpSComputer.ClearAllEntries();
                     warpSComputer.DisplayEntry(3);
                     shrinkingPlanetControler.sizeToAdd = 0.55f;
-                    // Locator.GetShipLogManager().RevealFact("TLD256_WARPSTABILIZER_PRIMED", true, true);
+                     Locator.GetShipLogManager().RevealFact("TLD256_WARPSTABILIZER_ACTIVATED", true, true);
                 }
             }
             else if (warpSStage == 11)
@@ -771,12 +779,19 @@ namespace TLDJam5
                 {
                     coreTooBigVolume.SetActive(true);
                 }
-                if (!gaveCoreDontShrinkEntry)
+               
+            }
+
+            if (isHeld!= wasCoreHeldLastFrame)
+            {
+                suitNotifDisplay.PushNotification(new NotificationData("White Hole Core at " + Mathf.Floor(whiteWarpCoreScale * 100f + 0.5f) + "% normal size"));
+                if (!isHeld && !gaveCoreDontShrinkEntry)
                 {
                     Locator.GetShipLogManager().RevealFact("TLD256_STORAGE_NOSHRINK", true, true);
                     gaveCoreDontShrinkEntry = true;
                 }
             }
+            wasCoreHeldLastFrame = isHeld;
 
             if (whiteWarpCoreScale < shrinkingPlanetControler.curentScale)
             {
