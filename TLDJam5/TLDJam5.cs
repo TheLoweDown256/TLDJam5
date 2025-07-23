@@ -596,8 +596,8 @@ namespace TLDJam5
 
         public void sunCloakUpdate()
         {
-            if (Locator.GetPlayerBody() == null || GameObject.Find(sunBodyPath).GetAttachedOWRigidbody() == null) { return; }
-            float pDist = (Locator.GetPlayerBody().GetPosition() - GameObject.Find(sunBodyPath).GetAttachedOWRigidbody().GetPosition()).magnitude;
+            if (Locator.GetPlayerBody() == null || sunRigidbody == null) { return; }
+            float pDist = (Locator.GetPlayerBody().GetPosition() - sunRigidbody.GetPosition()).magnitude;
             if (isSunCloakingActive)
             {
                 if (pDist < cloakDisableRadius)
@@ -817,7 +817,7 @@ namespace TLDJam5
 
         public bool doesShrinkingPlanetExist()
         {
-            return inJam5System && !shrinkingPlanetControler.planetGone;
+            return inJam5System && !shrinkingPlanetControler.planetGone && planetRigidbody!=null;
         }
 
         public bool isPlayerAroundShrinkingPlanet()
