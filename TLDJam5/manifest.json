@@ -4,7 +4,7 @@
   "author": "TheLoweDown256",
   "name": "Core Collapse",
   "uniqueName": "TheLoweDown256.TLDJam5",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "owmlVersion": "2.15.1",
     "dependencies": [ "xen.NewHorizons", "xen-42.ModJam5" ]
 }
