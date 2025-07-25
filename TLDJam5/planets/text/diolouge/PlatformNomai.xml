@@ -156,7 +156,7 @@
 	<DialogueNode>
 		<Name>Ending_2</Name>
 		<Dialogue>
-			<Page>Dispite how much <![CDATA[<color=orange>The Astrophytum</color>]]> means to me, I think I can accept this.</Page>
+			<Page>Despite how much <![CDATA[<color=orange>The Astrophytum</color>]]> means to me, I think I can accept this.</Page>
 			<Page>You wrote down everything else you found there in your own Ship Log, right?</Page>
 			<Page>That means the history of <![CDATA[<color=orange>The Astrophytum</color>]]> is also preserved.</Page>
 			<Page>I have seen at least one other Nomai around here, so I'm sure we can find someone willing to share their Vessel with us.</Page>
