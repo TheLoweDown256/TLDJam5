@@ -11,7 +11,7 @@
 	<TextBlock>
 		<ID>3</ID>
 		<ParentID>3</ParentID>
-		<Text>DEUTZIA: I will put this broken warp core in the storage area on top of the <![CDATA[<color=orange>Library</color>]]>, along with the white hole core that was 2 times too large to be used for this warp reciever (or <![CDATA[<color=orange>The Astrophytum</color>]]>'s <![CDATA[<color=orange>Central Core</color>]]>).</Text>
+		<Text>DEUTZIA: I will put this broken warp core in the storage area on top of the <![CDATA[<color=orange>Library</color>]]>, along with the white hole core that was too big to be used for this warp reciever (or <![CDATA[<color=orange>The Astrophytum</color>]]>'s <![CDATA[<color=orange>Central Core</color>]]>).</Text>
 	</TextBlock>
 
 	<ShipLogConditions>
