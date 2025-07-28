@@ -144,7 +144,7 @@
 			</ExploreFact>
 			<ExploreFact>
 				<ID>TLD256_STORAGE_NOSHRINK</ID>
-				<Text>The white hole core does not change size with the planet when I hold it.</Text>
+				<Text>The white hole core only changes size while dropped on The Astrophytum.</Text>
 			</ExploreFact>
 			
 		</Entry>
