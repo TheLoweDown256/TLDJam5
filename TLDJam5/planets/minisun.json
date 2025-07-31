@@ -277,7 +277,8 @@
     "ShipLog": {
         "mapMode": {
             "invisibleWhenHidden": true,
-            "revealedSprite": "planets/shiplog/img/MAP_HiddenLight.png"
+            "revealedSprite": "planets/shiplog/img/MAP_HiddenLight.png",
+            "scale":0.5
         },
         "xmlFile": "planets/shiplog/hiddenlight.xml",
         "spriteFolder": "planets/shiplog/img/entries"
