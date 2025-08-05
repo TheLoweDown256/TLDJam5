@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Mono.Cecil.Cil;
+using NAudio.Mixer;
+using OWML.Common;
+using OWML.ModHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using Mono.Cecil.Cil;
-using NAudio.Mixer;
-using OWML.Common;
-using OWML.ModHelper;
 using UnityEngine;
+using static System.Net.WebRequestMethods;
 
 namespace TLDJam5
 {
@@ -31,6 +32,8 @@ namespace TLDJam5
         public float curentScale = 1;
 
         public float sizeToAdd = 0;
+
+        public PlayerAttachPoint campfireAttPt = null;
 
       
 
@@ -154,7 +157,14 @@ namespace TLDJam5
                         sunComputer.ClearAllEntries();
                         sunComputer.DisplayEntry(3);
                     }
-                
+
+
+                if (campfireAttPt != null)
+                {
+                  //  TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (Before): " + campfireAttPt._attachOffset, MessageType.Info);
+                    campfireAttPt.SetAttachOffset(correctPlayerOffset((curentScale * 3f + 1f) / 4f));
+                   // TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (After): " + campfireAttPt._attachOffset, MessageType.Info);
+                }
             }
         }
 
@@ -203,13 +213,14 @@ namespace TLDJam5
             if (attPt != null)
             {
                // TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (Before): "+ attPt._attachOffset, MessageType.Info);
-                attPt.SetAttachOffset(attPt._attachOffset /= ((curentScale*3f+1f)/4f));
-               // TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (After): " + attPt._attachOffset, MessageType.Info);
+                attPt.SetAttachOffset(correctPlayerOffset((curentScale * 3f + 1f) / 4f));
+                //TLDJam5.Instance.ModHelper.Console.WriteLine("AttachPoint (After): " + attPt._attachOffset, MessageType.Info);
             }
             else
             {
                 TLDJam5.Instance.ModHelper.Console.WriteLine("players attach point is null >::(",MessageType.Error);
             }
+            campfireAttPt = attPt;
         }
         public void onExitCampFire()
         {
@@ -219,6 +230,16 @@ namespace TLDJam5
             }
             Transform player = Locator._playerTransform;
             player.localScale = Vector3.one;
+            campfireAttPt = null;
+        }
+
+        public Vector3 correctPlayerOffset(float divScale)
+        {
+            Vector3 temp = Locator.GetPlayerTransform().localPosition;
+            temp = new Vector3(temp.x, 0f, temp.z) ;
+            temp = temp.normalized * 2f + Vector3.up;
+
+            return temp/ divScale;
         }
     }
 }
