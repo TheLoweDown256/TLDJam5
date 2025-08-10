@@ -167,6 +167,7 @@
 		<RevealFacts>
 			<FactID>TLD256_PLATFORMNOMAI_ENDED</FactID>
 		</RevealFacts>
+		<SetPersistentCondition>TLD256_CORECOLLAPSE_DONE_FORJAMHUB</SetPersistentCondition>
 		<SetCondition>TLD256_PROTEA_POSTENDING</SetCondition>
 		<DialogueTarget>Ending_Choice</DialogueTarget>
 	</DialogueNode>

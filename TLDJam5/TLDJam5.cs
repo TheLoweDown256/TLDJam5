@@ -99,6 +99,8 @@ namespace TLDJam5
 
         int antiLag2 = 2;
 
+      //  public bool hasDoneJamHubThing=true;
+
         public void Awake()
         {
             Instance = this;
@@ -143,7 +145,15 @@ namespace TLDJam5
                 isSunCloakingActive = true;
                 sunCloakingObject = GameObject.Find(sunBodyPath + "/Sector/CloakingField");
                 postNHInit();
+               // hasDoneJamHubThing = false;
+
             }
+
+            bool hasBeatMod = (PlayerData.GetShipLogFactSave("TLD256_PLATFORMNOMAI_ENDED")?.revealOrder ?? -1) > -1;
+            ModHelper.Console.WriteLine("hasBeatMod: " + hasBeatMod, MessageType.Info);
+            PlayerData.SetPersistentCondition("TLD256_CORECOLLAPSE_DONE_FORJAMHUB", hasBeatMod);
+
+
 
         }
 
@@ -352,6 +362,25 @@ namespace TLDJam5
 
         public void Update()
         {
+
+           /* if (!hasDoneJamHubThing)
+            {
+                var temp1 = Locator.GetShipLogManager();
+                ModHelper.Console.WriteLine("temp1: " + temp1, MessageType.Info);
+                if (temp1 != null)
+                {
+                    var temp2 = temp1.GetFact("TLD256_PLATFORMNOMAI_ENDED");
+                    ModHelper.Console.WriteLine("temp2: " + temp2, MessageType.Info);
+                    var temp3 = temp2.IsRevealed();
+                    ModHelper.Console.WriteLine("temp3: " + temp3, MessageType.Info);
+                    if (temp3)
+                    {
+                        ModHelper.Console.WriteLine("adding the thing for jamhub", MessageType.Info);
+                        PlayerData.SetPersistentCondition("TLD256_CORECOLLAPSE_DONE_FORJAMHUB", true);
+                    }
+                    hasDoneJamHubThing = true;
+                }
+            }*/
 
             antiLag2--;
             if (antiLag2 < 0)

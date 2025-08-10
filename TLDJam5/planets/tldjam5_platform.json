@@ -195,6 +195,15 @@
                 "range": 4,
                 "xmlFile": "planets/text/diolouge/PlatformNomai.xml"
             }
+            /* {
+                "position": {
+                    "y": 3,
+                    "z": 30
+                },
+                "radius": 5,
+                "range": 4,
+                "xmlFile": "planets/text/diolouge/TLD256.xml"
+            }*/
         ],
         "entryLocation": [
             {
