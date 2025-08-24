@@ -11,6 +11,7 @@ using NewHorizons.Components.SizeControllers;
 using System.Security.Policy;
 using NewHorizons.Components.Props;
 using System.Collections.Generic;
+using static NewHorizons.Handlers.PlanetGraphHandler;
 
 namespace TLDJam5
 {
@@ -98,6 +99,8 @@ namespace TLDJam5
         private SuitNotificationDisplay suitNotifDisplay;
 
         int antiLag2 = 2;
+
+        private GameObject him;
 
       //  public bool hasDoneJamHubThing=true;
 
@@ -308,6 +311,9 @@ namespace TLDJam5
 
                 }
             }
+
+            him = GameObject.Find("TheLoweDown256_Jam5_Platform_Body/Sector/TOP_SECRET/Geswaldo");
+            him.SetActive(PlayerData.GetPersistentCondition("TLD256_CC_GESWALDO_CAN_APPEAR"));
 
         }
 
@@ -623,11 +629,57 @@ namespace TLDJam5
 
 
 
-        public static void OnExitConversation()
+        public void OnExitConversation()
         {
             if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_SHOW_ENDSCREEN"))
             {
                 Locator.GetDeathManager().KillPlayer(DeathType.Meditation);
+            }
+            if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_ERNESTO_NEXTLOOP"))
+            {
+                Locator.GetDeathManager().KillPlayer(DeathType.CrushedByElevator);
+            }
+            if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_RESETSCALE"))
+            {
+                if (shrinkingPlanetControler.planetGone) { 
+                    for (int i = 0; i < shrinkingPlanetControler.transformsToScale[0].childCount; i++)
+                    {
+                        shrinkingPlanetControler.transformsToScale[0].GetChild(i).gameObject.SetActive(false);
+                    }
+                    shrinkingPlanetControler.planetGone = false;
+                }
+                shrinkingPlanetControler.dontDelete = false;
+                shrinkingPlanetControler.curentScale = 1;
+            }
+            else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_RESETSPEED"))
+            {
+                shrinkingPlanetControler.shrinkPerSecond = shrinkingPlanetControler.defaultShrinkPerSecond;
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ISINVERTSPEED", false);
+            }
+           else  if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_ZEROSPEED"))
+            {
+                shrinkingPlanetControler.shrinkPerSecond = 0;
+            }
+           else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_DOUBLESPEED"))
+            {
+                shrinkingPlanetControler.shrinkPerSecond *=2f;
+            }
+            else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_HALFSPEED"))
+            {
+                shrinkingPlanetControler.shrinkPerSecond *= 0.5f;
+            }
+            else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_INVERTSPEED"))
+            {
+                shrinkingPlanetControler.shrinkPerSecond *= -1f;
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ISINVERTSPEED",!DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ISINVERTSPEED"));
+            }
+            else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_INSIDEOUT"))
+            {
+                shrinkingPlanetControler.dontDelete = true;
+                shrinkingPlanetControler.curentScale *= -1f;
+                GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/shelfs").SetActive(false);
+                GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/beds").SetActive(false);
+                GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/beds (1)").SetActive(false);
             }
         }
 

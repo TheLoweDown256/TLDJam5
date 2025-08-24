@@ -181,6 +181,24 @@
                     "y": 218.7804,
                     "z": 3.137295E-06
                 }
+            },
+            { "rename": "TOP_SECRET" },
+            {
+                "rename": "Geswaldo",
+                "path": "GiantsDeep_Body/Sector_GD/Sector_GDInterior/Jellyfish_GDInterior/Jellyfish_Pivot (1)/Jellyfish_Body/Beast_GD_Jellyfish_v4",
+                "position": {
+                    "x": -3.662531,
+                    "y": 1.6,
+                    "z": 50.21136
+                },
+                "rotation": {
+                    "x": 3.902182E-06,
+                    "y": 127.1868,
+                    "z": -3.990479E-06
+                },
+                "scale": 0.08,
+                "parentPath": "Sector/TOP_SECRET",
+                "deactivationCondition": "TLD256_CC_GESWALDO_STOP"
             }
         ],
         "dialogue": [
@@ -194,6 +212,14 @@
                 "radius": 1.5,
                 "range": 4,
                 "xmlFile": "planets/text/diolouge/PlatformNomai.xml"
+            },
+            {
+                "isRelativeToParent": true,
+                "position": {
+                    "y": 0
+                },
+                "xmlFile": "planets/text/diolouge/Geswaldo.xml",
+                "parentPath": "Sector/TOP_SECRET/Geswaldo"
             }
             /* {
                 "position": {

@@ -1,0 +1,118 @@
+﻿<DialogueTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/dialogue_schema.xsd">
+	<NameField>Geswaldo</NameField>
+
+
+	<DialogueNode>
+		<Name>START</Name>
+		<EntryCondition>DEFAULT</EntryCondition>
+		<Dialogue>
+			<Page>Hey its me Geswaldo the magic talking jellyfish.</Page>
+			<Page>I can mess with The Astrophytum's size so thats cool I guess. <![CDATA[<size=3>(I take no responsibility if you break something)</size>]]></Page>
+		</Dialogue>
+		<SetCondition>TLD256_CC_GESWALDO_TALKED_TO_THIS_LOOP</SetCondition>
+		<DialogueTarget>MAIN</DialogueTarget>
+	</DialogueNode>
+
+
+	<DialogueNode>
+		<Name>MAIN</Name>
+		<EntryCondition>TLD256_CC_GESWALDO_TALKED_TO_THIS_LOOP</EntryCondition>
+		<Dialogue>
+			<Page>Anything you want?</Page>
+		</Dialogue>
+
+		<DialogueOptionsList>
+			<DialogueOption>
+				<Text>Reset The Astrophytum's scale.</Text>
+				<DialogueTarget>SURE</DialogueTarget>
+				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_RESETSCALE</ConditionToSet>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Reset the size change speed.</Text>
+				<DialogueTarget>SURE</DialogueTarget>
+				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_RESETSPEED</ConditionToSet>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Set the size change speed to 0.</Text>
+				<DialogueTarget>SURE</DialogueTarget>
+				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_ZEROSPEED</ConditionToSet>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Double the size change speed.</Text>
+				<DialogueTarget>SURE</DialogueTarget>
+				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_DOUBLESPEED</ConditionToSet>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Half the size change speed.</Text>
+				<DialogueTarget>SURE</DialogueTarget>
+				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_HALFSPEED</ConditionToSet>
+			</DialogueOption>
+			<DialogueOption>
+				<CancelledCondition>TLD256_CC_GESWALDO_ISINVERTSPEED</CancelledCondition>
+				<Text>Make The Astrophytum grow instead of shrink.</Text>
+				<DialogueTarget>INVERTSPEED</DialogueTarget>
+				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_INVERTSPEED</ConditionToSet>
+			</DialogueOption>
+			<DialogueOption>
+				<RequiredCondition>TLD256_CC_GESWALDO_ISINVERTSPEED</RequiredCondition>
+				<Text>Make The Astrophytum shrink instead of grow.</Text>
+				<DialogueTarget>SURE</DialogueTarget>
+				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_INVERTSPEED</ConditionToSet>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Turn the Astrophytum inside-out.</Text>
+				<DialogueTarget>INSIDEOUT</DialogueTarget>
+				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_INSIDEOUT</ConditionToSet>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Can you stop being on this platform?</Text>
+				<DialogueTarget>STOP</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Bye.</Text>
+				<DialogueTarget>BYE</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+
+	</DialogueNode>
+
+
+	<DialogueNode>
+		<Name>SURE</Name>
+		<Dialogue>
+			<Page>Ok.</Page>
+		</Dialogue>
+	</DialogueNode>
+	<DialogueNode>
+		<Name>INVERTSPEED</Name>
+		<Dialogue>
+			<Page>Core espalloC</Page>
+		</Dialogue>
+	</DialogueNode>
+	<DialogueNode>
+		<Name>INSIDEOUT</Name>
+		<Dialogue>
+			<Page>mutyportsA</Page>
+		</Dialogue>
+	</DialogueNode>
+
+
+	<DialogueNode>
+		<Name>STOP</Name>
+		<Dialogue>
+			<Page>Uh ok sure.</Page>
+			<Page>Talk to Ernesto if you want me back.</Page>
+		</Dialogue>
+		<SetCondition>TLD256_CC_GESWALDO_STOP</SetCondition>
+		<DisablePersistentCondition>TLD256_CC_GESWALDO_CAN_APPEAR</DisablePersistentCondition>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>BYE</Name>
+		<Dialogue>
+			<Page>Ok bye.</Page>
+		</Dialogue>
+	</DialogueNode>
+
+</DialogueTree>
+

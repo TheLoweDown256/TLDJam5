@@ -1,0 +1,83 @@
+﻿<DialogueTree xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/dialogue_schema.xsd">
+	<NameField>Ernesto</NameField>
+
+
+	<DialogueNode>
+		<Name>START</Name>
+		<EntryCondition>DEFAULT</EntryCondition>
+		<Dialogue>
+			<Page>hey its me ernesto the magic talking anglerfish</Page>
+		</Dialogue>
+
+		<DialogueOptionsList>
+			<DialogueOption>
+				<RequiredLogCondition>TLD256_PLATFORMNOMAI_ENDED</RequiredLogCondition>
+				<RequiredPersistentCondition>TLD256_CC_ERNESTO_TALKED_TO_EVER</RequiredPersistentCondition>
+				<Text>I beat the mod</Text>
+				<DialogueTarget>BEAT_MOD</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>What are you doing here?</Text>
+				<DialogueTarget>2</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>2</Name>
+		<Dialogue>
+			<Page>i was just in the middle of space when this big spaceship planet thing almost crushed me</Page>
+			<Page>and then after that i got sucked into a black hole but that was just a minor inconvenience</Page>
+			<Page>anyways talk to me again after you beat this mod geswaldo and i have something cool to show you</Page>
+		</Dialogue>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<RequiredLogCondition>TLD256_PLATFORMNOMAI_ENDED</RequiredLogCondition>
+				<Text>But I did beat the mod!</Text>
+				<DialogueTarget>BEAT_MOD</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Bye</Text>
+				<DialogueTarget>END</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>BEAT_MOD</Name>
+		<Dialogue>
+			<Page>oh cool</Page>
+			<Page>ill tell Geswaldo to meet you at the central station next loop i think he has the suprise for you</Page>
+		</Dialogue>
+		<SetPersistentCondition>TLD256_CC_GESWALDO_CAN_APPEAR</SetPersistentCondition>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<Text>But I don't want to wait unti next loop!</Text>
+				<DialogueTarget>NEXTLOOP</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Cool thanks.</Text>
+				<DialogueTarget>END</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>NEXTLOOP</Name>
+		<Dialogue>
+			<Page>here let me help you with that</Page>
+		</Dialogue>
+		<SetCondition>TLD256_CC_ERNESTO_NEXTLOOP</SetCondition>
+	</DialogueNode>
+
+	<DialogueNode>
+		<Name>END</Name>
+		<Dialogue>
+			<Page>ok bye</Page>
+		</Dialogue>
+		<SetPersistentCondition>TLD256_CC_ERNESTO_TALKED_TO_EVER</SetPersistentCondition>
+		<SetCondition>TLD256_CC_ERNESTO_TALKED_TO_THIS_LOOP</SetCondition>
+	</DialogueNode>
+
+</DialogueTree>
+

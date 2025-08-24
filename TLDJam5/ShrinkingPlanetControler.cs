@@ -42,7 +42,11 @@ namespace TLDJam5
         public int antiLagCycle = 0;
 
         public Campfire[] campfires = [null, null];
-        private bool didCampfires=false;   
+        private bool didCampfires=false;
+
+        private GameObject him;
+        public bool dontDelete = false;
+        public float defaultShrinkPerSecond;
 
         public void Awake()
         {
@@ -61,12 +65,16 @@ namespace TLDJam5
             }
             transformsToUnscale.Add(this.transform.Find("Sector/Ring"));
 
-            shrinkPerSecond = 1f / endTime;
+            defaultShrinkPerSecond = 1f / endTime;
+            shrinkPerSecond = defaultShrinkPerSecond;
 
             GlobalMessenger.AddListener("ExitRoastingMode", new Callback(this.onExitCampFire));
             GlobalMessenger.AddListener("StopSleepingAtCampfire", new Callback(this.onExitCampFire));
             GlobalMessenger<Campfire>.AddListener("EnterRoastingMode", new Callback<Campfire>(this.onEnterCampFire));
             GlobalMessenger<bool>.AddListener("StartSleepingAtCampfire", new Callback<bool>(this.onEnterCampFire));
+
+            him = this.transform.Find("RFVolume/TOP_SECRET/Ernesto").gameObject;
+            him.SetActive(false);
         }
 
         public void Update()
@@ -147,16 +155,25 @@ namespace TLDJam5
                     }
                 }
 
-                
-                    if (curentScale <= 2f / 100f)//0.02)
+
+                if (curentScale <= 2f / 100f)//0.02)
+                {
+                    if (!dontDelete)
                     {
-                        transformsToScale[0].gameObject.SetActive(false);
-                        transformsToScale[1].localScale=Vector3.one*0.001f;
-                       planetGone = true;
+                        for (int i = 0; i < transformsToScale[0].childCount; i++)
+                        {
+                            transformsToScale[0].GetChild(i).gameObject.SetActive(false);
+                        }
+                        transformsToScale[1].localScale = Vector3.one * 0.001f;
+                        planetGone = true;
+
+                        him.SetActive(true);
+
 
                         sunComputer.ClearAllEntries();
                         sunComputer.DisplayEntry(3);
                     }
+                }
 
 
                 if (campfireAttPt != null)
