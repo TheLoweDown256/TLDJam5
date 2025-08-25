@@ -4,8 +4,7 @@ Help a group of Nomai save their knowledge from destruction. Made for the 5th Ou
 
 Also Includes:
 - 6 achievements (for Achievements+)
-- 1 Ernsesto
-- 1 Geswaldo
+- Ernsesto & Geswaldo
 
  
 ⠀
