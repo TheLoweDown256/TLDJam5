@@ -3,7 +3,7 @@
 Help a group of Nomai save their knowledge from destruction. Made for the 5th Outer Wilds Mod Jam.
 
 Also Includes:
-- 6 achievements
+- 6 achievements (for Achievements+)
 - 1 Ernsesto
 - 1 Geswaldo
 
