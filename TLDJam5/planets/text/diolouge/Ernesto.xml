@@ -9,6 +9,8 @@
 			<Page>hey its me ernesto the magic talking anglerfish</Page>
 		</Dialogue>
 
+		<SetCondition>TLD256_CC_ERNESTO_TALKFORACHIEVEMENT</SetCondition>
+		
 		<DialogueOptionsList>
 			<DialogueOption>
 				<RequiredLogCondition>TLD256_PLATFORMNOMAI_ENDED</RequiredLogCondition>
@@ -26,7 +28,7 @@
 	<DialogueNode>
 		<Name>2</Name>
 		<Dialogue>
-			<Page>i was just in the middle of space when this big spaceship planet thing almost crushed me</Page>
+			<Page>i was just swimming in the middle of space when this big spaceship planet thing almost crushed me</Page>
 			<Page>and then after that i got sucked into a black hole but that was just a minor inconvenience</Page>
 			<Page>anyways talk to me again after you beat this mod geswaldo and i have something cool to show you</Page>
 		</Dialogue>
@@ -56,7 +58,7 @@
 				<DialogueTarget>NEXTLOOP</DialogueTarget>
 			</DialogueOption>
 			<DialogueOption>
-				<Text>Cool thanks.</Text>
+				<Text>Cool, thanks.</Text>
 				<DialogueTarget>END</DialogueTarget>
 			</DialogueOption>
 		</DialogueOptionsList>

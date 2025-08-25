@@ -7,20 +7,71 @@
 		<EntryCondition>DEFAULT</EntryCondition>
 		<Dialogue>
 			<Page>Hey its me Geswaldo the magic talking jellyfish.</Page>
-			<Page>I can mess with The Astrophytum's size so thats cool I guess. <![CDATA[<size=3>(I take no responsibility if you break something)</size>]]></Page>
+			<Page>I figured out how to hack into The Astrophytum's ShrinkingPlanetControler so now I can mess with its scale.</Page>
 		</Dialogue>
+		
 		<SetCondition>TLD256_CC_GESWALDO_TALKED_TO_THIS_LOOP</SetCondition>
-		<DialogueTarget>MAIN</DialogueTarget>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<RequiredPersistentCondition>TLD256_CC_GESWALDO_TALKED_TO_EVER</RequiredPersistentCondition>
+				<Text>I'm in a time loop! I've already heard all this!</Text>
+				<DialogueTarget>1</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>How did you do that?</Text>
+				<DialogueTarget>2</DialogueTarget>
+			</DialogueOption>
+			<DialogueOption>
+				<Text>Did you misspell <![CDATA["Control<i>L</i>er"]]>?</Text>
+				<DialogueTarget>3</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
 	</DialogueNode>
 
+	<DialogueNode>
+		<Name>1</Name>
+		<Dialogue>
+			<Page>Yeah I know I just thought you might want to hear it again.</Page>
+		</Dialogue>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<Text><![CDATA[>::(]]></Text>
+				<DialogueTarget>MAIN</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+	<DialogueNode>
+		<Name>2</Name>
+		<Dialogue>
+			<Page>I pressed random buttons on my keyboard until something happened.</Page>
+		</Dialogue>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<Text>Makes sense.</Text>
+				<DialogueTarget>MAIN</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
+	<DialogueNode>
+		<Name>3</Name>
+		<Dialogue>
+			<Page>No thats the dev's fault not mine.</Page>
+		</Dialogue>
+		<DialogueOptionsList>
+			<DialogueOption>
+				<Text>Ok.</Text>
+				<DialogueTarget>MAIN</DialogueTarget>
+			</DialogueOption>
+		</DialogueOptionsList>
+	</DialogueNode>
 
 	<DialogueNode>
 		<Name>MAIN</Name>
 		<EntryCondition>TLD256_CC_GESWALDO_TALKED_TO_THIS_LOOP</EntryCondition>
 		<Dialogue>
-			<Page>Anything you want?</Page>
+			<Page>Anything you want? <![CDATA[<size=10>(I take no responsibility if you break something)</size>]]></Page>
 		</Dialogue>
-
+		<SetPersistentCondition>TLD256_CC_GESWALDO_TALKED_TO_EVER</SetPersistentCondition>
 		<DialogueOptionsList>
 			<DialogueOption>
 				<Text>Reset The Astrophytum's scale.</Text>
@@ -60,7 +111,7 @@
 				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_INVERTSPEED</ConditionToSet>
 			</DialogueOption>
 			<DialogueOption>
-				<Text>Turn the Astrophytum inside-out.</Text>
+				<Text>Invert The Astrophytum's scale.</Text>
 				<DialogueTarget>INSIDEOUT</DialogueTarget>
 				<ConditionToSet>TLD256_CC_GESWALDO_ACTION_INSIDEOUT</ConditionToSet>
 			</DialogueOption>

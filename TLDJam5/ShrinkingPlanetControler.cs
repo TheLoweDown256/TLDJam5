@@ -175,6 +175,10 @@ namespace TLDJam5
                     }
                 }
 
+                if (curentScale > 2500 / 200)
+                {
+                    TLDJam5.Instance.AchievementsAPI.EarnAchievement("CORECOLLAPSE.TOOBIG");
+                }
 
                 if (campfireAttPt != null)
                 {

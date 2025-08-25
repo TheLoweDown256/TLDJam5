@@ -42,5 +42,23 @@ namespace TLDJam5
             }
             return true;
         }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(DeathManager), nameof(DeathManager.KillPlayer))]
+        public static void DeathManager_KillPlayer_Prefix(ref DeathType deathType)
+        {
+            if (PlayerState.IsInsideShuttle() && !TLDJam5.Instance.isSunCloakingActive)
+            {
+                TLDJam5.Instance.AchievementsAPI.EarnAchievement("CORECOLLAPSE.HIDDENLIGHTCRASH");
+            }
+            else if(deathType==DeathType.BlackHole && TLDJam5.Instance.playerIsAroundSP < 20)
+            {
+                TLDJam5.Instance.AchievementsAPI.EarnAchievement("CORECOLLAPSE.BLACKHOLEDEATH");
+            }
+            else if (deathType == DeathType.Crushed && TLDJam5.Instance.playerIsAroundSP>197f*TLDJam5.Instance.shrinkingPlanetControler.curentScale && TLDJam5.Instance.isPlayerAroundShrinkingPlanet())
+            {
+                TLDJam5.Instance.AchievementsAPI.EarnAchievement("CORECOLLAPSE.CRUSHEDBYSHIP");
+            }
+        }
     }
 }

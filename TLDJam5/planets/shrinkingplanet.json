@@ -7,7 +7,7 @@
         "surfaceSize": 200,
         "surfaceGravity": 14,
         "centerOfSolarSystem": true
-        //"groundSize": 200
+      //  "groundSize": 200
     },
     "Orbit": {
         "siderealPeriod": 2.8 //5

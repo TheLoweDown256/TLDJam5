@@ -102,7 +102,14 @@ namespace TLDJam5
 
         private GameObject him;
 
-      //  public bool hasDoneJamHubThing=true;
+        public IAchievements AchievementsAPI;
+
+        private OWRigidbody centralStationBody;
+        public bool isReadyForReevacuate = false;
+
+        private GameObject hiddenLightSpeedTrap;
+
+        //  public bool hasDoneJamHubThing=true;
 
         public void Awake()
         {
@@ -130,6 +137,27 @@ namespace TLDJam5
             NewHorizons.GetStarSystemLoadedEvent().AddListener(OnStarSystemLoaded);
 
             GlobalMessenger.AddListener("ExitConversation", OnExitConversation);
+
+
+            AchievementsAPI = ModHelper.Interaction.TryGetModApi<IAchievements>("xen.AchievementTracker");
+
+            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.REEVACUATE", false, this);
+            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.REEVACUATE", TextTranslation.Language.ENGLISH, "Reevacuation", "Fly back to the Central Station with the Nomai shuttle.");
+            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.CRUSHEDBYSHIP", true, this);
+            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.CRUSHEDBYSHIP", TextTranslation.Language.ENGLISH, "Hey, what's under here?", "Get crushed on the surface of The Astrophytum.");
+            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.HIDDENLIGHTCRASH", true, this);
+            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.HIDDENLIGHTCRASH", TextTranslation.Language.ENGLISH, "Only Fly at Night", "Crash the Nomai shuttle into the invisible star.");
+            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.BLACKHOLEDEATH", true, this);
+            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.BLACKHOLEDEATH", TextTranslation.Language.ENGLISH, "So close.", "Fly into the black hole.");
+            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.ERNESTO", false, this);
+            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.ERNESTO", TextTranslation.Language.ENGLISH, "Ernesto", "Find him.");
+            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.TOOBIG", true, this);
+            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.TOOBIG", TextTranslation.Language.ENGLISH, "Jam Rules Violation", "Grow The Astrophytum beyond a 2500m radius.");
+
+
+
+            GlobalMessenger.AddListener("EnterShuttle", OnEnterShuttle);
+            GlobalMessenger.AddListener("ExitShuttle", OnExitShuttle);
         }
 
         /*public void OnCompleteSceneLoad(OWScene previousScene, OWScene newScene)
@@ -315,6 +343,10 @@ namespace TLDJam5
             him = GameObject.Find("TheLoweDown256_Jam5_Platform_Body/Sector/TOP_SECRET/Geswaldo");
             him.SetActive(PlayerData.GetPersistentCondition("TLD256_CC_GESWALDO_CAN_APPEAR"));
 
+            centralStationBody=GameObject.Find("CentralStation_Body").GetAttachedOWRigidbody();
+            isReadyForReevacuate = false;
+
+            hiddenLightSpeedTrap = GameObject.Find(sunBodyPath + "/Sector/SpeedTrapVolume");
         }
 
         public void makeSolarPanelTrees()
@@ -424,6 +456,25 @@ namespace TLDJam5
 
                 }
 
+                if (PlayerState.IsInsideShuttle())
+                {
+                    float shuttleDist = (centralStationBody.GetPosition() - Locator.GetPlayerBody().GetPosition()).sqrMagnitude;
+                    if (!isReadyForReevacuate)
+                    {
+                        if (shuttleDist > 250000)
+                        {
+                            isReadyForReevacuate = true;
+                        }
+                    }
+                    else
+                    {
+                        if (shuttleDist < 250000)
+                        {
+                            AchievementsAPI.EarnAchievement("CORECOLLAPSE.REEVACUATE");
+                        }
+                    }
+                }
+
               /*  if (playerIsAroundSP < 3000)
                 {
                     if (treesRoot != null)
@@ -435,6 +486,22 @@ namespace TLDJam5
                 {
                     if (treesRoot != null) { treesRoot.SetActive(false); }
                 }*/
+            }
+        }
+
+        private void OnEnterShuttle()
+        {
+            if (hiddenLightSpeedTrap != null)
+            {
+                hiddenLightSpeedTrap.SetActive(false);
+            }
+        }
+
+        private void OnExitShuttle()
+        {
+            if (hiddenLightSpeedTrap != null)
+            {
+                hiddenLightSpeedTrap.SetActive(true);
             }
         }
 
@@ -631,6 +698,10 @@ namespace TLDJam5
 
         public void OnExitConversation()
         {
+            if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_ERNESTO_TALKFORACHIEVEMENT"))
+            {
+                AchievementsAPI.EarnAchievement("CORECOLLAPSE.ERNESTO");
+            }
             if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_SHOW_ENDSCREEN"))
             {
                 Locator.GetDeathManager().KillPlayer(DeathType.Meditation);
@@ -644,34 +715,43 @@ namespace TLDJam5
                 if (shrinkingPlanetControler.planetGone) { 
                     for (int i = 0; i < shrinkingPlanetControler.transformsToScale[0].childCount; i++)
                     {
-                        shrinkingPlanetControler.transformsToScale[0].GetChild(i).gameObject.SetActive(false);
+                        shrinkingPlanetControler.transformsToScale[0].GetChild(i).gameObject.SetActive(true);
                     }
                     shrinkingPlanetControler.planetGone = false;
                 }
                 shrinkingPlanetControler.dontDelete = false;
                 shrinkingPlanetControler.curentScale = 1;
+                GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/shelfs").SetActive(true);
+                GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/beds").SetActive(true);
+                GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/beds (1)").SetActive(true);
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ACTION_RESETSCALE", false);
             }
             else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_RESETSPEED"))
             {
                 shrinkingPlanetControler.shrinkPerSecond = shrinkingPlanetControler.defaultShrinkPerSecond;
                 DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ISINVERTSPEED", false);
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ACTION_RESETSPEED", false);
             }
            else  if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_ZEROSPEED"))
             {
                 shrinkingPlanetControler.shrinkPerSecond = 0;
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ACTION_ZEROSPEED", false);
             }
            else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_DOUBLESPEED"))
             {
                 shrinkingPlanetControler.shrinkPerSecond *=2f;
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ACTION_DOUBLESPEED", false);
             }
             else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_HALFSPEED"))
             {
                 shrinkingPlanetControler.shrinkPerSecond *= 0.5f;
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ACTION_HALFSPEED", false);
             }
             else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_INVERTSPEED"))
             {
                 shrinkingPlanetControler.shrinkPerSecond *= -1f;
                 DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ISINVERTSPEED",!DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ISINVERTSPEED"));
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ACTION_INVERTSPEED", false);
             }
             else if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_GESWALDO_ACTION_INSIDEOUT"))
             {
@@ -680,6 +760,7 @@ namespace TLDJam5
                 GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/shelfs").SetActive(false);
                 GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/beds").SetActive(false);
                 GameObject.Find("TheAstrophytum_Body/Sector/shrinkingplanet_details/beds (1)").SetActive(false);
+                DialogueConditionManager.SharedInstance.SetConditionState("TLD256_CC_GESWALDO_ACTION_INSIDEOUT", false);
             }
         }
 
