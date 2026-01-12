@@ -109,6 +109,8 @@ namespace TLDJam5
 
         private GameObject hiddenLightSpeedTrap;
 
+        public bool achievmentsEnabled = false;
+
         //  public bool hasDoneJamHubThing=true;
 
         public void Awake()
@@ -138,26 +140,29 @@ namespace TLDJam5
 
             GlobalMessenger.AddListener("ExitConversation", OnExitConversation);
 
-
-            AchievementsAPI = ModHelper.Interaction.TryGetModApi<IAchievements>("xen.AchievementTracker");
-
-            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.REEVACUATE", false, this);
-            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.REEVACUATE", TextTranslation.Language.ENGLISH, "Reevacuation", "Fly back to the Central Station with the Nomai shuttle.");
-            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.CRUSHEDBYSHIP", true, this);
-            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.CRUSHEDBYSHIP", TextTranslation.Language.ENGLISH, "Hey, what's under here?", "Get crushed on the surface of The Astrophytum.");
-            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.HIDDENLIGHTCRASH", true, this);
-            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.HIDDENLIGHTCRASH", TextTranslation.Language.ENGLISH, "Only Fly at Night", "Crash the Nomai shuttle into the invisible star.");
-            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.BLACKHOLEDEATH", true, this);
-            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.BLACKHOLEDEATH", TextTranslation.Language.ENGLISH, "So close.", "Fly into the black hole.");
-            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.ERNESTO", false, this);
-            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.ERNESTO", TextTranslation.Language.ENGLISH, "Ernesto", "Find him.");
-            AchievementsAPI.RegisterAchievement("CORECOLLAPSE.TOOBIG", true, this);
-            AchievementsAPI.RegisterTranslation("CORECOLLAPSE.TOOBIG", TextTranslation.Language.ENGLISH, "Jam Rules Violation", "Grow The Astrophytum beyond a 2500m radius.");
-
-
-
             GlobalMessenger.AddListener("EnterShuttle", OnEnterShuttle);
             GlobalMessenger.AddListener("ExitShuttle", OnExitShuttle);
+
+
+            AchievementsAPI = ModHelper.Interaction.TryGetModApi<IAchievements>("xen.AchievementTracker");
+            achievmentsEnabled = AchievementsAPI != null;//ModHelper.Interaction.ModExists("xen.AchievementTracker");
+
+            if (achievmentsEnabled) 
+            {
+                AchievementsAPI.RegisterAchievement("CORECOLLAPSE.REEVACUATE", false, this);
+                AchievementsAPI.RegisterTranslation("CORECOLLAPSE.REEVACUATE", TextTranslation.Language.ENGLISH, "Reevacuation", "Fly back to the Central Station with the Nomai shuttle.");
+                AchievementsAPI.RegisterAchievement("CORECOLLAPSE.CRUSHEDBYSHIP", true, this);
+                AchievementsAPI.RegisterTranslation("CORECOLLAPSE.CRUSHEDBYSHIP", TextTranslation.Language.ENGLISH, "Hey, what's under here?", "Get crushed on the surface of The Astrophytum.");
+                AchievementsAPI.RegisterAchievement("CORECOLLAPSE.HIDDENLIGHTCRASH", true, this);
+                AchievementsAPI.RegisterTranslation("CORECOLLAPSE.HIDDENLIGHTCRASH", TextTranslation.Language.ENGLISH, "Only Fly at Night", "Crash the Nomai shuttle into the invisible star.");
+                AchievementsAPI.RegisterAchievement("CORECOLLAPSE.BLACKHOLEDEATH", true, this);
+                AchievementsAPI.RegisterTranslation("CORECOLLAPSE.BLACKHOLEDEATH", TextTranslation.Language.ENGLISH, "So close.", "Fly into the black hole.");
+                AchievementsAPI.RegisterAchievement("CORECOLLAPSE.ERNESTO", false, this);
+                AchievementsAPI.RegisterTranslation("CORECOLLAPSE.ERNESTO", TextTranslation.Language.ENGLISH, "Ernesto", "Find him.");
+                AchievementsAPI.RegisterAchievement("CORECOLLAPSE.TOOBIG", true, this);
+                AchievementsAPI.RegisterTranslation("CORECOLLAPSE.TOOBIG", TextTranslation.Language.ENGLISH, "Jam Rules Violation", "Grow The Astrophytum beyond a 2500m radius.");
+            }
+
         }
 
         /*public void OnCompleteSceneLoad(OWScene previousScene, OWScene newScene)
@@ -470,7 +475,7 @@ namespace TLDJam5
                     {
                         if (shuttleDist < 250000)
                         {
-                            AchievementsAPI.EarnAchievement("CORECOLLAPSE.REEVACUATE");
+                            if(achievmentsEnabled) AchievementsAPI.EarnAchievement("CORECOLLAPSE.REEVACUATE");
                         }
                     }
                 }
@@ -700,7 +705,7 @@ namespace TLDJam5
         {
             if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_CC_ERNESTO_TALKFORACHIEVEMENT"))
             {
-                AchievementsAPI.EarnAchievement("CORECOLLAPSE.ERNESTO");
+                if (achievmentsEnabled) AchievementsAPI.EarnAchievement("CORECOLLAPSE.ERNESTO");
             }
             if (DialogueConditionManager.SharedInstance.GetConditionState("TLD256_SHOW_ENDSCREEN"))
             {
