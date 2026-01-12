@@ -1,4 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/outer-wilds-new-horizons/new-horizons/main/NewHorizons/Schemas/translation_schema.json",
+	"OtherDictionary": {
+		"CORECOLLAPSE_NOTIFICATION_WHCORESIZE": "White Hole Core at <PERCENT>% normal size"
+	}
 	
 }

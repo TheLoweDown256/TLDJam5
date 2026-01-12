@@ -946,7 +946,9 @@ namespace TLDJam5
 
             if (isHeld!= wasCoreHeldLastFrame)
             {
-                suitNotifDisplay.PushNotification(new NotificationData("White Hole Core at " + Mathf.Floor(whiteWarpCoreScale * 100f + 0.5f) + "% normal size"));
+                string notifText= NewHorizons.GetTranslationForOtherText("CORECOLLAPSE_NOTIFICATION_WHCORESIZE");
+                notifText=notifText.Replace("<PERCENT>", Mathf.Floor(whiteWarpCoreScale * 100f + 0.5f).ToString());
+                suitNotifDisplay.PushNotification(new NotificationData(notifText));
                 if (!isHeld && !gaveCoreDontShrinkEntry)
                 {
                     Locator.GetShipLogManager().RevealFact("TLD256_STORAGE_NOSHRINK", true, true);
