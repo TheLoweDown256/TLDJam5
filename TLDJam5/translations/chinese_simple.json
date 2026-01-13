@@ -1,0 +1,280 @@
+{
+//该翻译补丁经检查没有任何问题。
+	"DialogueDictionary": {
+		//Ernesto.xml
+		"Ernesto": "厄内斯托",
+		"hey its me ernesto the magic talking anglerfish": "嘿，是我，会说话的魔法安康鱼厄内斯托。",
+		"i was just swimming in the middle of space when this big spaceship planet thing almost crushed me": "我刚才正在太空里游着呢，结果一个像行星那么大的飞船差点把我压扁。",
+		"and then after that i got sucked into a black hole but that was just a minor inconvenience": "之后我还被吸进了黑洞，不过那都不算啥大事。",
+		"anyways talk to me again after you beat this mod geswaldo and i have something cool to show you": "总之，等你通关这个模组后再跟我聊，我和格茨瓦尔多有好东西要给你看。",
+		"oh cool": "哦，不错嘛。",
+		"ill tell Geswaldo to meet you at the central station next loop i think he has the suprise for you": "我会让格茨瓦尔多在下一个循环到中央站见你，我觉得他要给你一个惊喜。",
+		"here let me help you with that": "来，让我帮你一把。",
+		"ok bye": "好的，再见。",
+		"I beat the mod": "我通关模组了。",
+		"What are you doing here?": "你在这儿干嘛？",
+		"But I did beat the mod!": "可我真的通关了啊！",
+		"Bye": "再见。",
+		"But I don't want to wait unti next loop!": "可我不想等到下一个循环啊！",
+		"Cool, thanks.": "太酷了，谢谢。",
+
+		//Geswaldo.xml
+		"Geswaldo": "格茨瓦尔多",
+		"Hey its me Geswaldo the magic talking jellyfish.": "嘿，是我，会说话的魔法水母格茨瓦尔多。",
+		"I figured out how to hack into The Astrophytum's ShrinkingPlanetControler so now I can mess with its scale.": "我搞懂了怎么黑进星植号的行星缩小控制期，现在能随便调整它的大小了。",
+		"I'm in a time loop! I've already heard all this!": "我陷入时间循环了！这些话我都听过了！",
+		"How did you do that?": "你是怎么做到的？",
+		"Did you misspell <![CDATA[\"Control<i>L</i>er\"]]>?": "你是不是把<![CDATA[“控制<i>期</i>”]]>拼错了？",
+		"Yeah I know I just thought you might want to hear it again.": "是啊，我知道，就是觉得你可能想再听一遍。",
+		"<![CDATA[>::(]]>": "<![CDATA[>::(]]>",
+		"I pressed random buttons on my keyboard until something happened.": "我就胡乱按键盘，直到有反应为止。",
+		"Makes sense.": "说得通。",
+		"No thats the dev's fault not mine.": "不，那是开发者的锅，不是我。",
+		"Ok.": "好吧。",
+		"Anything you want? <![CDATA[<size=10>(I take no responsibility if you break something)</size>]]>": "有什么想做的吗？<![CDATA[<size=10>（要是搞坏了什么，我可不负责啊。）</size>]]>",
+		"Reset The Astrophytum's scale.": "重置星植号的大小。",
+		"Reset the size change speed.": "重置大小变化速度。",
+		"Set the size change speed to 0.": "把大小变化速度设为0。",
+		"Double the size change speed.": "让大小变化速度翻倍。",
+		"Half the size change speed.": "让大小变化速度减半。",
+		"Make The Astrophytum grow instead of shrink.": "让星植号变大而不是缩小。",
+		"Make The Astrophytum shrink instead of grow.": "让星植号缩小而不是变大。",
+		"Invert The Astrophytum's scale.": "反转星植号的大小比例。",
+		"Can you stop being on this platform?": "你能从这个平台上挪开吗？",
+		"Bye.": "再见。",
+		"Core espalloC": "核心溃崩",
+		"mutyportsA": "号植星",
+		"Uh ok sure.": "呃，行吧，可以。",
+		"Talk to Ernesto if you want me back.": "想让我回来就去跟厄内斯托说。",
+		"Ok bye.": "好的，再见。",
+
+		//PlatformNomai.xml
+		"Protea": "普罗蒂亚",
+		"Hello, traveler.": "你好啊，旅行者。",
+		"We are currently in a troubling situation. Would you care to hear how we got here?": "我们现在处境不太妙。你愿意听听我们是怎么落到这步田地的吗？",
+		"I'm in a hurry, can I ask you somthing?": "我赶时间，能问你点事吗？",
+		"Yes": "愿意。",
+		"No": "不愿意。",
+		"Yes?": "怎么了？",
+		"We came here from the Silverflame system to escape its dying star. Unfortunatley, our vessel, <![CDATA[<color=orange>The Astrophytum</color>]]>, suffered damage upon our arival.": "我们为了躲避银焰星系那颗行将消亡的恒星，才逃到了这里。但不幸的是，我们的飞船——<![CDATA[<color=orange>星植号</color>]]>，在抵达时受损了。",
+		"Our Central Warp Core malfunctioned, and now <![CDATA[<color=orange>The Astrophytum</color>]]> is rapidly miniaturizing into a black hole!": "我们的中央跃迁核心出了故障，现在<![CDATA[<color=orange>星植号</color>]]>正在迅速缩小，眼看就要变成一个黑洞了！",
+		"Worse still, we couldn't even recover any of our <![CDATA[<color=orange>Exploration Logs</color>]]> from the Silverflame system as most of <![CDATA[<color=orange>The Astrophytum</color>]]>'s computers were stuck telling us to evacuate.": "更糟的是，我们连银焰星系的<![CDATA[<color=orange>探索日志</color>]]>都没能抢救出来，因为星植号上的大部分电脑都一直提示我们赶紧撤离。",
+		"If <![CDATA[<color=orange>The Astrophytum</color>]]> isn't fixed, we won't be able to recover our <![CDATA[<color=orange>Exploration Logs</color>]]>. And, if those logs aren't recovered, the history of the Silverflame system and the knowledge we gained will be lost.": "要是修不好<![CDATA[<color=orange>星植号</color>]]>，我们就拿不回<![CDATA[<color=orange>探索日志</color>]]>了。而如果日志找不回来，银焰星系的历史和我们积累的知识就会永远消失。",
+		"I can help!": "我可以帮忙！",
+		"Well that sucks.": "这可太糟糕了。",
+		"If only we had enough time to fix <![CDATA[<color=orange>The Astrophytum</color>]]>...": "要是我们有足够的时间修理<![CDATA[<color=orange>星植号</color>]]>就好了……",
+		"Bye for now.": "先告辞了。",
+		"We appreciate your offer, but I'm worried there may not be enough time to save our <![CDATA[<color=orange>Exploration Logs</color>]]>.": "感谢你的好意，但我担心可能没时间救回我们的<![CDATA[<color=orange>探索日志</color>]]>了。",
+		"We would need to figure out what's wrong with <![CDATA[<color=orange>The Astrophytum</color>]]>, find a solution, and fix <![CDATA[<color=orange>The Astrophytum</color>]]> all before it is sucked into the black hole.": "我们得在它被黑洞吞噬前，弄清楚<![CDATA[<color=orange>星植号</color>]]>出了什么问题、找到解决办法，然后修好它。",
+		"We only had just over 20 minutes to evacuate, so unfortunately, I'm doubtful there's any way to get all that done in what little time we have...": "我们撤离的时间都只有20多分钟，所以很遗憾，我觉得这么点时间根本不够做完所有事……",
+		"If you want to try anyways, you can use this shuttle behind me to warp directly to <![CDATA[<color=orange>The Astrophytum</color>]]>, though it may be wise to bring your own ship just in case. ": "不过你要是想试试，可以用我身后的这艘穿梭机直接跃迁到<![CDATA[<color=orange>星植号</color>]]>，不过保险起见，最好还是开上你自己的飞船。",
+		"Just make sure to evacuate if you can't fix <![CDATA[<color=orange>The Astrophytum</color>]]> before it's fully consumed. Don't get crushed!": "要是在它完全被吞噬前修不好，一定要赶紧撤离。别被压到了！",
+		"<![CDATA[<color=orange>The Astrophytum</color>]]> (our Vessel)'s Central Warp Core malfuntioned after we warped away from the Silverflame system.": "<![CDATA[<color=orange>星植号</color>]]>（我们的飞船）在我们从银焰星系跃迁离开后，中央跃迁核心就出故障了。",
+		"We were unable to recover our <![CDATA[<color=orange>Exploration Logs</color>]]> durring the evacuation. Those logs have all of our knowledge we gathered at the Silverflame system.": "撤离时我们没能取回<![CDATA[<color=orange>探索日志</color>]]>。那些日志里记录了我们在银焰星系收集到的所有知识。",
+		"In order to retrieve our <![CDATA[<color=orange>Exploration Logs</color>]]>, you must find a way to fix <![CDATA[<color=orange>The Astrophytum</color>]]> to return the computers to normal.": "要想取回我们的<![CDATA[<color=orange>探索日志</color>]]>，你得想办法修好<![CDATA[<color=orange>星植号</color>]]>，让电脑恢复正常。",
+		"In order to retrieve our <![CDATA[<color=orange>The Astrophytum</color>]]>, you must find a way to fix <![CDATA[<color=orange>The Astrophytum</color>]]> to return the computers to normal.": "要想取回我们的<![CDATA[<color=orange>星植号</color>]]>，你得想办法修好它，让电脑恢复正常。",
+		"You can go to <![CDATA[<color=orange>The Astrophytum</color>]]> with the shuttle behind me or with your own ship.": "你可以乘我身后的穿梭机，或者开自己的飞船去<![CDATA[<color=orange>星植号</color>]]>。",
+		"Do you have anything to ask us?": "你有什么要问我们的吗？",
+		"I recovered your Exploration Logs!": "我找回你们的探索日志了！",
+		"How can I help you?": "我能帮你们做些什么？",
+		"Goodbye.": "再见。",
+		"Woah. Thank you so much!": "哇哦。太谢谢你了！",
+		"The history of the Silverflame system is saved!": "银焰星系的历史保住了！",
+		"Unfortunately, your Vessel won't stay fixed for long.": "可惜啊，你的飞船修好了也撑不了多久。",
+		"Despite how much <![CDATA[<color=orange>The Astrophytum</color>]]> means to me, I think I can accept this.": "虽然<![CDATA[<color=orange>星植号</color>]]>对我意义重大，但我想我能接受这个结果。",
+		"You wrote down everything else you found there in your own Ship Log, right?": "你把在那儿发现的其他东西都记在自己的飞船日志里了，对吗？",
+		"That means the history of <![CDATA[<color=orange>The Astrophytum</color>]]> is also preserved.": "这意味着<![CDATA[<color=orange>星植号</color>]]>的历史也得以留存了。",
+		"I have seen at least one other Nomai around here, so I'm sure we can find someone willing to share their Vessel with us.": "我在这附近至少见过另一个挪麦人，所以肯定能找到愿意把飞船分享给我们的人。",
+		"We will take time to explore the other miniature systems in this area. Now that our <![CDATA[<color=orange>Exploration Logs</color>]]> are no longer in immediate danger, I recommend you explore them too.": "我们会花时间探索这一带其他的微型星系。既然我们的<![CDATA[<color=orange>探索日志</color>]]>不再岌岌可危，我建议你也去探索一下。",
+		"Thank you so much for helping us!": "太感谢你帮忙了！",
+		"Will you resume exploring right away, or do you want to rest here for a little bit?": "你是想马上继续探索，还是在这儿休息一会儿？",
+		"I want to explore! [CONTINUE CURRENT LOOP]": "我想探索！[继续当前循环]",
+		"I'll rest for a little bit. [SEE END SCREEN]": "我休息一会儿。[查看结局画面]",
+		"We hope to see you again. Safe travels!": "希望能再见到你。一路顺风！",
+
+		"<![CDATA[<color=orange>Bedroom</color>]]> (120m)": "<![CDATA[<color=orange>卧室</color>]]>（120米）",
+		"Crossroads (175m)": "十字路口（175米）",
+		"East Tower": "东塔楼",
+		"<![CDATA[<color=orange>Interior Entrance</color>]]> (175m)": "<![CDATA[<color=orange>内部入口</color>]]>（175米）",
+		"<![CDATA[<color=orange>Library</color>]]> (120m)": "<![CDATA[<color=orange>图书馆</color>]]>（120米）",
+		"<![CDATA[<color=orange>Towers Controller</color>]]>": "<![CDATA[<color=orange>塔楼控制器</color>]]>",
+		"<![CDATA[<color=orange>Warp Stabilizer</color>]]>": "<![CDATA[<color=orange>跃迁稳定器</color>]]>",
+		"West Tower": "西塔楼",
+		"Campsite (150m, south pole)": "营地（150米，南极）",
+
+		//bedroomrec.xml
+		"BEGONIA: How do we access the <![CDATA[<color=orange>Towers Controller</color>]]>?": "贝戈尼亚：我们怎么进入<![CDATA[<color=orange>塔楼控制器</color>]]>呢？",
+		"PROTEA: Just before turning right into the <![CDATA[<color=orange>Interior Entrance</color>]]>, there is a loose panel straight ahead on the dimly lit wall.": "普罗蒂亚：在右转进入<![CDATA[<color=orange>内部入口</color>]]>之前，正前方昏暗的墙上有一块松动的面板。",
+		"PROTEA: There's probably a correct way to open it, but I usualy just throw somthing at it.": "普罗蒂亚：按理说是有正确的打开方式，但我一般就直接扔个东西砸开。",
+		"PROTEA: After taking the panel off the wall you can continue on to the <![CDATA[<color=orange>Tower s</color>]]>. It's dark though, so make sure to bring a flashlight!": "普罗蒂亚：把面板从墙上弄下来后，就能继续去<![CDATA[<color=orange>塔楼</color>]]>了。不过里面很黑，一定要带手电筒！",
+
+		//campfirerec.xml
+		"DEUTZIA: This is <![CDATA[<color=orange>The Astrophytum</color>]]>. It will be your Vessel.": "多伊西亚：这是<![CDATA[<color=orange>星植号</color>]]>。它以后就是你的飞船了。",
+		"DEUTZIA: It is an old type of Vessel from before advanced technologies such as warping had been discovered. I, however, have upgraded it with modern Nomai technology including a warp core and a gravity cannon.": "多伊西亚：这是一种古老的飞船，早在跃迁之类的先进技术出现之前就有了。不过我用现代挪麦科技给它做了升级，装了跃迁核心和重力炮。",
+		"DEUTZIA: I have also left notes for you regarding the operation of <![CDATA[<color=orange>The Astrophytum</color>]]>. Make sure to read them carefully.": "多伊西亚：我还留了关于<![CDATA[<color=orange>星植号</color>]]>操作的笔记。一定要仔细看看。",
+		"DEUTZIA: Once you have done so, this will officialy be your Vessel to explore the universe with.": "多伊西亚：看完之后，它就正式成为你探索宇宙的飞船了。",
+		"PROTEA: Thank you so much! I'm so exited to explore the universe!": "普罗蒂亚：太谢谢你了！我很激动能去探索宇宙！",
+
+		//connectthesun.xml
+		"DEUTZIA: <![CDATA[<color=orange>Hidden Light</color>]]>'s cloaking field is finished! My work on this star is almost done.": "多伊西亚：<![CDATA[<color=orange>隐光星</color>]]>的隐形力场完成了！我在这颗恒星上的工作差不多要结束了。",
+		"DEUTZIA: The beautiful stars can now be viewed even during the day.": "多伊西亚：现在就算是白天，也能看到那些美丽的星星了。",
+		"DEUTZIA: All that's left to do is to make sure <![CDATA[<color=orange>Hidden Light</color>]]> can detect <![CDATA[<color=orange>The Astrophytum</color>]]>...": "多伊西亚：就差确保<![CDATA[<color=orange>隐光星</color>]]>能检测到<![CDATA[<color=orange>星植号</color>]]>了……",
+		"DEUTZIA: Yes! It works! <![CDATA[<color=orange>Hidden Light</color>]]> is expanding! It will not shrink again for as long as it detects <![CDATA[<color=orange>The Astrophytum</color>]]>.": "多伊西亚：成了！管用了！<![CDATA[<color=orange>隐光星</color>]]>在变大！只要它能检测到<![CDATA[<color=orange>星植号</color>]]>，就不会再缩小了。",
+		"DEUTZIA: This will surely be enough solar energy to power <![CDATA[<color=orange>The Astrophytum</color>]]>!": "多伊西亚：这些太阳能肯定够给<![CDATA[<color=orange>星植号</color>]]>供能了！",
+
+		//controlerrec.xml
+		"DEUTZIA: How to access the <![CDATA[<color=orange>Central Core</color>]]>:": "多伊西亚：进入<![CDATA[<color=orange>中央核心</color>]]>的方法：",
+		"DEUTZIA: You must first use this interface to open the <![CDATA[<color=orange>Equitorial Towers</color>]]>.": "多伊西亚：必须先通过这个界面打开<![CDATA[<color=orange>赤道塔楼</color>]]>。",
+		"DEUTZIA: Two Nomai must then go to the <![CDATA[<color=orange>Equitorial Towers</color>]]> and activate both towers within 15 seconds. This cannot be done alone as <![CDATA[<color=orange>The Astrophytum</color>]]> is too large to get to the other tower in time.": "多伊西亚：然后需要两个挪麦人去<![CDATA[<color=orange>赤道塔楼</color>]]>，在15秒内激活两座塔楼。一个人是办不到的，因为星植号太大了，来不及赶到另一座塔楼。",
+		"DEUTZIA: Once that is done, the <![CDATA[<color=orange>Central Core</color>]]> can be entered from <![CDATA[<color=orange>The Astrophytum's</color>]]> noth pole.": "多伊西亚：完成这一步后，就能从<![CDATA[<color=orange>星植号</color>]]>的北极进入<![CDATA[<color=orange>中央核心</color>]]>了。",
+
+		//dontuseshuttleatday.xml
+		"For saftey reasons, only use the Gravity Cannon durring the night.": "出于安全考虑，只能在夜间使用重力炮。",
+
+		//errorreport.xml
+		"<![CDATA[<color=orange>Central Core</color>]]> damaged. White hole core destroyed.": "<![CDATA[<color=orange>中央核心</color>]]>受损。白洞核心已损坏。",
+		"Black hole core unstable. WHITE HOLE CORE REPLACEMENT REQUIRED.": "黑洞核心不稳定。需更换白洞核心。",
+
+		//evacuate.xml
+		"WARNING: &lt;TLDJam5_MinutesToFullShrink&gt; minutes &lt;TLDJam5_SecondsToFullShrink&gt; seconds until <![CDATA[<color=orange>The Astrophytum</color>]]> is consumed by black hole.": "警告：距离<![CDATA[<color=orange>星植号</color>]]>被黑洞吞噬还有&lt;TLDJam5_MinutesToFullShrink&gt;分&lt;TLDJam5_SecondsToFullShrink&gt;秒。",
+		"<![CDATA[<color=orange>The Astrophytum</color>]]> is &lt;TLDJam5_ShrinkPercent&gt;% normal size. EVACUATE IMMEDIATELY.": "<![CDATA[<color=orange>星植号</color>]]>当前大小为正常状态的&lt;TLDJam5_ShrinkPercent&gt;%。请立即撤离。",
+
+		//librarycomputer.xml
+		"PROTEA: We have just warped to the Silverflame system! The Astrophytum is currently orbiting a gas giant we have named Golden Titan.": "普罗蒂亚：我们刚跃迁到银焰星系！星植号现在正绕着一颗我们命名为“黄金泰坦”的气态巨行星运行。",
+		"BEGONIA: We just landed our shuttle on Golden Titan's moon, Bronze Observer. This moon seems to be the ideal location for studying this system!": "贝戈尼亚：我们刚把穿梭机降落在黄金泰坦的卫星“青铜观测者”上。这颗卫星似乎是研究这个星系的理想地点！",
+		"BEGONIA: From our site on Bronze Observer, we have discovered a massive ocean under Golden Titan's clouds, featuring multiple islands that seem to drift with the ocean's current! I wonder if more planets like this exist.": "贝戈尼亚：从青铜观测者上的站点看，我们发现黄金泰坦的云层下有一片巨大的海洋，里面有多个岛屿，似乎随着洋流漂移！不知道还有没有这样的行星。",
+		"PROTEA: Our first landing on Golden Titan was a success! This island seems to have the same composition as Bronze Observer. Hypothesis: Bronze Observer was originaly much larger, but pieces of it broke off some time ago and landed on Golden Titan.": "普罗蒂亚：我们第一次在黄金泰坦着陆成功了！这个岛屿的成分似乎和青铜观测者一样。推测：青铜观测者原本大得多，很久以前有部分碎裂，落到了黄金泰坦上。",
+		"PROTEA: We just recieved many reports of stars across the universe all going supernova. Using our instruments on Bronze Observer, we have learned Silverflame's star will die in just 8 days. Our clan needs to leave here as soon as possible.": "普罗蒂亚：我们刚收到很多报告，说全宇宙有很多恒星都变成超新星了。通过青铜观测者上的仪器，我们得知银焰星系的恒星8天后就会消亡。我们家族得尽快离开这里。",
+
+		//libraryrecorder.xml
+		"PROTEA: In preperation for the Silverflame system's death, everything we have writen on the surrounding planets will be moved to this computer.": "普罗蒂亚：为了应对银焰星系的消亡，我们在周边行星上记录的所有内容都会转移到这台电脑里。",
+		"BEGONIA: I'm unsure if this computer is the best place to store our <![CDATA[<color=orange>Exploration Logs</color>]]>. Should there be an error with <![CDATA[<color=orange>The Astrophytum</color>]]>, the computer wouldn't allow us to access our logs until repairs are made.": "贝戈尼亚：我不确定这台电脑是不是存储<![CDATA[<color=orange>探索日志</color>]]>的最佳地点。要是<![CDATA[<color=orange>星植号</color>]]>出问题，电脑可能要等修好了才能让我们访问日志。",
+		"PROTEA: This is our best option. We only have 5 days to leave this system, and it would take too long to physicaly move anything written on walls to <![CDATA[<color=orange>The Astrophytum</color>]]>.": "普罗蒂亚：这是我们最好的选择了。我们只有5天时间离开这个星系，要把写在墙上的东西都搬到<![CDATA[<color=orange>星植号</color>]]>上，太费时间了。",
+
+		//stabilizerhelp.xml
+		"DEUTZIA: <![CDATA[<color=orange>Warp Stabilizer</color>]]> troubleshooting:": "多伊西亚：<![CDATA[<color=orange>跃迁稳定器</color>]]>故障排除：",
+		"DEUTZIA: The most likely reason for the <![CDATA[<color=orange>Warp Stabilizer</color>]]> to not activate is due to insufficient power.": "多伊西亚：<![CDATA[<color=orange>跃迁稳定器</color>]]>无法激活，最可能的原因是电力不足。",
+		"DEUTZIA: The <![CDATA[<color=orange>Warp Stabilizer</color>]]> can be primed by attempting to activate it 4 times. While primed, the <![CDATA[<color=orange>Warp Stabilizer</color>]]> will activate immediately once power is restored.": "多伊西亚：尝试激活<![CDATA[<color=orange>跃迁稳定器</color>]]>4次可使其进入待激活状态。处于该状态时，电力恢复后稳定器会立即激活。",
+		"DEUTZIA: Keep in mind the <![CDATA[<color=orange>Warp Stabilizer</color>]]> will not be able to fix <![CDATA[<color=orange>The Astrophytum</color>]]> on its own in the event of warp-induced damage. For this reason, is is extremely important to always activate the <![CDATA[<color=orange>Warp Stabilizer</color>]]> before warping.": "多伊西亚：要记住，若因跃迁导致<![CDATA[<color=orange>星植号</color>]]>受损，<![CDATA[<color=orange>跃迁稳定器</color>]]>无法自行修复。因此，跃迁前一定要激活稳定器，这一点至关重要。",
+		"DEUTZIA: (Though, if something does go wrong, the <![CDATA[<color=orange>Warp Stabilizer</color>]]> would give you some more time to fix the problem.)": "多伊西亚：（不过，要是真出了问题，<![CDATA[<color=orange>跃迁稳定器</color>]]>能给你多争取点时间来解决。）",
+
+		//suncomputer.xml
+		"ERROR: <![CDATA[<color=orange>The Astrophytum</color>]]> not found.": "错误：未找到<![CDATA[<color=orange>星植号</color>]]>。",
+
+		//sunwarppad.xml
+		"DEUTZIA: Now that everything is done here, I am leaving <![CDATA[<color=orange>Hidden Light</color>]]>.": "多伊西亚：这里的事都搞定了，我要离开<![CDATA[<color=orange>隐光星</color>]]>了。",
+		"DEUTZIA: I was planning to use the white hole core from this warp pad to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s <![CDATA[<color=orange>Central Core</color>]]>, but unfortunately it has been damaged from exposure to <![CDATA[<color=orange>Hidden Light</color>]]>.": "多伊西亚：我本来打算用这个跃迁平台的白洞核心给<![CDATA[<color=orange>星植号</color>]]>的<![CDATA[<color=orange>中央核心</color>]]>供能，可惜它因暴露在<![CDATA[<color=orange>隐光星</color>]]>下受损了。",
+		"DEUTZIA: I will put this broken warp core in the storage area on top of the <![CDATA[<color=orange>Library</color>]]>, along with the white hole core that was too big to be used for this warp reciever (or <![CDATA[<color=orange>The Astrophytum</color>]]>'s <![CDATA[<color=orange>Central Core</color>]]>).": "多伊西亚：我会把这个坏掉的跃迁核心放到<![CDATA[<color=orange>图书馆</color>]]>顶部的存储区，还有那个太大了、用不了的白洞核心（既用不了这个跃迁接收器，也用不了<![CDATA[<color=orange>星植号</color>]]>的<![CDATA[<color=orange>中央核心</color>]]>）也一起放过去。",
+
+		//towerrec.xml
+		"DEUTZIA: Interface Orb Colors:": "多伊西亚：界面球体颜色说明：",
+		"DEUTZIA: Blue: this tower is deactivated.": "多伊西亚：蓝色：本塔楼未激活。",
+		"DEUTZIA: Orange: only this tower is activated.": "多伊西亚：橙色：仅本塔楼已激活。",
+		"DEUTZIA: Green: both towers are activated.": "多伊西亚：绿色：两座塔楼均已激活。",
+
+		//treeresearch.xml
+		"DEUTZIA: After much work, I have finally finished installing all of the necessary Photovoltaic Trees on <![CDATA[<color=orange>The Astrophytum</color>]]>.": "多伊西亚：经过一番努力，我终于在<![CDATA[<color=orange>星植号</color>]]>上装好了所有必要的光伏树。",
+		"DEUTZIA: These trees are engineered to convert sunlight to energy useable by most Nomaian technology. In total, the Photovoltaic Trees installed on <![CDATA[<color=orange>The Astrophytum</color>]]> are currently producing over 50 NEU (Nomaian Energy Units).": "多伊西亚：这些树是经过改造的，能将阳光转化为大多数挪麦科技可用的能量。目前，星植号上的光伏树总共能产生超过50 NEU（挪麦能量单位）。",
+		"DEUTZIA: A strange thing I've noticed is that the trees actualy produce the greatest amount of energy at only 20% maximum size. If the Photovoltaic Trees were to grow to their full size, they would only be able to generate around 20 NEU total.": "多伊西亚：我发现一件怪事，这些树只有长到最大尺寸的20%时，产能才最高。要是长到 full size，总共只能产生约20 NEU。",
+		"DEUTZIA: For this reason, it is important that the Photovoltaic Trees are limited to only 20% of their full size potential.": "多伊西亚：因此，必须把光伏树的大小限制在最大潜能的20%。",
+
+		//warpstabilizer_computer.xml
+		"ERROR: insufficient power": "错误：电力不足",
+		"Warp Stabilizer: PRIMED (will activate once power is restored)": "跃迁稳定器：待激活（电力恢复后立即激活）",
+		"Warp Stabilizer: ACTIVE": "跃迁稳定器：已激活",
+
+		//whydoesntthestabilizerwork.xml
+		"BEGONIA: We have a problem with the <![CDATA[<color=orange>Warp Stabilizer</color>]]>. It requires 50 NEU to activate, but only 20 NEU is being generated.": "贝戈尼亚：<![CDATA[<color=orange>跃迁稳定器</color>]]>出问题了。激活需要50NEU，但现在只产生了20NEU。",
+		"PROTEA: I don't understand! All the Photovoltaic Trees are at their maximum size and healthy.": "普罗蒂亚：我搞不懂啊！所有光伏树都长到最大了，而且状态良好。",
+		"BEGONIA: Weren't Deutzia's notes on the <![CDATA[<color=orange>Warp Stabilizer</color>]]> lost somewhere on <![CDATA[<color=orange>Hidden Light</color>]]>? We should look there.": "贝戈尼亚：多伊西亚关于<![CDATA[<color=orange>跃迁稳定器</color>]]>的笔记不是丢在<![CDATA[<color=orange>隐光星</color>]]>的什么地方了吗？我们该去那儿找找。",
+		"PROTEA: There's no time to look on <![CDATA[<color=orange>Hidden Light</color>]]>! We have less than 2 days until this star dies! We need to warp as soon as possible!": "普罗蒂亚：没时间去<![CDATA[<color=orange>隐光星</color>]]>找了！这颗恒星不到两天就要消亡了！我们得尽快跃迁！",
+
+		//whyisthereanemptywarppad.xml
+		"BEGONIA: Why is there an empty warp transmitter here?": "贝戈尼亚：这儿怎么有个空的跃迁发射器？",
+		"PROTEA: This warp transmitter used to lead to <![CDATA[<color=orange>Hidden Light</color>]]>, the invisible star orbiting <![CDATA[<color=orange>The Astrophytum</color>]]>.": "普罗蒂亚：这个跃迁发射器原本是通往<![CDATA[<color=orange>隐光星</color>]]>的，就是那颗绕着<![CDATA[<color=orange>星植号</color>]]>转的隐形恒星。",
+		"PROTEA: <![CDATA[<color=orange>Hidden Light</color>]]> orbits along the purple energy ring around <![CDATA[<color=orange>The Astrophytum</color>]]>.": "普罗蒂亚：<![CDATA[<color=orange>隐光星</color>]]>沿着<![CDATA[<color=orange>星植号</color>]]>周围的紫色能量环运行。",
+		"PROTEA: The warp core from this transmitter was repurposed to power <![CDATA[<color=orange>The Astrophytum</color>]]>'s <![CDATA[<color=orange>Central Core</color>]]>.": "普罗蒂亚：这个发射器的跃迁核心被改用来给<![CDATA[<color=orange>星植号</color>]]>的<![CDATA[<color=orange>中央核心</color>]]>供能了。",
+
+		"Hidden Light": "隐光星",
+		"The Astrophytum": "星植号"
+	},
+	"ShipLogDictionary": {
+		//hiddenlight.xml
+		"Hidden Light": "隐光星",
+		"There is an invisible star called Hidden Light orbiting The Astrophytum along a purple energy ring.": "有一颗名为“隐光星”的隐形恒星，沿着紫色能量环绕星植号运行。",
+		"A star orbiting The Astrophytum. there is an artificial ring-like structure around it.": "一颗绕星植号运行的恒星。其周围有人造环状结构。",
+		"The white hole core in the Storage Area was too big to be used in The Astrophytum's Central Core.": "存储区的白洞核心太大，无法用于星植号的中央核心。",
+		"Hidden Light grew in size upon detecting The Astrophytum. It would shrink again if The Astrophytum could no longer be detected.": "隐光星检测到星植号后会变大。若无法再检测到星植号，它就会再次缩小。",
+		"I saw Hidden Light miniaturize after The Astrophytum was fully consumed by the black hole.": "我看到星植号被黑洞完全吞噬后，隐光星变小了。",
+		"Lost Recorders": "丢失的记录仪",
+		"Notes related to the Warp Stabilizer were lost somewhere on Hidden Light.": "与跃迁稳定器相关的笔记丢在了隐光星的某个地方。",
+		"The Photovoltaic Trees on The Astrophytum should generate a total of over 50 Nomaian Energy Units at 20% growth. However, they would only generate 20 NEU at full growth.": "星植号上的光伏树在长到20%大小时，总产能应超过50NEU（挪麦能量单位）。但长到最大时，只能产生20NEU。",
+		"The Warp Stabilizer can be primed by attempting to activate it 4 times.": "尝试激活跃迁稳定器4次可使其进入待激活状态。",
+		"While the Warp Stabilizer can't fix damage to The Astrophytum after warping, it can give more time to fix the issue.": "虽然跃迁稳定器无法修复跃迁后星植号受到的损坏，但能为解决问题争取更多时间。",
+
+		//platform.xml
+		"Protea's Clan": "普罗蒂亚家族",
+		"I met a Nomai named Protea. Her clan was forced to evacuate their Vessel, The Astrophytum after warping to this system.": "我遇到了一个叫普罗蒂亚的挪麦人。她的家族跃迁到这个星系后，被迫从他们的飞船星植号撤离。",
+		"I recovered Protea's clan's Exploration Logs.": "我找回了普罗蒂亚家族的探索日志。",
+
+		//shrinkingplanet.xml
+		"The Astrophytum": "星植号",
+		"Protea's Vessel is called The Astrophytum. It is currently miniaturizing into a black hole.": "普罗蒂亚的飞船名为星植号。它目前正在缩小，逐渐变成一个黑洞。",
+		"This is Protea's Vessel. It is currently miniaturizing into a black hole.": "这是普罗蒂亚的飞船。它目前正在缩小，逐渐变成一个黑洞。",
+		"Campsite": "营地",
+		"There is a campsite at the south pole of The Astrophytum.": "星植号的南极有一个营地。",
+		"I found a recording of a Nomai named Deutzia introducing Protea to The Astrophytum.": "我发现了一段录音，是一个叫多伊西亚的挪麦人向普罗蒂亚介绍星植号。",
+		"The Astrophytum is an older Nomai Vessel with modern technology added by Deutzia.": "星植号是一艘较古老的挪麦飞船，多伊西亚为其加装了现代科技。",
+		"Bedroom": "卧室",
+		"A Nomai named Protea normaly accesses the Towers Controller by throwing an object at a loose tile just before the Interior Entrance.": "一个叫普罗蒂亚的挪麦人通常是在快到内部入口时，朝一块松动的瓷砖扔东西来进入塔楼控制器。",
+		"Warp Stabilizer": "跃迁稳定器",
+		"The Warp Stabilizer requires 50 \"NEU\".": "跃迁稳定器需要50NEU（挪麦能量单位）。",
+		"All Photovoltaic Trees on The Astrophytum were at full size, yet are only producing 20 \"NEU\".": "星植号上的所有光伏树都长到了最大，但只能产生20NEU。",
+		"Protea's clan was in a rush to escape a dying star and warped without activating the Warp Stabilizer.": "普罗蒂亚的家族为了逃离一颗行将消亡的恒星，仓促之间没激活跃迁稳定器就进行了跃迁。",
+		"I primed the Warp Stabilizer by attempting to activate it 4 times.": "我尝试激活跃迁稳定器4次，使其进入了待激活状态。",
+		"The Astrophytum grew in size a while after I primed the Warp Stabilizer.": "我激活跃迁稳定器进入待激活状态后不久，星植号变大了。",
+		"Library": "图书馆",
+		"Protea's clan's Exploration Logs were put on a computer in the Library to preserve them after a star's death.": "为了在一颗恒星消亡后留存资料，普罗蒂亚家族的探索日志被存到了图书馆的一台电脑里。",
+		"A Nomai pointed out the logs would not be able to be accessed in the event of damage until The Astrophytum is fixed.": "一个挪麦人指出，若星植号受损，日志要等修好飞船后才能访问。",
+		"Storage Area": "存储区",
+		"A broken warp core and an oversized white hole core were put in a storage area above the Library.": "一个损坏的跃迁核心和一个过大的白洞核心被放在了图书馆上方的存储区。",
+		"There is a broken warp core and an oversized white hole core on a table here.": "这里的桌子上有一个损坏的跃迁核心和一个过大的白洞核心。",
+		"The white hole core only changes size while dropped on The Astrophytum.": "只有把白洞核心放在星植号上时，它才会改变大小。",
+		"Towers Controller": "塔楼控制器",
+		"Access to the Towers Controller is blocked by a loose panel.": "进入塔楼控制器的通道被一块松动的面板挡住了。",
+		"I entered the room with the Towers Controller by launching my scout at a loose wall panel.": "我发射探测器击中墙上一块松动的面板，进入了有塔楼控制器的房间。",
+		"Both towers must be activated within around 15 seconds of eachother to open access to the Central Core. This should require two people as The Astrophytum is too large to activate both towers in time.": "必须在约15秒内激活两座塔楼，才能打开通往中央核心的通道。由于星植号太大，一个人来不及激活两座塔楼，因此需要两个人。",
+		"Equitorial Towers": "赤道塔楼",
+		"The Equitorial Towers are required to access the Central Core.": "进入中央核心需要用到赤道塔楼。",
+		"I entered an Equitorial Tower after opening them with the Towers Controller.": "我用塔楼控制器打开赤道塔楼后，进入了其中一座。",
+		"According to a Nomai recorder in the West Tower: the orb interfaces in the Equitorial Towers are blue when no towers are active, yellow when only that tower is active, and geen when both towers are active.": "根据西塔楼的挪麦记录仪记载：赤道塔楼的球体界面在无塔楼激活时为蓝色，仅本塔楼激活时为黄色，两座塔楼均激活时为绿色。",
+		"Interior Entrance": "内部入口",
+		"The white hole core in The Astrophytum's Central Core requires replacement.": "星植号中央核心的白洞核心需要更换。",
+		"Unused Warp Platform": "未使用的跃迁平台",
+		"The warp cores connecting The Astrophytum and Hidden Light were repurposed for The Astrophytum's Central Core.": "连接星植号和隐光星的跃迁核心被改用于星植号的中央核心。",
+		"Central Core": "中央核心",
+		"The Central Core was damaged durring The Astrophytum's warp to this system.": "星植号跃迁到这个星系时，中央核心受损。",
+		"The Equitorial Towers must be activated to access the Central Core.": "必须激活赤道塔楼才能进入中央核心。",
+		"The entrance to the Central Core is at The Astrophytum's north pole.": "中央核心的入口在星植号的北极。",
+		"I entered The Astrophytum's Central Core.": "我进入了星植号的中央核心。",
+		"I fixed The Astrophytum by replacing the white hole core.": "我通过更换白洞核心修好了星植号。",
+		"Exploration Logs": "探索日志",
+		"Protea's clan was unable to recover their exploration logs while evacuating their Vessel.": "普罗蒂亚的家族撤离飞船时，没能取回他们的探索日志。",
+		"The Exploration Logs are stored on a computer in the Library.": "探索日志存储在图书馆的一台电脑里。",
+		"PROTEA: We have just warped to the Silverflame system! The Astrophytum is currently orbiting a gas giant we have named Golden Titan.": "普罗蒂亚：我们刚跃迁到银焰星系！星植号现在正绕着一颗我们命名为“黄金泰坦”的气态巨行星运行。",
+		"BEGONIA: We just landed our shuttle on Golden Titan's moon, Bronze Observer. This moon seems to be the ideal location for studying this system!": "贝戈尼亚：我们刚把穿梭机降落在黄金泰坦的卫星“青铜观测者”上。这颗卫星似乎是研究这个星系的理想地点！",
+		"BEGONIA: From our site on Bronze Observer, we have discovered a massive ocean under Golden Titan's clouds, featuring multiple islands that seem to drift with the ocean's current! I wonder if more planets like this exist.": "贝戈尼亚：从青铜观测者上的站点看，我们发现黄金泰坦的云层下有一片巨大的海洋，里面有多个岛屿，似乎随着洋流漂移！不知道还有没有这样的行星。",
+		"PROTEA: Our first landing on Golden Titan was a success! This island seems to have the same composition as Bronze Observer. Hypothesis: Bronze Observer was originaly much larger, but pieces of it broke off some time ago and landed on Golden Titan.": "普罗蒂亚：我们第一次在黄金泰坦着陆成功了！这个岛屿的成分似乎和青铜观测者一样。推测：青铜观测者原本大得多，很久以前有部分碎裂，落到了黄金泰坦上。",
+		"PROTEA: We just recieved many reports of stars across the universe all going supernova. Using our instruments on Bronze Observer, we have learned Silverflame's star will die in just 8 days. Our clan needs to leave here as soon as possible.": "普罗蒂亚：我们刚收到很多报告，说全宇宙有很多恒星都变成超新星了。通过青铜观测者上的仪器，我们得知银焰星系的恒星8天后就会消亡。我们家族得尽快离开这里。"
+	},
+	"UIDictionary": {
+		"Hidden Light": "隐光星",
+		"The Astrophytum": "星植号",
+		"CORE COLLAPSE": "CORE COLLAPSE",
+		"Core Collapse": "核心崩溃",
+		"Warp Core is too big.": "跃迁核心太大了。"
+	},
+	"OtherDictionary": {
+		"CORECOLLAPSE_NOTIFICATION_WHCORESIZE": "白洞核心当前大小为正常状态的<PERCENT>%"
+	}
+}
