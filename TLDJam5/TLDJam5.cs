@@ -596,13 +596,17 @@ namespace TLDJam5
 
                 if (playerItemCarryTool == null)
                 {
-                    var temp2 = Locator.GetPlayerController().transform.Find("PlayerCamera/ItemCarryTool");
-                    //    ModHelper.Console.WriteLine("TEMP2: " + temp2, MessageType.Info);
+                    var temp2 = Locator.GetPlayerController().transform.Find("PlayerCamera/ItemCarryTool"); 
+
                     if (temp2 == null)
                     {
-                        ModHelper.Console.WriteLine("[logged error] temp2 is NULL ", MessageType.Error);
+                        playerItemCarryTool = Locator.GetPlayerController().GetComponentInChildren<ItemTool>();   // THIS ENTIRE THING COULD INSTEAD JUST ALWAYS GET THE ITEMTOOL DIRECTLY FROM WHATEVER COMPONENT IN PLAYER_BODY CONTROLS THE PLAYERS TOOLS
                     }
-                    playerItemCarryTool = temp2.GetComponent<ItemTool>();
+                    else
+                    {
+                        playerItemCarryTool = temp2.GetComponent<ItemTool>();
+                    }
+                    
 
 
                     if (playerItemCarryTool == null)
